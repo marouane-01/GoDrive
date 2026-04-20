@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment ça marche — Go Drive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body data-page="guide">
+    <header class="site-header site-header--transparent">
+        <div class="header-inner">
+            <a href="/" class="logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async"></a>
+            <div class="header-actions">
+                <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">Télécharger</button>
+                <label class="lang-switcher">
+                    <span class="visually-hidden" data-i18n="lang.label">Langue</span>
+                    <select id="lang-select" class="lang-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </label>
+                <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-expanded="false" aria-controls="site-menu-panel" aria-label="Ouvrir le menu">
+                    <span class="nav-menu-btn__bars" aria-hidden="true">
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                    </span>
+                </button>
+            </div>
+            <div id="site-menu-panel" class="site-menu-panel" hidden>
+                <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <h1 data-i18n-html="guide.hero.title_html">Comment utiliser <span class="text-gradient-on-dark">Go Drive</span></h1>
+            <p data-i18n="guide.hero.lead">Quelques étapes, comme sur une app de course — ici pour vos colis.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <figure class="content-hero-img content-hero-img--logo reveal">
+            <img
+                src="/images/guide-hero-logo.png"
+                width="677"
+                height="369"
+                alt="Go Drive"
+                loading="lazy"
+                decoding="async">
+            <figcaption class="visually-hidden">Logo Go Drive</figcaption>
+        </figure>
+        <div class="card reveal" data-reveal-delay="0">
+            <h2 style="margin-top: 0; font-family: var(--font-display); font-weight: 700;" data-i18n="guide.clients.title">Clients</h2>
+            <ol style="padding-left: 1.25rem; color: var(--muted);">
+                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.clients.li1_html"><strong>Téléchargez l’application</strong> (lien sur l’accueil ou QR code).</li>
+                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.clients.li2_html">Créez ou utilisez votre compte <strong>Client</strong> dans l’app pour passer et suivre vos commandes.</li>
+                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.clients.li3_html">Partagez le <strong>QR code</strong> de commande au destinataire (accès utile depuis l’app).</li>
+            </ol>
+        </div>
+        <div class="card reveal" data-reveal-delay="100">
+            <h2 style="margin-top: 0; font-family: var(--font-display); font-weight: 700;" data-i18n="guide.drivers.title">Livreurs</h2>
+            <ol style="padding-left: 1.25rem; color: var(--muted);">
+                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.drivers.li1_html"><strong>Installez l’app</strong> et activez votre profil <strong>Livreur</strong> (hors inscription sur ce site).</li>
+                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.drivers.li2_html">Consultez les commandes <strong>disponibles</strong> et acceptez une course.</li>
+                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.drivers.li3_html">Mettez à jour le statut (en transit, livré) et la position pour l’historique.</li>
+            </ol>
+        </div>
+    </div>
+
+    <footer class="site-footer site-footer--simple" lang="fr">
+        <div class="footer-simple">
+            <div class="footer-simple__top">
+                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy"></a>
+                <nav class="footer-simple__nav" data-i18n-aria-label="footer.aria" aria-label="Pied de page">
+                    <ul class="footer-simple__links">
+                        <li><a href="/" data-i18n="nav.home">Accueil</a></li>
+                        <li><a href="/guide.html" data-i18n="nav.guide">Comment ça marche</a></li>
+                        <li><a href="/about.html" data-i18n="nav.about">À propos</a></li>
+                        <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/download-app.html" data-i18n="nav.download">Télécharger l’app</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-simple__bottom">
+                <p class="footer-simple__copy"><span data-i18n="footer.copy">© Go Drive — Maroc, 2024–2026</span></p>
+                <nav class="footer-simple__legal" data-i18n-aria-label="footer.legal_nav_aria" aria-label="Informations légales">
+                    <a href="/contact.html#mentions-confidentialite" data-i18n="footer.link.legal">Mentions légales</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/i18n-content.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/download-modal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/store-links.js"></script>
+</body>
+</html>

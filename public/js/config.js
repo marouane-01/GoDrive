@@ -1,0 +1,13 @@
+/**
+ * URLs publiques — modifiez selon vos stores réels.
+ * GODRIVE_APP_DOWNLOAD_URL : lien encodé dans le QR (souvent une page « télécharger » ou un lien universel).
+ */
+(function () {
+    var origin = window.location.origin;
+    window.GODRIVE_APP_DOWNLOAD_URL =
+        window.GODRIVE_APP_DOWNLOAD_URL || origin + '/download-app.html';
+    window.GODRIVE_IOS_URL =
+        window.GODRIVE_IOS_URL || 'https://apps.apple.com/app/godrive';
+    window.GODRIVE_ANDROID_URL =
+        window.GODRIVE_ANDROID_URL || 'https://play.google.com/store/apps/details?id=com.godrive.app';
+})();

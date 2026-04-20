@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Go Drive — Transport de colis, local & international</title>
+    <meta name="description" content="Go Drive connecte expéditeurs et livreurs pour des envois équitables : même ville, inter-ville ou international.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body data-page="home">
+    <header class="site-header site-header--transparent">
+        <div class="header-inner">
+            <a href="/" class="logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" fetchpriority="high"></a>
+            <div class="header-actions">
+                <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">Télécharger</button>
+                <label class="lang-switcher">
+                    <span class="visually-hidden" data-i18n="lang.label">Langue</span>
+                    <select id="lang-select" class="lang-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </label>
+                <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-expanded="false" aria-controls="site-menu-panel" aria-label="Ouvrir le menu">
+                    <span class="nav-menu-btn__bars" aria-hidden="true">
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                    </span>
+                </button>
+            </div>
+            <div id="site-menu-panel" class="site-menu-panel" hidden>
+                <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Images Unsplash : photos libres de droit (voir crédit en pied de page) -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+            <div>
+                <p class="hero-eyebrow" data-i18n="home.hero.eyebrow">Maroc & international</p>
+                <h1 id="hero-title" class="hero-heading" data-i18n-html="home.hero.title_html">
+                    <span class="hero-heading__line">Des <span class="text-gradient-hero">livraisons claires</span>,</span>
+                    <span class="hero-heading__line">du prix à la <span class="text-gradient-hero">livraison</span></span>
+                </h1>
+                <p class="hero-lead" data-i18n="home.hero.lead">
+                    Publiez une demande, choisissez un livreur et suivez chaque étape — local, inter-ville ou à l’étranger. Une plateforme simple pour vos colis et bagages.
+                </p>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary" data-i18n="home.hero.cta1">Télécharger l’app</a>
+                    <a href="/guide.html" class="btn btn-ghost" data-i18n="home.hero.cta2">Comment ça marche</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>3</strong>
+                        <span data-i18n="home.hero.stat1">types de trajet</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>QR</strong>
+                        <span data-i18n="home.hero.stat2">partage par scan</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>24/7</strong>
+                        <span data-i18n="home.hero.stat3">historique de statut</span>
+                    </div>
+                </div>
+            </div>
+            <aside class="hero-panel" aria-label="Aperçu des services">
+                <figure class="hero-figure hero-figure--carousel">
+                    <div
+                        class="hero-panel-carousel"
+                        data-hero-carousel
+                        role="region"
+                        data-i18n-aria-label="home.panel.carousel_aria"
+                        aria-label="Étapes de la livraison">
+                        <div class="hero-panel-carousel__viewport">
+                            <div class="hero-panel-carousel__slides">
+                                <div class="hero-panel-carousel__slide is-active" data-hero-slide>
+                                    <img
+                                        src="assets/images/hero-step-1.png"
+                                        width="690"
+                                        height="491"
+                                        alt=""
+                                        data-i18n-alt="home.panel.img_alt1"
+                                        decoding="async"
+                                        fetchpriority="high"
+                                        loading="eager">
+                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step1">Étape 1</span>
+                                </div>
+                                <div class="hero-panel-carousel__slide" data-hero-slide hidden>
+                                    <img
+                                        src="assets/images/hero-step-3.png"
+                                        width="680"
+                                        height="488"
+                                        alt=""
+                                        data-i18n-alt="home.panel.img_alt2"
+                                        decoding="async"
+                                        loading="lazy">
+                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step2">Étape 2</span>
+                                </div>
+                                <div class="hero-panel-carousel__slide" data-hero-slide hidden>
+                                    <img
+                                        src="assets/images/hero-step-4.png"
+                                        width="680"
+                                        height="488"
+                                        alt=""
+                                        data-i18n-alt="home.panel.img_alt3"
+                                        decoding="async"
+                                        loading="lazy">
+                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step3">Étape 3</span>
+                                </div>
+                                <div class="hero-panel-carousel__slide" data-hero-slide hidden>
+                                    <img
+                                        src="assets/images/hero-step-5.png"
+                                        width="680"
+                                        height="488"
+                                        alt=""
+                                        data-i18n-alt="home.panel.img_alt4"
+                                        decoding="async"
+                                        loading="lazy">
+                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step4">Étape 4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-panel-carousel__toolbar">
+                            <div class="hero-panel-carousel__dots" role="group" data-i18n-aria-label="home.panel.dots_aria">
+                                <button type="button" class="hero-panel-carousel__dot is-active" data-hero-carousel-dot="0" data-i18n-aria-label="home.panel.goto_slide_1" aria-label="Aller à la diapositive 1" aria-current="true"></button>
+                                <button type="button" class="hero-panel-carousel__dot" data-hero-carousel-dot="1" data-i18n-aria-label="home.panel.goto_slide_2" aria-label="Aller à la diapositive 2"></button>
+                                <button type="button" class="hero-panel-carousel__dot" data-hero-carousel-dot="2" data-i18n-aria-label="home.panel.goto_slide_3" aria-label="Aller à la diapositive 3"></button>
+                                <button type="button" class="hero-panel-carousel__dot" data-hero-carousel-dot="3" data-i18n-aria-label="home.panel.goto_slide_4" aria-label="Aller à la diapositive 4"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption class="visually-hidden" data-i18n="home.panel.carousel_caption">En images : rencontre client et livreur, trajet, remise du colis et confirmation.</figcaption>
+                </figure>
+                <h2 data-i18n="home.panel.title">Une plateforme, plusieurs besoins</h2>
+                <div class="hero-tags">
+                    <span class="tag" data-i18n="home.panel.tag1">Local</span>
+                    <span class="tag" data-i18n="home.panel.tag2">Inter-ville</span>
+                    <span class="tag" data-i18n="home.panel.tag3">International</span>
+                    <span class="tag" data-i18n="home.panel.tag4">QR & commandes</span>
+                </div>
+                <p style="margin: 1rem 0 0; font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.5;" data-i18n="home.panel.blurb">
+                    Installez l’application pour commander ou livrer, avec statuts en temps réel et QR code pour partager la commande.
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="services-title">
+        <div class="section-inner">
+            <h2 id="services-title" class="section-title reveal" data-i18n-html="home.services.title_html">Des offres pour <span class="text-gradient-accent">chaque distance</span></h2>
+            <p class="section-sub reveal" data-i18n="home.services.sub">Du dernier kilomètre au long courrier, la même expérience : commande, acceptation, transit, livraison.</p>
+            <div class="grid">
+                <article class="service-card reveal" data-reveal-delay="0">
+                    <figure class="service-card__media">
+                        <img
+                            src="assets/images/transport-urbain-godrive.jpg"
+                            sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                            width="1024"
+                            height="682"
+                            alt="Livraison GODRIVE en ville : camion blanc sur rue pavée, façades et terrasse de café"
+                            loading="lazy"
+                            decoding="async">
+                    </figure>
+                    <div class="icon" aria-hidden="true">📍</div>
+                    <h3 data-i18n="home.service1.title">Même ville</h3>
+                    <p data-i18n="home.service1.text">Enlèvement et dépôt rapides pour vos colis urbains, avec statuts et localisation dans l’app.</p>
+                </article>
+                <article class="service-card reveal" data-reveal-delay="90">
+                    <figure class="service-card__media">
+                        <img
+                            src="assets/images/inter-ville-godrive.jpg"
+                            sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                            width="1024"
+                            height="636"
+                            alt="Go Drive Logistics : convoi de trois semi-remorques sur autoroute pour transport inter-ville"
+                            loading="lazy"
+                            decoding="async">
+                    </figure>
+                    <div class="icon" aria-hidden="true">🚌</div>
+                    <h3 data-i18n="home.service2.title">Inter-ville</h3>
+                    <p data-i18n="home.service2.text">Reliez deux villes avec un parcours tracé et un historique de passage pour le destinataire.</p>
+                </article>
+                <article class="service-card reveal" data-reveal-delay="180">
+                    <figure class="service-card__media">
+                        <img
+                            src="assets/images/international-logistique-godrive.jpg"
+                            sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                            width="1024"
+                            height="636"
+                            alt="Logistique internationale Go Drive : navire, avion, camion GoDrive et entrepôt avec équipes."
+                            loading="lazy"
+                            decoding="async">
+                    </figure>
+                    <div class="icon" aria-hidden="true">✈️</div>
+                    <h3 data-i18n="home.service3.title">International</h3>
+                    <p data-i18n="home.service3.text">Préparez un envoi transfrontalier : même flux, QR de commande et traçabilité dans l’application.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gallery-section" aria-labelledby="gallery-title">
+        <div class="section-inner">
+            <h2 id="gallery-title" class="section-title reveal" data-i18n-html="home.gallery.title_html">La chaîne <span class="text-gradient-accent">logistique</span>, en images</h2>
+            <p class="section-sub gallery-intro reveal" data-i18n="home.gallery.sub">Du premier envoi au dernier kilomètre, une chaîne claire pour vos colis.</p>
+            <div class="gallery-grid">
+                <figure class="gallery-item reveal" data-reveal-delay="0">
+                    <img
+                        src="assets/images/transport-urbain-godrive.jpg"
+                        sizes="(max-width: 639px) 100vw, 50vw"
+                        width="1024"
+                        height="682"
+                        alt="Camion de livraison GODRIVE blanc sur rue pavée, façades haussmanniennes et terrasse de café"
+                        loading="lazy"
+                        decoding="async">
+                    <figcaption data-i18n="home.gallery.cap1">Transport urbain</figcaption>
+                </figure>
+                <figure class="gallery-item reveal" data-reveal-delay="80">
+                    <img
+                        src="assets/images/longue-distance-godrive.png"
+                        sizes="(max-width: 639px) 100vw, 50vw"
+                        width="1024"
+                        height="486"
+                        alt="Semi-remorque GODRIVE sur autoroute entre montagnes vertes, panneaux Lyon et Marseille"
+                        loading="lazy"
+                        decoding="async">
+                    <figcaption data-i18n="home.gallery.cap2">Longue distance</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark" aria-labelledby="safety-title">
+        <div class="section-inner trust-split">
+            <figure class="trust-figure trust-figure--illustration reveal">
+                <img
+                    src="assets/images/confiance-securite-godrive.png"
+                    width="735"
+                    height="498"
+                    sizes="(max-width: 899px) 92vw, 38vw"
+                    alt="Illustration : téléphone sécurisé, bouclier avec coche verte, cadenas, nuage et clé — confiance et protection des données."
+                    loading="lazy"
+                    decoding="async">
+                <figcaption class="visually-hidden">Sécurité et confiance sur mobile</figcaption>
+            </figure>
+            <div class="trust-copy">
+                <h2 id="safety-title" class="section-title reveal" data-i18n-html="home.trust.title_html"><span class="text-gradient-on-dark">Votre confiance</span>, notre priorité</h2>
+                <p class="section-sub reveal" data-i18n="home.trust.sub">Comptes sécurisés, mots de passe protégés et API conçue pour limiter les abus — comme sur les grandes plateformes de mobilité.</p>
+                <div class="feature-row reveal">
+                    <ul class="feature-list">
+                        <li data-i18n="home.trust.li1">Comptes et sessions gérés depuis l’application mobile</li>
+                        <li data-i18n="home.trust.li2">Jetons de session à durée limitée</li>
+                        <li data-i18n="home.trust.li3">Requêtes serveur validées et paramétrées</li>
+                    </ul>
+                    <ul class="feature-list">
+                        <li data-i18n="home.trust.li4">QR code unique par commande (lien utile dans l’app)</li>
+                        <li data-i18n="home.trust.li5">Historique des statuts et positions</li>
+                        <li data-i18n="home.trust.li6">Limitation de débit sur l’API pour limiter le brute force</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="download-section" id="download" aria-labelledby="download-title">
+        <div class="download-wrap">
+            <h2 id="download-title" class="section-title reveal" data-i18n-html="home.download.title_html"><span class="text-gradient-accent">Télécharger</span> l’application</h2>
+            <p class="section-sub download-lead reveal" data-i18n="home.download.lead">
+                Scannez le QR code pour ouvrir la page de téléchargement sur votre téléphone, ou choisissez votre store.
+            </p>
+            <div class="download-grid">
+                <div class="download-qr card reveal" data-reveal-delay="0">
+                    <p class="qr-label" data-i18n="home.download.qr_label">QR code — page de téléchargement</p>
+                    <div class="qr-frame">
+                        <img
+                            id="app-qr-img"
+                            src="/images/download-app-qr.png"
+                            width="220"
+                            height="220"
+                            alt="QR code menant à la page de téléchargement Go Drive"
+                            data-i18n-alt="home.download.qr_label"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+                </div>
+                <div class="download-stores card reveal" data-reveal-delay="100">
+                    <div class="download-visual">
+                        <figure>
+                            <img
+                                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=560&q=75"
+                                srcset="
+                                    https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=320&q=75 320w,
+                                    https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=560&q=75 560w,
+                                    https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=840&q=75 840w
+                                "
+                                sizes="(max-width: 799px) 78vw, 320px"
+                                width="560"
+                                height="746"
+                                alt="Utilisation d’un téléphone portable pour commander une course ou suivre un colis"
+                                loading="lazy"
+                                decoding="async">
+                            <figcaption class="visually-hidden">Application mobile sur smartphone</figcaption>
+                        </figure>
+                    </div>
+                    <h3 class="store-heading" data-i18n="home.download.stores">Stores</h3>
+                    <p class="text-muted store-copy" data-i18n="home.download.store_lead">
+                        Téléchargez l’application sur votre téléphone pour envoyer ou livrer des colis, et suivre chaque étape depuis l’app.
+                    </p>
+                    <div class="store-buttons">
+                        <a id="btn-ios" class="store-btn store-btn--ios" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.app">App Store</a>
+                        <a id="btn-android" class="store-btn store-btn--android" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.play">Google Play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer site-footer--simple" lang="fr">
+        <div class="footer-simple">
+            <div class="footer-simple__top">
+                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy"></a>
+                <nav class="footer-simple__nav" data-i18n-aria-label="footer.aria" aria-label="Pied de page">
+                    <ul class="footer-simple__links">
+                        <li><a href="/" data-i18n="nav.home">Accueil</a></li>
+                        <li><a href="/guide.html" data-i18n="nav.guide">Comment ça marche</a></li>
+                        <li><a href="/about.html" data-i18n="nav.about">À propos</a></li>
+                        <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/download-app.html" data-i18n="nav.download">Télécharger l’app</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-simple__bottom">
+                <p class="footer-simple__copy"><span data-i18n="footer.copy">© Go Drive — Maroc, 2024–2026</span></p>
+                <nav class="footer-simple__legal" data-i18n-aria-label="footer.legal_nav_aria" aria-label="Informations légales">
+                    <a href="/contact.html#mentions-confidentialite" data-i18n="footer.link.legal">Mentions légales</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/i18n-content.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/download-modal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/store-links.js"></script>
+</body>
+</html>

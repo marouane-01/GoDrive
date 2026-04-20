@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & support — Go Drive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body class="page-contact" data-page="contact">
+    <header class="site-header site-header--transparent">
+        <div class="header-inner">
+            <a href="/" class="logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async"></a>
+            <div class="header-actions">
+                <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">Télécharger</button>
+                <label class="lang-switcher">
+                    <span class="visually-hidden" data-i18n="lang.label">Langue</span>
+                    <select id="lang-select" class="lang-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </label>
+                <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-expanded="false" aria-controls="site-menu-panel" aria-label="Ouvrir le menu">
+                    <span class="nav-menu-btn__bars" aria-hidden="true">
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                    </span>
+                </button>
+            </div>
+            <div id="site-menu-panel" class="site-menu-panel" hidden>
+                <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="contact-main">
+        <div class="contact-wrap">
+            <div class="contact-bg" aria-hidden="true">
+                <span class="contact-bg__shape contact-bg__shape--1"></span>
+                <span class="contact-bg__shape contact-bg__shape--2"></span>
+                <span class="contact-bg__shape contact-bg__shape--3"></span>
+            </div>
+
+            <div class="contact-card reveal">
+                <header class="contact-card__head">
+                    <h1 data-i18n="contact.card.title">Nous contacter</h1>
+                    <p class="contact-card__lead" data-i18n="contact.card.lead">Posez une question ou partagez votre avis.</p>
+                </header>
+
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="contact-field contact-field--honeypot" aria-hidden="true">
+                        <label for="contact-website">Website</label>
+                        <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-subject" data-i18n="contact.label.subject">Objet</label>
+                        <input type="text" id="contact-subject" name="subject" data-i18n-placeholder="contact.ph.subject" placeholder="Saisissez l’objet" autocomplete="off" required>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-name" data-i18n="contact.label.name">Nom</label>
+                        <input type="text" id="contact-name" name="name" data-i18n-placeholder="contact.ph.name" placeholder="Nom et prénom" autocomplete="name" required>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-country" data-i18n="contact.label.country">Pays</label>
+                        <div class="contact-select-wrap">
+                            <select id="contact-country" name="country" required>
+                                <option value="MA" selected data-i18n="contact.country.ma">Maroc</option>
+                                <option value="FR" data-i18n="contact.country.fr">France</option>
+                                <option value="BE" data-i18n="contact.country.be">Belgique</option>
+                                <option value="CH" data-i18n="contact.country.ch">Suisse</option>
+                                <option value="CA" data-i18n="contact.country.ca">Canada</option>
+                                <option value="OTHER" data-i18n="contact.country.other">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-lang" data-i18n="contact.label.resp_lang">Langue de réponse</label>
+                        <div class="contact-select-wrap">
+                            <select id="contact-lang" name="response_language" required>
+                                <option value="" disabled selected data-i18n="contact.opt.lang_pick">Sélectionnez une langue</option>
+                                <option value="fr">Français</option>
+                                <option value="ar">العربية</option>
+                                <option value="en">English</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-service" data-i18n="contact.label.service">Service</label>
+                        <div class="contact-select-wrap">
+                            <select id="contact-service" name="service" required>
+                                <option value="" disabled selected data-i18n="contact.opt.service_pick">Sélectionnez un service</option>
+                                <option value="colis" data-i18n="contact.opt.s.colis">Livraison de colis</option>
+                                <option value="bagages" data-i18n="contact.opt.s.bags">Transport de bagages</option>
+                                <option value="compte" data-i18n="contact.opt.s.account">Compte &amp; application</option>
+                                <option value="partenariat" data-i18n="contact.opt.s.partner">Partenariat / pro</option>
+                                <option value="autre" data-i18n="contact.opt.s.other">Autre</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-phone" data-i18n="contact.label.phone">Numéro de téléphone</label>
+                        <div class="phone-row">
+                            <div class="phone-country" data-phone-country>
+                                <input type="hidden" id="contact-phone-prefix" name="phone_prefix" value="MA|212" required>
+                                <button
+                                    type="button"
+                                    class="phone-country-btn"
+                                    id="phone-country-btn"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                    aria-controls="contact-phone-panel"
+                                    aria-label="Choisir le pays et l’indicatif téléphonique"
+                                >
+                                    <span class="phone-flag-display" id="contact-phone-flag" aria-hidden="true">🇲🇦</span>
+                                    <span class="phone-country-dial" id="contact-phone-dial-label">+212</span>
+                                    <span class="phone-country-chevron" aria-hidden="true">
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
+                                </button>
+                                <div id="contact-phone-panel" class="phone-country-panel" hidden>
+                                    <label for="contact-phone-search" class="visually-hidden">Rechercher un pays</label>
+                                    <input
+                                        type="text"
+                                        id="contact-phone-search"
+                                        class="phone-country-search"
+                                        placeholder="Rechercher un pays ou un indicatif…"
+                                        autocomplete="off"
+                                        autocorrect="off"
+                                        autocapitalize="off"
+                                        spellcheck="false"
+                                        inputmode="text"
+                                        enterkeyhint="search"
+                                    >
+                                    <ul
+                                        id="contact-phone-list"
+                                        class="phone-country-list"
+                                        role="listbox"
+                                        aria-label="Pays et indicatifs"
+                                        aria-multiselectable="false"
+                                    ></ul>
+                                    <p id="contact-phone-empty" class="phone-country-empty" hidden role="status">Aucun pays ne correspond à votre recherche.</p>
+                                </div>
+                            </div>
+                            <input type="tel" id="contact-phone" name="phone_local" data-i18n-placeholder="contact.ph.phone" placeholder="Numéro sans indicatif" inputmode="tel" autocomplete="tel-national" aria-describedby="phone-hint">
+                        </div>
+                        <span id="phone-hint" class="contact-hint" data-i18n="contact.phone.hint">Indicatif et drapeau à gauche, puis votre numéro local (sans répéter l’indicatif).</span>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-email" data-i18n="contact.label.email">E-mail</label>
+                        <div class="contact-input-icon-wrap">
+                            <input type="email" id="contact-email" name="email" data-i18n-placeholder="contact.ph.email" placeholder="votre@email.com" autocomplete="email" required>
+                            <button type="button" class="contact-info-btn" title="Nous utiliserons cet e-mail uniquement pour répondre à votre message." aria-label="Information sur l’e-mail">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 16v-4M12 8h.01"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-field">
+                        <label for="contact-comment" data-i18n="contact.label.msg">Commentaire</label>
+                        <textarea id="contact-comment" name="comment" rows="5" maxlength="5000" data-i18n-placeholder="contact.ph.msg" placeholder="Votre message" required></textarea>
+                        <div class="contact-counter" aria-live="polite"><span id="contact-char-count">0</span>/5000</div>
+                    </div>
+
+                    <div class="contact-field contact-field--upload">
+                        <span class="contact-field__label">Pièces jointes</span>
+                        <div class="contact-upload">
+                            <input type="file" id="contact-files" name="files" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx" class="visually-hidden">
+                            <label for="contact-files" class="contact-upload__btn" title="Ajouter des fichiers">
+                                <span aria-hidden="true" class="contact-upload__plus">+</span>
+                                <span class="visually-hidden">Choisir des fichiers</span>
+                            </label>
+                            <p class="contact-upload__hint">Maximum 3 fichiers, 10 Mo chacun.</p>
+                            <ul id="contact-file-list" class="contact-file-list"></ul>
+                        </div>
+                    </div>
+
+                    <p id="contact-form-status" class="contact-form-status" role="status" aria-live="polite"></p>
+
+                    <button type="submit" class="contact-submit" data-i18n="contact.submit">Envoyer</button>
+
+                    <p class="contact-privacy">
+                        Consultez notre
+                        <a href="#mentions-confidentialite">politique de confidentialité</a>
+                        pour savoir comment nous traitons vos données personnelles.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <section id="mentions-confidentialite" class="contact-legal-note container">
+        <h2 class="visually-hidden">Mentions légales — confidentialité</h2>
+        <p class="text-muted" style="margin:0;font-size:0.9rem;max-width:42rem;">
+            Les informations collectées via ce formulaire servent à traiter votre demande. Pour toute question :
+            <a href="mailto:support@godrive.com">support@godrive.com</a>.
+        </p>
+    </section>
+
+    <footer class="site-footer site-footer--simple" lang="fr">
+        <div class="footer-simple">
+            <div class="footer-simple__top">
+                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy"></a>
+                <nav class="footer-simple__nav" data-i18n-aria-label="footer.aria" aria-label="Pied de page">
+                    <ul class="footer-simple__links">
+                        <li><a href="/" data-i18n="nav.home">Accueil</a></li>
+                        <li><a href="/guide.html" data-i18n="nav.guide">Comment ça marche</a></li>
+                        <li><a href="/about.html" data-i18n="nav.about">À propos</a></li>
+                        <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/download-app.html" data-i18n="nav.download">Télécharger l’app</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-simple__bottom">
+                <p class="footer-simple__copy"><span data-i18n="footer.copy">© Go Drive — Maroc, 2024–2026</span></p>
+                <nav class="footer-simple__legal" data-i18n-aria-label="footer.legal_nav_aria" aria-label="Informations légales">
+                    <a href="/contact.html#mentions-confidentialite" data-i18n="footer.link.legal">Mentions légales</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/i18n-content.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/download-modal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/store-links.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos — Go Drive</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body data-page="about">
+    <header class="site-header site-header--transparent">
+        <div class="header-inner">
+            <a href="/" class="logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async"></a>
+            <div class="header-actions">
+                <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">Télécharger</button>
+                <label class="lang-switcher">
+                    <span class="visually-hidden" data-i18n="lang.label">Langue</span>
+                    <select id="lang-select" class="lang-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </label>
+                <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-expanded="false" aria-controls="site-menu-panel" aria-label="Ouvrir le menu">
+                    <span class="nav-menu-btn__bars" aria-hidden="true">
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                        <span class="nav-menu-btn__bar"></span>
+                    </span>
+                </button>
+            </div>
+            <div id="site-menu-panel" class="site-menu-panel" hidden>
+                <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <h1 data-i18n-html="about.hero.title_html">À propos de <span class="text-gradient-on-dark">Go Drive</span></h1>
+            <p data-i18n="about.hero.lead">Une plateforme pensée comme les apps de mobilité : simple, lisible, centrée sur l’expéditeur et le livreur.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <figure class="content-hero-img reveal">
+            <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c4befd?auto=format&fit=crop&w=960&q=75"
+                srcset="
+                    https://images.unsplash.com/photo-1586528116311-ad8dd3c4befd?auto=format&fit=crop&w=600&q=75 600w,
+                    https://images.unsplash.com/photo-1586528116311-ad8dd3c4befd?auto=format&fit=crop&w=960&q=75 960w,
+                    https://images.unsplash.com/photo-1586528116311-ad8dd3c4befd?auto=format&fit=crop&w=1400&q=75 1400w
+                "
+                sizes="(max-width: 768px) 100vw, 720px"
+                width="960"
+                height="411"
+                alt="Chaîne logistique : cartons et préparation de colis en entrepôt"
+                loading="lazy"
+                decoding="async">
+            <figcaption class="visually-hidden">Logistique et préparation d’envois</figcaption>
+        </figure>
+        <div class="card reveal">
+            <p class="text-muted" style="margin-top: 0;" data-i18n-html="about.p1_html">Go Drive met en relation des <strong>clients</strong> qui ont un colis ou des bagages à envoyer avec des <strong>livreurs</strong> disponibles sur le même créneau — en local, entre villes ou à l’international.</p>
+            <p data-i18n-html="about.p2_html">Nous nous inspirons des meilleures expériences du marché (transparence des étapes, confiance) tout en restant un produit générique : <strong>Go Drive</strong> n’est pas affilié à inDrive ni à aucune autre marque.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer site-footer--simple" lang="fr">
+        <div class="footer-simple">
+            <div class="footer-simple__top">
+                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy"></a>
+                <nav class="footer-simple__nav" data-i18n-aria-label="footer.aria" aria-label="Pied de page">
+                    <ul class="footer-simple__links">
+                        <li><a href="/" data-i18n="nav.home">Accueil</a></li>
+                        <li><a href="/guide.html" data-i18n="nav.guide">Comment ça marche</a></li>
+                        <li><a href="/about.html" data-i18n="nav.about">À propos</a></li>
+                        <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="/download-app.html" data-i18n="nav.download">Télécharger l’app</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-simple__bottom">
+                <p class="footer-simple__copy"><span data-i18n="footer.copy">© Go Drive — Maroc, 2024–2026</span></p>
+                <nav class="footer-simple__legal" data-i18n-aria-label="footer.legal_nav_aria" aria-label="Informations légales">
+                    <a href="/contact.html#mentions-confidentialite" data-i18n="footer.link.legal">Mentions légales</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="js/i18n.js"></script>
+    <script src="js/i18n-content.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/download-modal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/store-links.js"></script>
+</body>
+</html>
