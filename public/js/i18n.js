@@ -58,6 +58,10 @@
             'about.hero.title_html': 'À propos de <span class="text-gradient-on-dark">Go Drive</span>',
             'about.hero.lead':
                 'Une plateforme pensée comme les apps de mobilité : simple, lisible, centrée sur l’expéditeur et le livreur.',
+            'about.banner.alt':
+                'Bannière Go Drive : remise d’un colis à un livreur, avantages du service et aperçu du suivi de livraison dans l’application.',
+            'about.banner.caption':
+                'Bannière Go Drive : livraison de confiance et suivi dans l’application',
             'pages.guide.title': 'Comment ça marche — Go Drive',
             'guide.hero.title': 'Comment utiliser Go Drive',
             'guide.hero.title_html': 'Comment utiliser <span class="text-gradient-on-dark">Go Drive</span>',
@@ -132,6 +136,9 @@
             'about.hero.title_html': 'About <span class="text-gradient-on-dark">Go Drive</span>',
             'about.hero.lead':
                 'A platform built like mobility apps: simple, clear, focused on senders and drivers.',
+            'about.banner.alt':
+                'Go Drive banner: parcel handoff to a courier, service highlights, and in-app delivery tracking preview.',
+            'about.banner.caption': 'Go Drive banner: trusted delivery and in-app tracking',
             'pages.guide.title': 'How it works — Go Drive',
             'guide.hero.title': 'How to use Go Drive',
             'guide.hero.title_html': 'How to use <span class="text-gradient-on-dark">Go Drive</span>',
@@ -204,6 +211,9 @@
             'about.hero.title': 'حول Go Drive',
             'about.hero.title_html': 'عن <span class="text-gradient-on-dark">Go Drive</span>',
             'about.hero.lead': 'منصة مصممة مثل تطبيقات التنقل: بسيطة، واضحة، تركز على المرسل والسائق.',
+            'about.banner.alt':
+                'لافتة Go Drive: تسليم طرد إلى مندوب، مزايا الخدمة، ومعاينة لتتبع التوصيل داخل التطبيق.',
+            'about.banner.caption': 'لافتة Go Drive: توصيل موثوق وتتبع داخل التطبيق',
             'pages.guide.title': 'كيف يعمل — Go Drive',
             'guide.hero.title': 'كيف تستخدم Go Drive',
             'guide.hero.title_html': 'كيفية استخدام <span class="text-gradient-on-dark">Go Drive</span>',
