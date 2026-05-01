@@ -150,56 +150,122 @@
         </div>
     </section>
 
-    <section class="section" aria-labelledby="services-title">
+    <!-- Services: modular blocks (Delivery · Ambulance · Dépannage) -->
+    <section class="section services-section" aria-labelledby="services-title">
         <div class="section-inner">
-            <h2 id="services-title" class="section-title reveal" data-i18n-html="home.services.title_html">Des offres pour <span class="text-gradient-accent">chaque distance</span></h2>
-            <p class="section-sub reveal" data-i18n="home.services.sub">Du dernier kilomètre au long courrier, la même expérience : commande, acceptation, transit, livraison.</p>
-            <div class="grid">
-                <article class="service-card reveal" data-reveal-delay="0">
-                    <figure class="service-card__media">
-                        <img
-                            src="assets/images/transport-urbain-godrive.jpg"
-                            sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
-                            width="1024"
-                            height="682"
-                            alt="Livraison GODRIVE en ville : camion blanc sur rue pavée, façades et terrasse de café"
-                            loading="lazy"
-                            decoding="async">
-                    </figure>
-                    <div class="icon" aria-hidden="true">📍</div>
-                    <h3 data-i18n="home.service1.title">Même ville</h3>
-                    <p data-i18n="home.service1.text">Enlèvement et dépôt rapides pour vos colis urbains, avec statuts et localisation dans l’app.</p>
-                </article>
-                <article class="service-card reveal" data-reveal-delay="90">
-                    <figure class="service-card__media">
-                        <img
-                            src="assets/images/inter-ville-godrive.jpg"
-                            sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
-                            width="1024"
-                            height="636"
-                            alt="Go Drive Logistics : convoi de trois semi-remorques sur autoroute pour transport inter-ville"
-                            loading="lazy"
-                            decoding="async">
-                    </figure>
-                    <div class="icon" aria-hidden="true">🚌</div>
-                    <h3 data-i18n="home.service2.title">Inter-ville</h3>
-                    <p data-i18n="home.service2.text">Reliez deux villes avec un parcours tracé et un historique de passage pour le destinataire.</p>
-                </article>
-                <article class="service-card reveal" data-reveal-delay="180">
-                    <figure class="service-card__media">
-                        <img
-                            src="assets/images/international-logistique-godrive.jpg"
-                            sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
-                            width="1024"
-                            height="636"
-                            alt="Logistique internationale Go Drive : navire, avion, camion GoDrive et entrepôt avec équipes."
-                            loading="lazy"
-                            decoding="async">
-                    </figure>
-                    <div class="icon" aria-hidden="true">✈️</div>
-                    <h3 data-i18n="home.service3.title">International</h3>
-                    <p data-i18n="home.service3.text">Préparez un envoi transfrontalier : même flux, QR de commande et traçabilité dans l’application.</p>
-                </article>
+            <h2 id="services-title" class="section-title reveal" data-i18n-html="home.services.title_html">Des services pour <span class="text-gradient-accent">chaque besoin</span></h2>
+            <p class="section-sub reveal" data-i18n="home.services.sub">Livraisons et assistance rapide : Go Drive vous accompagne pour vos envois comme pour les urgences.</p>
+
+            <div class="services-modules">
+                <!-- Module: Delivery (parcel tiers) -->
+                <section class="service-module service-module--delivery" data-service-module="delivery" aria-labelledby="services-module-delivery-heading">
+                    <header class="service-module__header reveal">
+                        <h3 id="services-module-delivery-heading" class="service-module__title" data-i18n="home.services.module.delivery.title">Livraison</h3>
+                        <p class="service-module__lead" data-i18n="home.services.module.delivery.lead">Colis et envois : du dernier kilomètre au long courrier.</p>
+                    </header>
+                    <div class="service-module__grid service-module__grid--cols-3 grid">
+                        <article class="service-card reveal" data-reveal-delay="0">
+                            <figure class="service-card__media">
+                                <img
+                                    src="assets/images/transport-urbain-godrive.jpg"
+                                    sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                                    width="1024"
+                                    height="682"
+                                    alt="Livraison GODRIVE en ville : camion blanc sur rue pavée, façades et terrasse de café"
+                                    loading="lazy"
+                                    decoding="async">
+                            </figure>
+                            <div class="icon" aria-hidden="true">📍</div>
+                            <h3 data-i18n="home.service1.title">Même ville</h3>
+                            <p data-i18n="home.service1.text">Enlèvement et dépôt rapides pour vos colis urbains, avec statuts et localisation dans l’app.</p>
+                        </article>
+                        <article class="service-card reveal" data-reveal-delay="90">
+                            <figure class="service-card__media">
+                                <img
+                                    src="assets/images/inter-ville-godrive.jpg"
+                                    sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                                    width="1024"
+                                    height="636"
+                                    alt="Go Drive Logistics : convoi de trois semi-remorques sur autoroute pour transport inter-ville"
+                                    loading="lazy"
+                                    decoding="async">
+                            </figure>
+                            <div class="icon" aria-hidden="true">🚌</div>
+                            <h3 data-i18n="home.service2.title">Inter-ville</h3>
+                            <p data-i18n="home.service2.text">Reliez deux villes avec un parcours tracé et un historique de passage pour le destinataire.</p>
+                        </article>
+                        <article class="service-card reveal" data-reveal-delay="180">
+                            <figure class="service-card__media">
+                                <img
+                                    src="assets/images/international-logistique-godrive.jpg"
+                                    sizes="(max-width: 639px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                                    width="1024"
+                                    height="636"
+                                    alt="Logistique internationale Go Drive : navire, avion, camion GoDrive et entrepôt avec équipes."
+                                    loading="lazy"
+                                    decoding="async">
+                            </figure>
+                            <div class="icon" aria-hidden="true">✈️</div>
+                            <h3 data-i18n="home.service3.title">International</h3>
+                            <p data-i18n="home.service3.text">Préparez un envoi transfrontalier : même flux, QR de commande et traçabilité dans l’application.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Modules: Assistance (Ambulance · Dépannage) -->
+                <div class="service-modules-assistance" role="presentation">
+                    <section class="service-module service-module--ambulance" data-service-module="ambulance" aria-labelledby="services-module-ambulance-heading">
+                        <header class="service-module__header reveal">
+                            <h3 id="services-module-ambulance-heading" class="service-module__title" data-i18n="home.services.module.ambulance.title">Ambulance</h3>
+                            <p class="service-module__lead" data-i18n="home.services.module.ambulance.lead">Assistance médicale urgente, avec réactivité prioritaire.</p>
+                        </header>
+                        <div class="service-module__grid service-module__grid--single grid">
+                            <article class="service-card reveal" data-reveal-delay="0">
+                                <figure
+                                    class="service-card__media service-card__media--illustrated service-card__media--ambulance"
+                                    role="img"
+                                    data-i18n-aria-label="home.service4.media_alt"
+                                    aria-label="Assistance ambulance Go Drive disponible rapidement">
+                                    <span class="service-card__media-badge">24/7</span>
+                                    <span class="service-card__media-icon" aria-hidden="true">🚑</span>
+                                    <span class="service-card__media-glow" aria-hidden="true"></span>
+                                </figure>
+                                <div class="icon" aria-hidden="true">⛑️</div>
+                                <h3 data-i18n="home.service4.title">Ambulance</h3>
+                                <p data-i18n="home.service4.text">Besoin d’un transport médical urgent ? Go Drive vous met en relation avec une assistance ambulance rapide et fiable, prête à intervenir au plus vite quand chaque seconde compte.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="service-module service-module--depannage" data-service-module="depannage" aria-labelledby="services-module-depannage-heading">
+                        <header class="service-module__header reveal">
+                            <h3 id="services-module-depannage-heading" class="service-module__title" data-i18n="home.services.module.depannage.title">Dépannage</h3>
+                            <p class="service-module__lead" data-i18n="home.services.module.depannage.lead">Panne ou immobilisation : intervention sur la route.</p>
+                        </header>
+                        <div class="service-module__grid service-module__grid--single grid">
+                            <article class="service-card reveal" data-reveal-delay="90">
+                                <figure
+                                    class="service-card__media service-card__media--illustrated service-card__media--depannage"
+                                    role="img"
+                                    data-i18n-aria-label="home.service5.media_alt"
+                                    aria-label="Assistance dépannage Go Drive pour panne ou urgence sur la route">
+                                    <span class="service-card__media-badge">SOS</span>
+                                    <span class="service-card__media-icon service-card__media-icon--img" aria-hidden="true">
+                                        <img src="assets/images/depannage-tow-truck.png" alt="" width="160" height="160" decoding="async"
+                                             onerror="this.parentElement.classList.remove('service-card__media-icon--img');this.parentElement.textContent='🛠️'">
+                                    </span>
+                                    <span class="service-card__media-glow" aria-hidden="true"></span>
+                                </figure>
+                                <div class="icon icon--img" aria-hidden="true">
+                                    <img src="assets/images/depannage-tow-truck.png" alt="" width="48" height="48" decoding="async"
+                                         onerror="this.parentElement.classList.remove('icon--img');this.parentElement.textContent='🔧'">
+                                </div>
+                                <h3 data-i18n="home.service5.title">Dépannage</h3>
+                                <p data-i18n="home.service5.text">Panne de voiture ou problème sur la route ? Go Drive vous propose une assistance dépannage rapide pour vous rejoindre vite et résoudre votre situation avec un service professionnel.</p>
+                            </article>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
     </section>

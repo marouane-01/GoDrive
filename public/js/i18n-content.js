@@ -63,6 +63,21 @@
             'footer.badge.aria.ios': 'Télécharger sur l’App Store',
             'footer.badge.aria.mid': 'Télécharger pour Android — page APK et web',
             'footer.badge.aria.play': 'Google Play',
+            // --- Home: modular services (`public/index.html` `.services-section`) ---
+            'home.services.title_html':
+                'Des services pour <span class="text-gradient-accent">chaque besoin</span>',
+            'home.services.sub':
+                'Livraisons et assistance rapide : Go Drive vous accompagne pour vos envois comme pour les urgences.',
+            'home.services.module.delivery.title': 'Livraison',
+            'home.services.module.delivery.lead':
+                'Colis et envois : du dernier kilomètre au long courrier.',
+            'home.services.module.ambulance.title': 'Ambulance',
+            'home.services.module.ambulance.lead':
+                'Assistance médicale urgente, avec réactivité prioritaire.',
+            'home.services.module.depannage.title': 'Dépannage',
+            'home.services.module.depannage.lead':
+                'Panne ou immobilisation : intervention sur la route.',
+            // Livraison — niveaux de distance (cartes dans le module Delivery)
             'home.service1.title': 'Même ville',
             'home.service1.text':
                 'Enlèvement et dépôt rapides pour vos colis urbains, avec statuts et localisation dans l’app.',
@@ -72,6 +87,15 @@
             'home.service3.title': 'International',
             'home.service3.text':
                 'Préparez un envoi transfrontalier : même flux, QR de commande et traçabilité dans l’application.',
+            // Assistance — Ambulance & Dépannage
+            'home.service4.title': 'Ambulance',
+            'home.service4.text':
+                'Besoin d’un transport médical urgent ? Go Drive vous met en relation avec une assistance ambulance rapide et fiable, prête à intervenir au plus vite quand chaque seconde compte.',
+            'home.service4.media_alt': 'Assistance ambulance Go Drive disponible rapidement',
+            'home.service5.title': 'Dépannage',
+            'home.service5.text':
+                'Panne de voiture ou problème sur la route ? Go Drive vous propose une assistance dépannage rapide pour vous rejoindre vite et résoudre votre situation avec un service professionnel.',
+            'home.service5.media_alt': 'Assistance dépannage Go Drive pour panne ou urgence sur la route',
             'home.gallery.title_html':
                 'La chaîne <span class="text-gradient-accent">logistique</span>, en images',
             'home.gallery.sub': 'Du premier envoi au dernier kilomètre, une chaîne claire pour vos colis.',
@@ -115,6 +139,7 @@
             'guide.drivers.li2_html': 'Consultez les commandes <strong>disponibles</strong> et acceptez une course.',
             'guide.drivers.li3_html':
                 'Mettez à jour le statut (en transit, livré) et la position pour l’historique.',
+            // --- Contact form (single form; service-aware behavior: `main.js` `GD_CONTACT_SERVICE_PROFILES`) ---
             'contact.label.subject': 'Objet',
             'contact.ph.subject': 'Saisissez l’objet',
             'contact.label.name': 'Nom',
@@ -125,10 +150,19 @@
             'contact.label.service': 'Service',
             'contact.opt.service_pick': 'Sélectionnez un service',
             'contact.opt.s.colis': 'Livraison de colis',
-            'contact.opt.s.bags': 'Transport de bagages',
+            'contact.opt.s.ambulance': 'Ambulance',
+            'contact.opt.s.depannage': 'Dépannage',
             'contact.opt.s.account': 'Compte & application',
             'contact.opt.s.partner': 'Partenariat / pro',
             'contact.opt.s.other': 'Autre',
+            'contact.service.hint':
+                'Choisissez un service pour adapter le formulaire à votre demande.',
+            'contact.service.hint.colis':
+                'Indiquez lieux, délais et nature du colis pour une réponse rapide sur votre envoi.',
+            'contact.service.hint.ambulance':
+                'Situation urgente : indiquez le lieu exact, l’urgence et un numéro joignable pour une prise en charge prioritaire.',
+            'contact.service.hint.depannage':
+                'Indiquez votre position, le symptôme et le véhicule pour accélérer l’intervention sur route.',
             'contact.label.phone': 'Numéro de téléphone',
             'contact.ph.phone': 'Numéro sans indicatif',
             'contact.phone.hint':
@@ -137,6 +171,15 @@
             'contact.ph.email': 'votre@email.com',
             'contact.label.msg': 'Commentaire',
             'contact.ph.msg': 'Votre message',
+            'contact.ph.subject.colis': 'Ex. Livraison urgente de colis',
+            'contact.ph.subject.ambulance': 'Ex. Ambulance urgente — [lieu]',
+            'contact.ph.subject.depannage': 'Ex. Dépannage — panne à [lieu]',
+            'contact.template.colis':
+                'Bonjour,\n\nJe souhaite une livraison de colis.\n\nLieu de collecte :\nLieu de livraison :\nDate / créneau souhaité :\nDimensions / poids approximatifs :\nUrgence : oui / non\nPrécisions :\n\nMerci de me recontacter rapidement.',
+            'contact.template.ambulance':
+                'URGENT — Assistance ambulance demandée.\n\nLieu précis (adresse ou repère) :\nNature de l’urgence :\nPersonne(s) concernée(s) :\nTéléphone joignable :\nAccès / contraintes (code, étage, etc.) :\n\nMerci de traiter cette demande en priorité.',
+            'contact.template.depannage':
+                'Bonjour,\n\nBesoin d’assistance dépannage sur la route.\n\nPosition exacte :\nType de panne / voyants :\nMarque et modèle du véhicule :\nLe véhicule roule-t-il encore ? oui / non\nRoue de secours / batterie connue :\nPrécisions :\n\nMerci d’intervenir au plus vite.',
             'contact.submit': 'Envoyer',
             'contact.country.ma': 'Maroc',
             'contact.country.fr': 'France',
@@ -247,6 +290,20 @@
             'footer.badge.aria.ios': 'Download on the App Store',
             'footer.badge.aria.mid': 'Download for Android — APK and web page',
             'footer.badge.aria.play': 'Get it on Google Play',
+            // --- Home: modular services ---
+            'home.services.title_html':
+                'Services for <span class="text-gradient-accent">every need</span>',
+            'home.services.sub':
+                'Deliveries and fast assistance: Go Drive supports your shipments as well as urgent situations.',
+            'home.services.module.delivery.title': 'Delivery',
+            'home.services.module.delivery.lead':
+                'Parcels and shipments from last mile to long haul.',
+            'home.services.module.ambulance.title': 'Ambulance',
+            'home.services.module.ambulance.lead':
+                'Urgent medical assistance with priority handling.',
+            'home.services.module.depannage.title': 'Dépannage',
+            'home.services.module.depannage.lead':
+                'Breakdowns and roadside issues: help can reach you quickly.',
             'home.service1.title': 'Same city',
             'home.service1.text':
                 'Fast pickup and drop-off for urban parcels, with status and location in the app.',
@@ -256,6 +313,14 @@
             'home.service3.title': 'International',
             'home.service3.text':
                 'Prepare a cross-border shipment: same flow, order QR and tracking in the app.',
+            'home.service4.title': 'Ambulance',
+            'home.service4.text':
+                'Need urgent medical transport? Go Drive connects you with fast and reliable ambulance assistance, arriving as quickly as possible to help when every second matters.',
+            'home.service4.media_alt': 'Fast Go Drive ambulance assistance',
+            'home.service5.title': 'Dépannage',
+            'home.service5.text':
+                'Car breakdown or roadside problem? Go Drive provides fast roadside assistance to reach you quickly and solve your issue with professional service.',
+            'home.service5.media_alt': 'Fast Go Drive roadside assistance for breakdowns',
             'home.gallery.title_html':
                 'The logistics <span class="text-gradient-accent">chain</span>, in pictures',
             'home.gallery.sub': 'From first shipment to last mile, a clear chain for your parcels.',
@@ -297,6 +362,7 @@
                 '<strong>Install the app</strong> and enable your <strong>Driver</strong> profile (sign-up is not on this site).',
             'guide.drivers.li2_html': 'Browse <strong>available</strong> orders and accept a trip.',
             'guide.drivers.li3_html': 'Update status (in transit, delivered) and location for history.',
+            // --- Contact form (single form; service-aware: `main.js`) ---
             'contact.label.subject': 'Subject',
             'contact.ph.subject': 'Enter the subject',
             'contact.label.name': 'Name',
@@ -307,10 +373,19 @@
             'contact.label.service': 'Service',
             'contact.opt.service_pick': 'Select a service',
             'contact.opt.s.colis': 'Parcel delivery',
-            'contact.opt.s.bags': 'Luggage transport',
+            'contact.opt.s.ambulance': 'Ambulance',
+            'contact.opt.s.depannage': 'Dépannage',
             'contact.opt.s.account': 'Account & app',
             'contact.opt.s.partner': 'Partnership / business',
             'contact.opt.s.other': 'Other',
+            'contact.service.hint':
+                'Pick a service so we can tailor the form to your request.',
+            'contact.service.hint.colis':
+                'Include pickup and delivery details, timing, and parcel description for a faster shipping reply.',
+            'contact.service.hint.ambulance':
+                'Emergency: share the exact location, situation, and a reachable phone number for priority handling.',
+            'contact.service.hint.depannage':
+                'Share your location, symptoms, and vehicle details so roadside assistance can respond faster.',
             'contact.label.phone': 'Phone number',
             'contact.ph.phone': 'Number without country code',
             'contact.phone.hint':
@@ -319,6 +394,15 @@
             'contact.ph.email': 'your@email.com',
             'contact.label.msg': 'Message',
             'contact.ph.msg': 'Describe your request…',
+            'contact.ph.subject.colis': 'E.g. Urgent parcel delivery',
+            'contact.ph.subject.ambulance': 'E.g. Urgent ambulance — [location]',
+            'contact.ph.subject.depannage': 'E.g. Roadside assistance — breakdown at [location]',
+            'contact.template.colis':
+                'Hello,\n\nI need a parcel delivery.\n\nPickup location:\nDelivery location:\nPreferred date / time:\nApprox. size / weight:\nUrgent: yes / no\nAdditional details:\n\nPlease get back to me as soon as possible.',
+            'contact.template.ambulance':
+                'URGENT — Ambulance assistance requested.\n\nExact location (address or landmark):\nEmergency details:\nPeople involved:\nReachable phone:\nAccess notes (code, floor, etc.):\n\nPlease handle this request as a priority.',
+            'contact.template.depannage':
+                'Hello,\n\nI need roadside assistance.\n\nExact location:\nBreakdown / warning lights:\nVehicle make and model:\nCan the vehicle still move? yes / no\nSpare tire / battery notes:\nAdditional details:\n\nPlease respond as quickly as possible.',
             'contact.submit': 'Send',
             'contact.country.ma': 'Morocco',
             'contact.country.fr': 'France',
@@ -429,6 +513,20 @@
             'footer.badge.aria.ios': 'التنزيل من App Store',
             'footer.badge.aria.mid': 'التنزيل لنظام Android — صفحة APK والويب',
             'footer.badge.aria.play': 'Google Play',
+            // --- Home: modular services ---
+            'home.services.title_html':
+                'خدمات لكل <span class="text-gradient-accent">احتياج</span>',
+            'home.services.sub':
+                'التوصيل والمساعدة السريعة: Go Drive جاهز لشحناتك وللحالات المستعجلة أيضًا.',
+            'home.services.module.delivery.title': 'التوصيل',
+            'home.services.module.delivery.lead':
+                'الطرود والشحنات من آخر كيلومتر إلى المسافات الطويلة.',
+            'home.services.module.ambulance.title': 'الإسعاف',
+            'home.services.module.ambulance.lead':
+                'مساعدة طبية عاجلة مع معالجة ذات أولوية.',
+            'home.services.module.depannage.title': 'المساعدة على الطريق',
+            'home.services.module.depannage.lead':
+                'الأعطال وتوقف المركبة: يمكن أن تصلكم المساعدة بسرعة.',
             'home.service1.title': 'داخل المدينة',
             'home.service1.text':
                 'استلام وتسليم سريع للطرود الحضرية، مع الحالة والموقع في التطبيق.',
@@ -438,6 +536,14 @@
             'home.service3.title': 'دولي',
             'home.service3.text':
                 'جهّز شحنة عبر الحدود: نفس المسار ورمز QR للطلب والتتبع في التطبيق.',
+            'home.service4.title': 'إسعاف',
+            'home.service4.text':
+                'هل تحتاج إلى نقل طبي عاجل؟ يربطك Go Drive بخدمة إسعاف سريعة وموثوقة تصل بأسرع وقت ممكن عندما تكون كل ثانية مهمة.',
+            'home.service4.media_alt': 'خدمة إسعاف سريعة من Go Drive',
+            'home.service5.title': 'المساعدة على الطريق',
+            'home.service5.text':
+                'هل لديك عطل في السيارة أو مشكلة على الطريق؟ يوفر Go Drive خدمة مساعدة سريعة للوصول إليك بسرعة وحل المشكلة باحترافية.',
+            'home.service5.media_alt': 'خدمة مساعدة سريعة من Go Drive للأعطال على الطريق',
             'home.gallery.title_html': 'سلسلة <span class="text-gradient-accent">اللوجستيك</span>، بالصور',
             'home.gallery.sub': 'من أول شحنة إلى آخر كيلومتر، سلسلة واضحة لطرودك.',
             'home.gallery.cap1': 'نقل حضري',
@@ -478,6 +584,7 @@
                 '<strong>ثبّت التطبيق</strong> وفعّل ملف <strong>سائق</strong> (التسجيل ليس على هذا الموقع).',
             'guide.drivers.li2_html': 'اطلع على الطلبات <strong>المتاحة</strong> واقبل رحلة.',
             'guide.drivers.li3_html': 'حدّث الحالة (قيد النقل، مُسلّم) والموقع للسجل.',
+            // --- Contact form (single form; service-aware: `main.js`) ---
             'contact.label.subject': 'الموضوع',
             'contact.ph.subject': 'أدخل الموضوع',
             'contact.label.name': 'الاسم',
@@ -488,10 +595,19 @@
             'contact.label.service': 'الخدمة',
             'contact.opt.service_pick': 'اختر خدمة',
             'contact.opt.s.colis': 'توصيل طرود',
-            'contact.opt.s.bags': 'نقل أمتعة',
+            'contact.opt.s.ambulance': 'إسعاف',
+            'contact.opt.s.depannage': 'المساعدة على الطريق',
             'contact.opt.s.account': 'الحساب والتطبيق',
             'contact.opt.s.partner': 'شراكة / احترافي',
             'contact.opt.s.other': 'أخرى',
+            'contact.service.hint':
+                'اختر خدمة ليتم ضبط النموذج وفق طلبك.',
+            'contact.service.hint.colis':
+                'اذكر أماكن الاستلام والتسليم والموعد ووصف الطرد للرد بسرعة على طلب الشحن.',
+            'contact.service.hint.ambulance':
+                'حالة طارئة: حدّد الموقع بدقة وحالة الطوارئ ورقم هاتف متاح للاستجابة بأولوية.',
+            'contact.service.hint.depannage':
+                'اذكر موقعك على الطريق ونوع العطل وتفاصيل المركبة لتسريع وصول المساعدة.',
             'contact.label.phone': 'رقم الهاتف',
             'contact.ph.phone': 'الرقم بدون المقدمة',
             'contact.phone.hint':
@@ -500,6 +616,15 @@
             'contact.ph.email': 'your@email.com',
             'contact.label.msg': 'الرسالة',
             'contact.ph.msg': 'صف طلبك…',
+            'contact.ph.subject.colis': 'مثال: توصيل طرد عاجل',
+            'contact.ph.subject.ambulance': 'مثال: إسعاف عاجل — [الموقع]',
+            'contact.ph.subject.depannage': 'مثال: مساعدة على الطريق — عطل في [الموقع]',
+            'contact.template.colis':
+                'مرحبًا،\n\nأحتاج إلى توصيل طرد.\n\nمكان الاستلام:\nمكان التسليم:\nالتاريخ / الوقت المفضل:\nالحجم / الوزن التقريبي:\nعاجل: نعم / لا\nتفاصيل إضافية:\n\nأرجو الرد في أقرب وقت.',
+            'contact.template.ambulance':
+                'عاجل — طلب مساعدة إسعاف.\n\nالموقع الدقيق (عنوان أو علامة):\nتفاصيل الطوارئ:\nعدد الأشخاص المعنيين:\nهاتف للتواصل:\nملاحظات الوصول (رمز، طابق، إلخ):\n\nيرجى معالجة هذا الطلب بأولوية.',
+            'contact.template.depannage':
+                'مرحبًا،\n\nأحتاج مساعدة على الطريق.\n\nالموقع الدقيق:\nنوع العطل / إشارات التحذير:\nماركة وموديل المركبة:\nهل لا تزال المركبة تتحرك؟ نعم / لا\nملاحظات (إطار احتياط، بطارية، إلخ):\nتفاصيل إضافية:\n\nأرجو التدخل في أسرع وقت.',
             'contact.submit': 'إرسال',
             'contact.country.ma': 'المغرب',
             'contact.country.fr': 'فرنسا',

@@ -8,20 +8,52 @@
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body class="page-contact" data-page="contact">
-    <header class="site-header site-header--transparent">
+        <header class="site-header site-header--transparent">
         <div class="header-inner">
-            <a href="/" class="logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async"></a>
+
+            <!-- ① Logo -->
+            <a href="/" class="logo" aria-label="Go Drive">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async">
+            </a>
+
+            <!-- ② Desktop navigation (≥900 px) -->
+            <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
+                <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
+                <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
+                <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
+            </nav>
+
+            <!-- ③ Right-side controls -->
             <div class="header-actions">
-                <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">Télécharger</button>
-                <label class="lang-switcher">
+                <!-- Download CTA -->
+                <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">
+                    Télécharger
+                </button>
+
+                <!-- Language selector with globe icon -->
+                <label class="lang-switcher" aria-label="Choisir la langue">
+                    <span class="lang-switcher__globe" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.25"/>
+                            <path d="M8 1.5C8 1.5 5.5 4.5 5.5 8C5.5 11.5 8 14.5 8 14.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M8 1.5C8 1.5 10.5 4.5 10.5 8C10.5 11.5 8 14.5 8 14.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M1.5 8H14.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                            <path d="M2.5 5.5H13.5M2.5 10.5H13.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+                        </svg>
+                    </span>
                     <span class="visually-hidden" data-i18n="lang.label">Langue</span>
                     <select id="lang-select" class="lang-select">
-                        <option value="fr">Français</option>
-                        <option value="en">English</option>
-                        <option value="ar">العربية</option>
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                        <option value="ar">AR</option>
                     </select>
                 </label>
-                <button type="button" class="nav-menu-btn" id="nav-menu-btn" aria-expanded="false" aria-controls="site-menu-panel" aria-label="Ouvrir le menu">
+
+                <!-- Hamburger / menu toggle -->
+                <button type="button" class="nav-menu-btn" id="nav-menu-btn"
+                    aria-expanded="false"
+                    aria-controls="site-menu-panel"
+                    aria-label="Ouvrir le menu">
                     <span class="nav-menu-btn__bars" aria-hidden="true">
                         <span class="nav-menu-btn__bar"></span>
                         <span class="nav-menu-btn__bar"></span>
@@ -29,9 +61,12 @@
                     </span>
                 </button>
             </div>
+
+            <!-- ④ Mobile dropdown panel -->
             <div id="site-menu-panel" class="site-menu-panel" hidden>
                 <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
             </div>
+
         </div>
     </header>
 
@@ -96,12 +131,14 @@
                             <select id="contact-service" name="service" required>
                                 <option value="" disabled selected data-i18n="contact.opt.service_pick">Sélectionnez un service</option>
                                 <option value="colis" data-i18n="contact.opt.s.colis">Livraison de colis</option>
-                                <option value="bagages" data-i18n="contact.opt.s.bags">Transport de bagages</option>
+                                <option value="ambulance" data-i18n="contact.opt.s.ambulance">Ambulance</option>
+                                <option value="depannage" data-i18n="contact.opt.s.depannage">Dépannage</option>
                                 <option value="compte" data-i18n="contact.opt.s.account">Compte &amp; application</option>
                                 <option value="partenariat" data-i18n="contact.opt.s.partner">Partenariat / pro</option>
                                 <option value="autre" data-i18n="contact.opt.s.other">Autre</option>
                             </select>
                         </div>
+                        <span class="contact-hint" data-i18n="contact.service.hint">Choisissez un service pour adapter le formulaire à votre demande.</span>
                     </div>
 
                     <div class="contact-field">
@@ -189,11 +226,6 @@
 
                     <button type="submit" class="contact-submit" data-i18n="contact.submit">Envoyer</button>
 
-                    <p class="contact-privacy">
-                        Consultez notre
-                        <a href="#mentions-confidentialite">politique de confidentialité</a>
-                        pour savoir comment nous traitons vos données personnelles.
-                    </p>
                 </form>
             </div>
         </div>

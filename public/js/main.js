@@ -482,12 +482,44 @@ function initPhoneCountryField() {
     });
 }
 
+/** Contact form: maps `<select name="service">` values → i18n keys for placeholders, hints, templates. */
+const GD_CONTACT_SERVICE_PROFILES = {
+    colis: {
+        subjectKey: 'contact.ph.subject.colis',
+        hintKey: 'contact.service.hint.colis',
+        templateKey: 'contact.template.colis',
+    },
+    ambulance: {
+        subjectKey: 'contact.ph.subject.ambulance',
+        hintKey: 'contact.service.hint.ambulance',
+        templateKey: 'contact.template.ambulance',
+    },
+    depannage: {
+        subjectKey: 'contact.ph.subject.depannage',
+        hintKey: 'contact.service.hint.depannage',
+        templateKey: 'contact.template.depannage',
+    },
+};
+
+const GD_CONTACT_SERVICE_FALLBACK = {
+    subjectKey: 'contact.ph.subject',
+    hintKey: 'contact.service.hint',
+    templateKey: '',
+};
+
+function getContactServiceProfile(service) {
+    return GD_CONTACT_SERVICE_PROFILES[service] || GD_CONTACT_SERVICE_FALLBACK;
+}
+
 function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
     initPhoneCountryField();
 
+    const subjectInput = document.getElementById('contact-subject');
+    const serviceSelect = document.getElementById('contact-service');
+    const serviceHintEl = form.querySelector('[data-i18n="contact.service.hint"]');
     const textarea = document.getElementById('contact-comment');
     const countEl = document.getElementById('contact-char-count');
     const fileInput = document.getElementById('contact-files');
@@ -495,10 +527,60 @@ function initContactForm() {
     const statusEl = document.getElementById('contact-form-status');
 
     let selectedFiles = [];
+    let isApplyingAutoMessage = false;
 
     function syncTextareaCount() {
         if (!textarea || !countEl) return;
         countEl.textContent = String(textarea.value.length);
+    }
+
+    function applyServiceAwareContent() {
+        const service = serviceSelect?.value || '';
+        const profile = getContactServiceProfile(service);
+
+        if (subjectInput) {
+            const nextSubjectPlaceholder = tNav(profile.subjectKey);
+            if (subjectInput.getAttribute('placeholder') !== nextSubjectPlaceholder) {
+                subjectInput.setAttribute('placeholder', nextSubjectPlaceholder);
+            }
+        }
+
+        if (serviceHintEl) {
+            const nextHint = tNav(profile.hintKey);
+            if (serviceHintEl.textContent !== nextHint) {
+                serviceHintEl.textContent = nextHint;
+            }
+        }
+
+        if (!textarea) return;
+
+        const nextTemplate = profile.templateKey ? tNav(profile.templateKey) : '';
+        const isAutoManaged = textarea.dataset.autoManaged === '1';
+        const isEmpty = !textarea.value.trim();
+
+        if (!nextTemplate) {
+            if (isAutoManaged) {
+                isApplyingAutoMessage = true;
+                textarea.value = '';
+                isApplyingAutoMessage = false;
+                textarea.dataset.autoManaged = '0';
+                textarea.dataset.autoTemplate = '';
+                syncTextareaCount();
+            }
+            return;
+        }
+
+        if (!isEmpty && !isAutoManaged) return;
+
+        if (textarea.value !== nextTemplate) {
+            isApplyingAutoMessage = true;
+            textarea.value = nextTemplate;
+            isApplyingAutoMessage = false;
+        }
+
+        textarea.dataset.autoManaged = '1';
+        textarea.dataset.autoTemplate = nextTemplate;
+        syncTextareaCount();
     }
 
     function renderFileList() {
@@ -554,7 +636,35 @@ function initContactForm() {
     }
 
     syncTextareaCount();
-    textarea?.addEventListener('input', syncTextareaCount);
+    textarea?.addEventListener('input', () => {
+        syncTextareaCount();
+        if (isApplyingAutoMessage) return;
+
+        const autoTemplate = textarea.dataset.autoTemplate || '';
+        if (!textarea.value.trim()) {
+            textarea.dataset.autoManaged = '0';
+            textarea.dataset.autoTemplate = '';
+            return;
+        }
+
+        if (textarea.value !== autoTemplate) {
+            textarea.dataset.autoManaged = '0';
+        }
+    });
+
+    serviceSelect?.addEventListener('change', applyServiceAwareContent);
+    form.addEventListener('reset', () => {
+        requestAnimationFrame(() => {
+            if (textarea) {
+                textarea.dataset.autoManaged = '0';
+                textarea.dataset.autoTemplate = '';
+            }
+            applyServiceAwareContent();
+            syncTextareaCount();
+        });
+    });
+
+    applyServiceAwareContent();
 
     fileInput?.addEventListener('change', () => {
         if (!fileInput.files?.length) return;
@@ -646,6 +756,7 @@ function initContactForm() {
         if (statusEl?.classList.contains('is-ok')) {
             statusEl.textContent = tNav('contact.success');
         }
+        applyServiceAwareContent();
     });
 }
 

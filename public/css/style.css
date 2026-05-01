@@ -851,6 +851,23 @@ html[dir='rtl'] .site-menu-panel {
     border: 1px solid rgba(22, 163, 74, 0.12);
 }
 
+.service-card .icon.icon--img {
+    padding: 0;
+    overflow: hidden;
+}
+
+.service-card .icon.icon--img img {
+    width: 62%;
+    height: 62%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    transition: none;
+    pointer-events: none;
+}
+
 .service-card h3 {
     font-family: var(--font-display);
     font-size: 1.15rem;
