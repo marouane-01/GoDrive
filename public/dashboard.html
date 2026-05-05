@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de bord — Go Drive</title>
+    <title>Aperçu de l’application — Go Drive</title>
+    <meta name="description" content="Aperçu de l’application mobile Go Drive : commandes, suivi et statuts. Toutes les actions se font uniquement depuis l’app.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
 </head>
@@ -11,26 +12,21 @@
         <header class="site-header site-header--transparent">
         <div class="header-inner">
 
-            <!-- ① Logo -->
             <a href="/" class="logo" aria-label="Go Drive">
                 <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async">
             </a>
 
-            <!-- ② Desktop navigation (≥900 px) -->
             <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
                 <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
                 <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
                 <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
             </nav>
 
-            <!-- ③ Right-side controls -->
             <div class="header-actions">
-                <!-- Download CTA -->
                 <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">
                     Télécharger
                 </button>
 
-                <!-- Language selector with globe icon -->
                 <label class="lang-switcher" aria-label="Choisir la langue">
                     <span class="lang-switcher__globe" aria-hidden="true">
                         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +45,6 @@
                     </select>
                 </label>
 
-                <!-- Hamburger / menu toggle -->
                 <button type="button" class="nav-menu-btn" id="nav-menu-btn"
                     aria-expanded="false"
                     aria-controls="site-menu-panel"
@@ -62,7 +57,6 @@
                 </button>
             </div>
 
-            <!-- ④ Mobile dropdown panel -->
             <div id="site-menu-panel" class="site-menu-panel" hidden>
                 <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
             </div>
@@ -72,41 +66,82 @@
 
     <div class="page-hero">
         <div class="page-hero-inner">
-            <h1 data-i18n-html="dashboard.hero.title_html"><span class="text-gradient-on-dark">Tableau</span> de bord</h1>
-            <p id="dashboard-sub">Gérez vos envois ou vos courses.</p>
+            <h1 data-i18n-html="dashboard.preview.hero.title_html"><span class="text-gradient-on-dark">Aperçu</span> de l’application</h1>
+            <p data-i18n="dashboard.preview.hero.lead">Voici à quoi ressemble Go Drive sur votre téléphone. Toutes les commandes et le suivi se font uniquement dans l’application mobile.</p>
         </div>
     </div>
 
     <div class="container">
-        <div class="card" id="clientControls" style="display:none;">
-            <h2 style="margin-top: 0; font-family: var(--font-display); font-weight: 700;" data-i18n="dashboard.new_order.title">Nouvelle commande</h2>
-            <form id="orderForm">
-                <div class="grid">
-                    <div class="form-group">
-                        <label for="pickup" data-i18n="dashboard.form.pickup">Lieu de départ</label>
-                        <input type="text" id="pickup" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dropoff" data-i18n="dashboard.form.dropoff">Lieu d'arrivée</label>
-                        <input type="text" id="dropoff" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="type" data-i18n="dashboard.form.transport">Type de transport</label>
-                        <select id="type">
-                            <option value="local" data-i18n="dashboard.transport.local">Local</option>
-                            <option value="inter-city" data-i18n="dashboard.transport.intercity">Inter-ville</option>
-                            <option value="international" data-i18n="dashboard.transport.international">International</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary" data-i18n="dashboard.form.submit">Créer la commande</button>
-            </form>
+        <div class="card reveal" role="note" aria-live="polite" style="border-left: 4px solid var(--accent, #f6a92c);">
+            <p style="margin: 0;" data-i18n-html="dashboard.preview.banner_html"><strong>Aperçu uniquement.</strong> Cette page ne permet pas de créer ou de gérer des commandes. Pour utiliser Go Drive, <a href="/download-app.html" data-i18n="dashboard.preview.banner_link">téléchargez l’application</a>.</p>
         </div>
 
-        <div class="card">
-            <h2 style="margin-top: 0; font-family: var(--font-display); font-weight: 700;" data-i18n="dashboard.orders.title">Commandes</h2>
-            <div id="ordersList" class="grid"></div>
+        <div class="card reveal">
+            <h2 style="margin-top: 0; font-family: var(--font-display); font-weight: 700;" data-i18n="dashboard.preview.example.title">Exemple de commandes dans l’app</h2>
+            <p class="text-muted" data-i18n="dashboard.preview.example.lead">Ces cartes sont une démonstration visuelle. Les vraies commandes vivent dans votre application Go Drive.</p>
+
+            <div id="ordersList" class="grid" aria-label="Aperçu de commandes">
+                <div class="order-card" aria-hidden="true">
+                    <h3><span data-i18n="dashboard.order.prefix">Commande #</span>1042</h3>
+                    <p><strong data-i18n="dashboard.order.from">De :</strong> <span>Casablanca — Maarif</span></p>
+                    <p><strong data-i18n="dashboard.order.to">À :</strong> <span>Rabat — Agdal</span></p>
+                    <p><strong data-i18n="dashboard.order.type">Type :</strong> <span data-i18n="dashboard.transport.intercity">Inter-ville</span></p>
+                    <p><strong data-i18n="dashboard.order.status">Statut :</strong> <span class="badge in_transit" data-i18n="dashboard.status.in_transit">En transit</span></p>
+                </div>
+
+                <div class="order-card" aria-hidden="true">
+                    <h3><span data-i18n="dashboard.order.prefix">Commande #</span>1043</h3>
+                    <p><strong data-i18n="dashboard.order.from">De :</strong> <span>Marrakech — Guéliz</span></p>
+                    <p><strong data-i18n="dashboard.order.to">À :</strong> <span>Marrakech — Médina</span></p>
+                    <p><strong data-i18n="dashboard.order.type">Type :</strong> <span data-i18n="dashboard.transport.local">Local</span></p>
+                    <p><strong data-i18n="dashboard.order.status">Statut :</strong> <span class="badge accepted" data-i18n="dashboard.status.accepted">Accepté</span></p>
+                </div>
+
+                <div class="order-card" aria-hidden="true">
+                    <h3><span data-i18n="dashboard.order.prefix">Commande #</span>1044</h3>
+                    <p><strong data-i18n="dashboard.order.from">De :</strong> <span>Tanger — Port</span></p>
+                    <p><strong data-i18n="dashboard.order.to">À :</strong> <span>Madrid — Centro</span></p>
+                    <p><strong data-i18n="dashboard.order.type">Type :</strong> <span data-i18n="dashboard.transport.international">International</span></p>
+                    <p><strong data-i18n="dashboard.order.status">Statut :</strong> <span class="badge delivered" data-i18n="dashboard.status.delivered">Livré</span></p>
+                </div>
+            </div>
         </div>
+
+        <section class="download-section download-section--page" aria-labelledby="dl-title-dash">
+            <div class="download-wrap">
+                <h2 id="dl-title-dash" class="section-title reveal" style="text-align: center;" data-i18n-html="dashboard.preview.download.title_html">Pour <span class="text-gradient-accent">commander</span>, téléchargez l’app</h2>
+                <p class="section-sub download-lead reveal" style="text-align: center; margin-left: auto; margin-right: auto;" data-i18n="dashboard.preview.download.lead">
+                    Go Drive est une application mobile. Scannez le QR code ou ouvrez votre store pour l’installer.
+                </p>
+                <div class="download-grid">
+                    <div class="download-qr card reveal" data-reveal-delay="0">
+                        <p class="qr-label" data-i18n="home.download.qr_label">QR code</p>
+                        <div class="qr-frame">
+                            <img
+                                id="app-qr-img"
+                                src="/images/download-app-qr.png"
+                                width="220"
+                                height="220"
+                                alt="QR code Go Drive"
+                                data-i18n-alt="home.download.qr_label"
+                                loading="lazy"
+                                decoding="async">
+                        </div>
+                    </div>
+                    <div class="download-stores card reveal" data-reveal-delay="110">
+                        <h3 class="store-heading" data-i18n="home.download.stores">Stores</h3>
+                        <div class="store-buttons">
+                            <a id="btn-ios" class="store-btn store-btn--ios" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.app">App Store</a>
+                            <a id="btn-android" class="store-btn store-btn--android" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.play">Google Play</a>
+                        </div>
+                        <p class="text-muted" style="margin-top: 1.25rem; font-size: 0.9rem;">
+                            <a href="/guide.html" data-i18n="nav.guide">Comment ça marche</a> ·
+                            <a href="/contact.html" data-i18n="nav.contact">Contact</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer class="site-footer site-footer--simple" lang="fr">
@@ -138,6 +173,5 @@
     <script src="js/download-modal.js"></script>
     <script src="js/main.js"></script>
     <script src="js/store-links.js"></script>
-    <script src="js/dashboard.js"></script>
 </body>
 </html>

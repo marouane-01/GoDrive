@@ -37,116 +37,259 @@
         </div>
     </header>
 
-    <!-- Images Unsplash : photos libres de droit (voir crédit en pied de page) -->
     <section class="hero" aria-labelledby="hero-title">
         <div class="hero-inner">
             <div>
-                <p class="hero-eyebrow" data-i18n="home.hero.eyebrow">Maroc & international</p>
+                <p class="hero-eyebrow" data-i18n="home.hero.eyebrow">Application mobile · iOS & Android</p>
                 <h1 id="hero-title" class="hero-heading" data-i18n-html="home.hero.title_html">
-                    <span class="hero-heading__line">Des <span class="text-gradient-hero">livraisons claires</span>,</span>
-                    <span class="hero-heading__line">du prix à la <span class="text-gradient-hero">livraison</span></span>
+                    <span class="hero-heading__line">L’application <span class="text-gradient-hero">Go Drive</span></span>
+                    <span class="hero-heading__line">pour vos <span class="text-gradient-hero">livraisons</span></span>
                 </h1>
                 <p class="hero-lead" data-i18n="home.hero.lead">
-                    Publiez une demande, choisissez un livreur et suivez chaque étape — local, inter-ville ou à l’étranger. Une plateforme simple pour vos colis et bagages.
+                    Téléchargez l’application Go Drive pour publier une demande, choisir un livreur et suivre chaque étape — local, inter-ville ou à l’étranger. Le site sert uniquement à présenter l’app.
                 </p>
-                <div class="hero-cta">
-                    <a href="#download" class="btn btn-primary" data-i18n="home.hero.cta1">Télécharger l’app</a>
-                    <a href="/guide.html" class="btn btn-ghost" data-i18n="home.hero.cta2">Comment ça marche</a>
+                <div class="hero-rating" aria-label="Note des utilisateurs">
+                    <span class="hero-rating__stars" aria-hidden="true">★★★★★</span>
+                    <span class="hero-rating__text" data-i18n="home.hero.rating">4,9 sur 1 200+ avis</span>
                 </div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <strong>3</strong>
-                        <span data-i18n="home.hero.stat1">types de trajet</span>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary btn-lg" data-i18n="home.hero.cta1">Télécharger gratuitement</a>
+                    <a href="#app-preview" class="btn btn-ghost" data-i18n="home.hero.cta2">Voir l’app en action</a>
+                </div>
+                <p class="hero-cta-hint" data-i18n="home.hero.cta_hint">Gratuit · iOS &amp; Android · prêt en 30 sec</p>
+                <div class="hero-store-badges" aria-label="Stores">
+                    <a id="btn-ios" href="#" target="_blank" rel="noopener noreferrer" class="store-badge store-badge--ios" aria-label="App Store">
+                        <span class="store-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M16.365 1.43c0 1.14-.46 2.22-1.21 3.02-.81.85-2.13 1.51-3.21 1.42-.13-1.13.42-2.31 1.16-3.06.84-.85 2.27-1.49 3.26-1.38zM20.5 17.34c-.55 1.27-.81 1.84-1.52 2.96-.99 1.57-2.39 3.53-4.13 3.55-1.55.02-1.95-1.01-4.05-1-2.1.01-2.55 1.02-4.1 1-1.74-.02-3.07-1.79-4.06-3.36C.04 16.6-.31 11.46 1.59 8.71c1.34-1.93 3.46-3.06 5.45-3.06 2.03 0 3.31 1.11 4.99 1.11 1.63 0 2.62-1.11 4.97-1.11 1.78 0 3.66.97 5 2.65-4.39 2.41-3.68 8.7.5 9.04z"/></svg>
+                        </span>
+                        <span class="store-badge__text">
+                            <span class="store-badge__l1" data-i18n="badge.appstore.l1">Télécharger sur</span>
+                            <span class="store-badge__l2" data-i18n="badge.appstore.l2">App Store</span>
+                        </span>
+                    </a>
+                    <a id="btn-android" href="#" target="_blank" rel="noopener noreferrer" class="store-badge store-badge--play" aria-label="Google Play">
+                        <span class="store-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 512 512" width="22" height="22"><path d="M48 480V32l253 224L48 480z" fill="#34a853"/><path d="M48 32l253 224 73-65L80 16c-12-7-25-3-32 16z" fill="#4285f4"/><path d="M48 480l326-160-73-64L48 480z" fill="#ea4335"/><path d="M448 232l-74 24-73 65 73 64 74-25c25-15 25-113 0-128z" fill="#fbbc05"/></svg>
+                        </span>
+                        <span class="store-badge__text">
+                            <span class="store-badge__l1" data-i18n="badge.googleplay.l1">DISPONIBLE SUR</span>
+                            <span class="store-badge__l2" data-i18n="badge.googleplay.l2">Google Play</span>
+                        </span>
+                    </a>
+                </div>
+                <p class="hero-app-only" data-i18n="home.hero.app_only_chip">Services accessibles uniquement dans l’app</p>
+            </div>
+            <aside class="hero-panel hero-panel--mockup" aria-label="Aperçu de l’app Go Drive">
+                <div class="phone-mockup phone-mockup--hero" role="img" aria-label="Aperçu de l’application Go Drive sur iPhone">
+                    <div class="phone-mockup__notch" aria-hidden="true"></div>
+                    <div class="phone-mockup__home" aria-hidden="true"></div>
+                    <div class="phone-mockup__glare" aria-hidden="true"></div>
+                    <div class="phone-mockup__screen">
+                        <div class="appui">
+                            <div class="appui__statusbar" aria-hidden="true">
+                                <span class="appui__time">9:41</span>
+                                <span class="appui__statusbar-icons">
+                                    <svg width="17" height="11" viewBox="0 0 17 11" fill="none" aria-hidden="true">
+                                        <rect x="0" y="8" width="3" height="3" rx="0.5" fill="currentColor"/>
+                                        <rect x="4.5" y="6" width="3" height="5" rx="0.5" fill="currentColor"/>
+                                        <rect x="9" y="3" width="3" height="8" rx="0.5" fill="currentColor"/>
+                                        <rect x="13.5" y="0" width="3" height="11" rx="0.5" fill="currentColor"/>
+                                    </svg>
+                                    <svg width="14" height="10" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+                                        <path d="M8 10.5a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z" fill="currentColor"/>
+                                        <path d="M3.5 6.5C5 5 6.4 4.3 8 4.3s3 .7 4.5 2.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                        <path d="M0.8 3.7C2.9 1.6 5.4 0.5 8 0.5s5.1 1.1 7.2 3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                                    </svg>
+                                    <svg width="26" height="12" viewBox="0 0 26 12" fill="none" aria-hidden="true">
+                                        <rect x="0.5" y="0.5" width="22" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/>
+                                        <rect x="2" y="2" width="16" height="8" rx="1.5" fill="currentColor"/>
+                                        <rect x="23" y="3.5" width="2" height="5" rx="1" fill="currentColor" fill-opacity="0.45"/>
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <div class="appui__header">
+                                <div class="appui__header-text">
+                                    <span class="appui__hello">Bonjour 👋</span>
+                                    <strong class="appui__app">Go Drive</strong>
+                                </div>
+                                <span class="appui__avatar appui__avatar--lg" aria-hidden="true">M</span>
+                            </div>
+
+                            <div class="appui__search" aria-hidden="true">
+                                <span>🔎</span>
+                                <em>Où va votre colis ?</em>
+                            </div>
+
+                            <div class="appui__quick" aria-hidden="true">
+                                <div class="appui__quick-item"><span>📦</span><em>Colis</em></div>
+                                <div class="appui__quick-item"><span>🚑</span><em>Ambulance</em></div>
+                                <div class="appui__quick-item"><span>🛠️</span><em>Dépannage</em></div>
+                            </div>
+
+                            <div class="appui__order">
+                                <div class="appui__order-head">
+                                    <strong>Commande en cours</strong>
+                                    <span class="appui__chip appui__chip--ok">En transit</span>
+                                </div>
+                                <div class="appui__order-row">
+                                    <span class="appui__avatar appui__avatar--a" aria-hidden="true">K</span>
+                                    <div class="appui__order-info">
+                                        <strong>Karim B.</strong>
+                                        <em>★ 4.9 · Casa → Rabat</em>
+                                    </div>
+                                    <span class="appui__eta-badge">12 min</span>
+                                </div>
+                            </div>
+
+                            <div class="appui__tabbar" aria-hidden="true">
+                                <div class="appui__tab is-active">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>
+                                    <em>Accueil</em>
+                                </div>
+                                <div class="appui__tab">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    <em>Suivi</em>
+                                </div>
+                                <div class="appui__tab">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                    <em>Commandes</em>
+                                </div>
+                                <div class="appui__tab">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    <em>Profil</em>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-stat">
-                        <strong>QR</strong>
-                        <span data-i18n="home.hero.stat2">partage par scan</span>
-                    </div>
-                    <div class="hero-stat">
-                        <strong>24/7</strong>
-                        <span data-i18n="home.hero.stat3">historique de statut</span>
-                    </div>
+                </div>
+                <span class="hero-panel-glow" aria-hidden="true"></span>
+            </aside>
+        </div>
+    </section>
+
+    <section class="stats-section" aria-labelledby="stats-title">
+        <div class="section-inner">
+            <h2 id="stats-title" class="visually-hidden" data-i18n="home.stats.title">Une communauté qui fait confiance à Go Drive</h2>
+            <div class="stats-row">
+                <div class="stat-pill reveal">
+                    <strong data-i18n="home.stats.dl.value">50K+</strong>
+                    <span data-i18n="home.stats.dl.label">téléchargements</span>
+                </div>
+                <div class="stat-pill reveal" data-reveal-delay="60">
+                    <strong data-i18n="home.stats.rating.value">4,9 ★</strong>
+                    <span data-i18n="home.stats.rating.label">note moyenne</span>
+                </div>
+                <div class="stat-pill reveal" data-reveal-delay="120">
+                    <strong data-i18n="home.stats.deliveries.value">120K+</strong>
+                    <span data-i18n="home.stats.deliveries.label">courses livrées</span>
+                </div>
+                <div class="stat-pill reveal" data-reveal-delay="180">
+                    <strong data-i18n="home.stats.cities.value">40+</strong>
+                    <span data-i18n="home.stats.cities.label">villes au Maroc</span>
                 </div>
             </div>
-            <aside class="hero-panel" aria-label="Aperçu des services">
-                <figure class="hero-figure hero-figure--carousel">
-                    <div
-                        class="hero-panel-carousel"
-                        data-hero-carousel
-                        role="region"
-                        data-i18n-aria-label="home.panel.carousel_aria"
-                        aria-label="Étapes de la livraison">
-                        <div class="hero-panel-carousel__viewport">
-                            <div class="hero-panel-carousel__slides">
-                                <div class="hero-panel-carousel__slide is-active" data-hero-slide>
-                                    <img
-                                        src="assets/images/hero-step-1.png"
-                                        width="690"
-                                        height="491"
-                                        alt=""
-                                        data-i18n-alt="home.panel.img_alt1"
-                                        decoding="async"
-                                        fetchpriority="high"
-                                        loading="eager">
-                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step1">Étape 1</span>
-                                </div>
-                                <div class="hero-panel-carousel__slide" data-hero-slide hidden>
-                                    <img
-                                        src="assets/images/hero-step-3.png"
-                                        width="680"
-                                        height="488"
-                                        alt=""
-                                        data-i18n-alt="home.panel.img_alt2"
-                                        decoding="async"
-                                        loading="lazy">
-                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step2">Étape 2</span>
-                                </div>
-                                <div class="hero-panel-carousel__slide" data-hero-slide hidden>
-                                    <img
-                                        src="assets/images/hero-step-4.png"
-                                        width="680"
-                                        height="488"
-                                        alt=""
-                                        data-i18n-alt="home.panel.img_alt3"
-                                        decoding="async"
-                                        loading="lazy">
-                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step3">Étape 3</span>
-                                </div>
-                                <div class="hero-panel-carousel__slide" data-hero-slide hidden>
-                                    <img
-                                        src="assets/images/hero-step-5.png"
-                                        width="680"
-                                        height="488"
-                                        alt=""
-                                        data-i18n-alt="home.panel.img_alt4"
-                                        decoding="async"
-                                        loading="lazy">
-                                    <span class="hero-panel-carousel__step" data-i18n="home.panel.step4">Étape 4</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hero-panel-carousel__toolbar">
-                            <div class="hero-panel-carousel__dots" role="group" data-i18n-aria-label="home.panel.dots_aria">
-                                <button type="button" class="hero-panel-carousel__dot is-active" data-hero-carousel-dot="0" data-i18n-aria-label="home.panel.goto_slide_1" aria-label="Aller à la diapositive 1" aria-current="true"></button>
-                                <button type="button" class="hero-panel-carousel__dot" data-hero-carousel-dot="1" data-i18n-aria-label="home.panel.goto_slide_2" aria-label="Aller à la diapositive 2"></button>
-                                <button type="button" class="hero-panel-carousel__dot" data-hero-carousel-dot="2" data-i18n-aria-label="home.panel.goto_slide_3" aria-label="Aller à la diapositive 3"></button>
-                                <button type="button" class="hero-panel-carousel__dot" data-hero-carousel-dot="3" data-i18n-aria-label="home.panel.goto_slide_4" aria-label="Aller à la diapositive 4"></button>
+        </div>
+    </section>
+
+    <section id="app-preview" class="section app-preview-section" aria-labelledby="preview-title">
+        <div class="section-inner">
+            <h2 id="preview-title" class="section-title reveal" data-i18n-html="home.preview.title_html">Découvrez l’<span class="text-gradient-accent">application</span></h2>
+            <p class="section-sub reveal" data-i18n="home.preview.sub">Quatre écrans clés. Toute l’expérience tient dans votre poche.</p>
+
+            <div class="app-preview-grid">
+                <article class="app-preview-card reveal" data-reveal-delay="0">
+                    <div class="phone-mockup">
+                        <div class="phone-mockup__notch" aria-hidden="true"></div>
+                        <div class="phone-mockup__home" aria-hidden="true"></div>
+                        <div class="phone-mockup__glare" aria-hidden="true"></div>
+                        <div class="phone-mockup__screen">
+                            <div class="appui appui--form">
+                                <div class="appui__title">Nouvelle demande</div>
+                                <div class="appui__field"><span data-i18n="home.preview.s1.field1">Lieu de départ</span><i>Casablanca · Maarif</i></div>
+                                <div class="appui__field"><span data-i18n="home.preview.s1.field2">Lieu d’arrivée</span><i>Rabat · Agdal</i></div>
+                                <div class="appui__field"><span data-i18n="home.preview.s1.field3">Type de trajet</span><i>Inter-ville</i></div>
+                                <div class="appui__btn" data-i18n="home.preview.s1.btn">Publier ma demande</div>
                             </div>
                         </div>
                     </div>
-                    <figcaption class="visually-hidden" data-i18n="home.panel.carousel_caption">En images : rencontre client et livreur, trajet, remise du colis et confirmation.</figcaption>
-                </figure>
-                <h2 data-i18n="home.panel.title">Une plateforme, plusieurs besoins</h2>
-                <div class="hero-tags">
-                    <span class="tag" data-i18n="home.panel.tag1">Local</span>
-                    <span class="tag" data-i18n="home.panel.tag2">Inter-ville</span>
-                    <span class="tag" data-i18n="home.panel.tag3">International</span>
-                    <span class="tag" data-i18n="home.panel.tag4">QR & commandes</span>
-                </div>
-                <p style="margin: 1rem 0 0; font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.5;" data-i18n="home.panel.blurb">
-                    Installez l’application pour commander ou livrer, avec statuts en temps réel et QR code pour partager la commande.
-                </p>
-            </aside>
+                    <h3 data-i18n="home.preview.s1.title">Publier une demande</h3>
+                    <p data-i18n="home.preview.s1.text">Renseignez départ, arrivée et type de trajet en quelques secondes.</p>
+                </article>
+
+                <article class="app-preview-card reveal" data-reveal-delay="80">
+                    <div class="phone-mockup">
+                        <div class="phone-mockup__notch" aria-hidden="true"></div>
+                        <div class="phone-mockup__home" aria-hidden="true"></div>
+                        <div class="phone-mockup__glare" aria-hidden="true"></div>
+                        <div class="phone-mockup__screen">
+                            <div class="appui appui--list">
+                                <div class="appui__title">Livreurs proches</div>
+                                <div class="appui__driver-row">
+                                    <span class="appui__avatar appui__avatar--a">K</span>
+                                    <div><strong>Karim B.</strong><em>★ 4.9 · 1.2 km</em></div>
+                                </div>
+                                <div class="appui__driver-row">
+                                    <span class="appui__avatar appui__avatar--b">S</span>
+                                    <div><strong>Said M.</strong><em>★ 4.8 · 2.0 km</em></div>
+                                </div>
+                                <div class="appui__driver-row">
+                                    <span class="appui__avatar appui__avatar--c">Y</span>
+                                    <div><strong>Youssef A.</strong><em>★ 4.7 · 3.4 km</em></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 data-i18n="home.preview.s2.title">Choisir un livreur</h3>
+                    <p data-i18n="home.preview.s2.text">Comparez les profils, voyez la note et choisissez en confiance.</p>
+                </article>
+
+                <article class="app-preview-card reveal" data-reveal-delay="160">
+                    <div class="phone-mockup">
+                        <div class="phone-mockup__notch" aria-hidden="true"></div>
+                        <div class="phone-mockup__home" aria-hidden="true"></div>
+                        <div class="phone-mockup__glare" aria-hidden="true"></div>
+                        <div class="phone-mockup__screen">
+                            <div class="appui">
+                                <div class="appui__map appui__map--lg" role="img" aria-label="Carte avec trajet">
+                                    <span class="appui__pin appui__pin--from" aria-hidden="true"></span>
+                                    <span class="appui__pin appui__pin--to" aria-hidden="true"></span>
+                                    <span class="appui__route" aria-hidden="true"></span>
+                                    <span class="appui__driver" aria-hidden="true">🚐</span>
+                                </div>
+                                <div class="appui__card">
+                                    <div class="appui__card-row">
+                                        <span class="appui__chip appui__chip--ok" data-i18n="home.preview.s3.status">En transit</span>
+                                        <span class="appui__eta-inline" data-i18n="home.preview.s3.eta">Arrivée dans 12 min</span>
+                                    </div>
+                                    <div class="appui__progress" aria-hidden="true"><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 data-i18n="home.preview.s3.title">Suivi en temps réel</h3>
+                    <p data-i18n="home.preview.s3.text">Position du livreur, statuts à jour et historique complet.</p>
+                </article>
+
+                <article class="app-preview-card reveal" data-reveal-delay="240">
+                    <div class="phone-mockup">
+                        <div class="phone-mockup__notch" aria-hidden="true"></div>
+                        <div class="phone-mockup__home" aria-hidden="true"></div>
+                        <div class="phone-mockup__glare" aria-hidden="true"></div>
+                        <div class="phone-mockup__screen">
+                            <div class="appui appui--qr">
+                                <div class="appui__title appui__title--center" data-i18n="home.preview.s4.label">Commande #1042</div>
+                                <div class="appui__qr">
+                                    <img src="/images/download-app-qr.png" alt="" width="170" height="170" loading="lazy" decoding="async">
+                                </div>
+                                <div class="appui__qr-caption">Scannez pour partager</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 data-i18n="home.preview.s4.title">QR de commande</h3>
+                    <p data-i18n="home.preview.s4.text">Un code unique partagé entre client et livreur.</p>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -154,7 +297,7 @@
     <section class="section services-section" aria-labelledby="services-title">
         <div class="section-inner">
             <h2 id="services-title" class="section-title reveal" data-i18n-html="home.services.title_html">Des services pour <span class="text-gradient-accent">chaque besoin</span></h2>
-            <p class="section-sub reveal" data-i18n="home.services.sub">Livraisons et assistance rapide : Go Drive vous accompagne pour vos envois comme pour les urgences.</p>
+            <p class="section-sub reveal" data-i18n="home.services.sub">Livraisons et assistance rapide, accessibles uniquement dans l’application Go Drive.</p>
 
             <div class="services-modules">
                 <!-- Module: Delivery (parcel tiers) -->
@@ -270,33 +413,55 @@
         </div>
     </section>
 
-    <section class="section gallery-section" aria-labelledby="gallery-title">
+    <section class="section testimonials-section" aria-labelledby="testi-title">
         <div class="section-inner">
-            <h2 id="gallery-title" class="section-title reveal" data-i18n-html="home.gallery.title_html">La chaîne <span class="text-gradient-accent">logistique</span>, en images</h2>
-            <p class="section-sub gallery-intro reveal" data-i18n="home.gallery.sub">Du premier envoi au dernier kilomètre, une chaîne claire pour vos colis.</p>
-            <div class="gallery-grid">
-                <figure class="gallery-item reveal" data-reveal-delay="0">
-                    <img
-                        src="assets/images/transport-urbain-godrive.jpg"
-                        sizes="(max-width: 639px) 100vw, 50vw"
-                        width="1024"
-                        height="682"
-                        alt="Camion de livraison GODRIVE blanc sur rue pavée, façades haussmanniennes et terrasse de café"
-                        loading="lazy"
-                        decoding="async">
-                    <figcaption data-i18n="home.gallery.cap1">Transport urbain</figcaption>
+            <h2 id="testi-title" class="section-title reveal" data-i18n-html="home.testi.title_html">Ce que <span class="text-gradient-accent">disent</span> nos utilisateurs</h2>
+            <p class="section-sub reveal" data-i18n="home.testi.sub">Clients et livreurs parlent de leur expérience Go Drive.</p>
+            <div class="testimonials-grid">
+                <figure class="testimonial-card reveal" data-reveal-delay="0">
+                    <div class="testimonial-card__stars" aria-label="5 étoiles">★★★★★</div>
+                    <blockquote data-i18n="home.testi.t1.quote">Application simple, j’ai trouvé un livreur en 3 minutes pour un colis urgent.</blockquote>
+                    <figcaption>
+                        <span class="testimonial-card__avatar testimonial-card__avatar--a" aria-hidden="true">Y</span>
+                        <span class="testimonial-card__who">
+                            <strong data-i18n="home.testi.t1.name">Yasmine R.</strong>
+                            <em data-i18n="home.testi.t1.role">Cliente · Casablanca</em>
+                        </span>
+                    </figcaption>
                 </figure>
-                <figure class="gallery-item reveal" data-reveal-delay="80">
-                    <img
-                        src="assets/images/longue-distance-godrive.png"
-                        sizes="(max-width: 639px) 100vw, 50vw"
-                        width="1024"
-                        height="486"
-                        alt="Semi-remorque GODRIVE sur autoroute entre montagnes vertes, panneaux Lyon et Marseille"
-                        loading="lazy"
-                        decoding="async">
-                    <figcaption data-i18n="home.gallery.cap2">Longue distance</figcaption>
+                <figure class="testimonial-card reveal" data-reveal-delay="80">
+                    <div class="testimonial-card__stars" aria-label="5 étoiles">★★★★★</div>
+                    <blockquote data-i18n="home.testi.t2.quote">Le QR code partagé évite les longs échanges. Très pratique pour la remise.</blockquote>
+                    <figcaption>
+                        <span class="testimonial-card__avatar testimonial-card__avatar--b" aria-hidden="true">K</span>
+                        <span class="testimonial-card__who">
+                            <strong data-i18n="home.testi.t2.name">Karim B.</strong>
+                            <em data-i18n="home.testi.t2.role">Livreur · Rabat</em>
+                        </span>
+                    </figcaption>
                 </figure>
+                <figure class="testimonial-card reveal" data-reveal-delay="160">
+                    <div class="testimonial-card__stars" aria-label="5 étoiles">★★★★★</div>
+                    <blockquote data-i18n="home.testi.t3.quote">Suivi en temps réel impeccable, je sais exactement où est mon colis.</blockquote>
+                    <figcaption>
+                        <span class="testimonial-card__avatar testimonial-card__avatar--c" aria-hidden="true">S</span>
+                        <span class="testimonial-card__who">
+                            <strong data-i18n="home.testi.t3.name">Sofia M.</strong>
+                            <em data-i18n="home.testi.t3.role">Cliente · Marrakech</em>
+                        </span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark midcta-section" aria-labelledby="midcta-title">
+        <div class="section-inner" style="text-align: center;">
+            <h2 id="midcta-title" class="section-title reveal" data-i18n-html="home.midcta.title_html">Téléchargez Go Drive en <span class="text-gradient-accent">moins de 30 secondes</span></h2>
+            <p class="section-sub reveal" style="margin-left: auto; margin-right: auto;" data-i18n="home.midcta.lead">Gratuit. iOS et Android. Toutes les commandes se font dans l’app.</p>
+            <div class="hero-cta reveal" style="justify-content: center; margin-top: 1.5rem;">
+                <a href="/download-app.html" class="btn btn-primary btn-lg" data-i18n="home.midcta.cta">Télécharger gratuitement</a>
+                <a href="/guide.html" class="btn btn-ghost" data-i18n="home.midcta.cta_secondary">Comment ça marche</a>
             </div>
         </div>
     </section>
@@ -316,75 +481,68 @@
             </figure>
             <div class="trust-copy">
                 <h2 id="safety-title" class="section-title reveal" data-i18n-html="home.trust.title_html"><span class="text-gradient-on-dark">Votre confiance</span>, notre priorité</h2>
-                <p class="section-sub reveal" data-i18n="home.trust.sub">Comptes sécurisés, mots de passe protégés et API conçue pour limiter les abus — comme sur les grandes plateformes de mobilité.</p>
+                <p class="section-sub reveal" data-i18n="home.trust.sub">L’application Go Drive gère vos comptes, vos commandes et leur suivi. Voici ce qui rend l’expérience claire et sereine.</p>
                 <div class="feature-row reveal">
                     <ul class="feature-list">
-                        <li data-i18n="home.trust.li1">Comptes et sessions gérés depuis l’application mobile</li>
-                        <li data-i18n="home.trust.li2">Jetons de session à durée limitée</li>
-                        <li data-i18n="home.trust.li3">Requêtes serveur validées et paramétrées</li>
+                        <li data-i18n="home.trust.li1">Comptes et sessions gérés depuis l’app</li>
+                        <li data-i18n="home.trust.li2">Connexion protégée par mot de passe</li>
+                        <li data-i18n="home.trust.li3">QR code unique par commande, partagé client et livreur</li>
                     </ul>
                     <ul class="feature-list">
-                        <li data-i18n="home.trust.li4">QR code unique par commande (lien utile dans l’app)</li>
-                        <li data-i18n="home.trust.li5">Historique des statuts et positions</li>
-                        <li data-i18n="home.trust.li6">Limitation de débit sur l’API pour limiter le brute force</li>
+                        <li data-i18n="home.trust.li4">Historique des statuts et de la position dans l’app</li>
+                        <li data-i18n="home.trust.li5">Notifications de mise à jour pour chaque étape</li>
+                        <li data-i18n="home.trust.li6">Support disponible via la page Contact</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="download-section" id="download" aria-labelledby="download-title">
-        <div class="download-wrap">
-            <h2 id="download-title" class="section-title reveal" data-i18n-html="home.download.title_html"><span class="text-gradient-accent">Télécharger</span> l’application</h2>
-            <p class="section-sub download-lead reveal" data-i18n="home.download.lead">
-                Scannez le QR code pour ouvrir la page de téléchargement sur votre téléphone, ou choisissez votre store.
-            </p>
-            <div class="download-grid">
-                <div class="download-qr card reveal" data-reveal-delay="0">
-                    <p class="qr-label" data-i18n="home.download.qr_label">QR code — page de téléchargement</p>
-                    <div class="qr-frame">
-                        <img
-                            id="app-qr-img"
-                            src="/images/download-app-qr.png"
-                            width="220"
-                            height="220"
-                            alt="QR code menant à la page de téléchargement Go Drive"
-                            data-i18n-alt="home.download.qr_label"
-                            loading="lazy"
-                            decoding="async">
-                    </div>
+    <section class="final-cta-section" id="download" aria-labelledby="download-title">
+        <div class="final-cta-wrap">
+            <div class="final-cta-copy">
+                <h2 id="download-title" class="final-cta-title reveal" data-i18n-html="home.final.title_html">Téléchargez <span class="text-gradient-accent">Go Drive</span> maintenant</h2>
+                <p class="final-cta-lead reveal" data-i18n="home.final.lead">Gratuit, sans engagement. Disponible sur iOS et Android.</p>
+                <div class="final-cta-badges reveal">
+                    <a class="js-store-ios store-badge store-badge--lg store-badge--ios" href="#" target="_blank" rel="noopener noreferrer" aria-label="App Store">
+                        <span class="store-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M16.365 1.43c0 1.14-.46 2.22-1.21 3.02-.81.85-2.13 1.51-3.21 1.42-.13-1.13.42-2.31 1.16-3.06.84-.85 2.27-1.49 3.26-1.38zM20.5 17.34c-.55 1.27-.81 1.84-1.52 2.96-.99 1.57-2.39 3.53-4.13 3.55-1.55.02-1.95-1.01-4.05-1-2.1.01-2.55 1.02-4.1 1-1.74-.02-3.07-1.79-4.06-3.36C.04 16.6-.31 11.46 1.59 8.71c1.34-1.93 3.46-3.06 5.45-3.06 2.03 0 3.31 1.11 4.99 1.11 1.63 0 2.62-1.11 4.97-1.11 1.78 0 3.66.97 5 2.65-4.39 2.41-3.68 8.7.5 9.04z"/></svg>
+                        </span>
+                        <span class="store-badge__text">
+                            <span class="store-badge__l1" data-i18n="badge.appstore.l1">Télécharger sur</span>
+                            <span class="store-badge__l2" data-i18n="badge.appstore.l2">App Store</span>
+                        </span>
+                    </a>
+                    <a class="js-store-android store-badge store-badge--lg store-badge--play" href="#" target="_blank" rel="noopener noreferrer" aria-label="Google Play">
+                        <span class="store-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 512 512" width="28" height="28"><path d="M48 480V32l253 224L48 480z" fill="#34a853"/><path d="M48 32l253 224 73-65L80 16c-12-7-25-3-32 16z" fill="#4285f4"/><path d="M48 480l326-160-73-64L48 480z" fill="#ea4335"/><path d="M448 232l-74 24-73 65 73 64 74-25c25-15 25-113 0-128z" fill="#fbbc05"/></svg>
+                        </span>
+                        <span class="store-badge__text">
+                            <span class="store-badge__l1" data-i18n="badge.googleplay.l1">DISPONIBLE SUR</span>
+                            <span class="store-badge__l2" data-i18n="badge.googleplay.l2">Google Play</span>
+                        </span>
+                    </a>
                 </div>
-                <div class="download-stores card reveal" data-reveal-delay="100">
-                    <div class="download-visual">
-                        <figure>
-                            <img
-                                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=560&q=75"
-                                srcset="
-                                    https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=320&q=75 320w,
-                                    https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=560&q=75 560w,
-                                    https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=840&q=75 840w
-                                "
-                                sizes="(max-width: 799px) 78vw, 320px"
-                                width="560"
-                                height="746"
-                                alt="Utilisation d’un téléphone portable pour commander une course ou suivre un colis"
-                                loading="lazy"
-                                decoding="async">
-                            <figcaption class="visually-hidden">Application mobile sur smartphone</figcaption>
-                        </figure>
-                    </div>
-                    <h3 class="store-heading" data-i18n="home.download.stores">Stores</h3>
-                    <p class="text-muted store-copy" data-i18n="home.download.store_lead">
-                        Téléchargez l’application sur votre téléphone pour envoyer ou livrer des colis, et suivre chaque étape depuis l’app.
-                    </p>
-                    <div class="store-buttons">
-                        <a id="btn-ios" class="store-btn store-btn--ios" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.app">App Store</a>
-                        <a id="btn-android" class="store-btn store-btn--android" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.play">Google Play</a>
-                    </div>
+                <p class="final-cta-trust reveal" data-i18n="home.final.trust">Plus de 50 000 utilisateurs au Maroc · 4,9/5 sur les stores</p>
+            </div>
+            <div class="final-cta-qr reveal">
+                <div class="final-cta-qr__frame">
+                    <img
+                        id="app-qr-img"
+                        src="/images/download-app-qr.png"
+                        width="220"
+                        height="220"
+                        alt="QR code menant à la page de téléchargement Go Drive"
+                        data-i18n-alt="home.download.qr_label"
+                        loading="lazy"
+                        decoding="async">
                 </div>
+                <p class="final-cta-qr__label" data-i18n="home.final.qr_label">Scannez ce code avec votre téléphone</p>
             </div>
         </div>
     </section>
+
+    <a href="#download" class="mobile-sticky-cta" data-i18n="home.sticky.cta" aria-label="Télécharger Go Drive">Télécharger Go Drive</a>
 
     <footer class="site-footer site-footer--simple" lang="fr">
         <div class="footer-simple">

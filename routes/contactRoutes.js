@@ -37,7 +37,7 @@ const bodySchema = Joi.object({
     name: Joi.string().trim().min(2).max(120).required(),
     country: Joi.string().valid('MA', 'FR', 'BE', 'CH', 'CA', 'OTHER').required(),
     response_language: Joi.string().valid('fr', 'ar', 'en').required(),
-    service: Joi.string().valid('colis', 'bagages', 'compte', 'partenariat', 'autre').required(),
+    service: Joi.string().valid('colis', 'ambulance', 'depannage', 'compte', 'partenariat', 'autre').required(),
     phone_prefix: Joi.string().pattern(/^[A-Z]{2}\|\d{1,5}$/).required(),
     phone_local: Joi.string().trim().required(),
     email: Joi.string().email({ tlds: { allow: false } }).max(254).required(),

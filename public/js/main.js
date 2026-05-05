@@ -1,28 +1,3 @@
-function getStoredUser() {
-    try {
-        const raw = localStorage.getItem('user');
-        return raw ? JSON.parse(raw) : null;
-    } catch {
-        return null;
-    }
-}
-
-/** Protège uniquement le tableau de bord (accès réservé à un jeton déjà présent, ex. tests). */
-function checkAuth() {
-    const token = localStorage.getItem('token');
-    const user = getStoredUser();
-    const path = window.location.pathname || '';
-
-    const needsAuth = path.endsWith('dashboard.html');
-
-    if (needsAuth && !token) {
-        window.location.replace('/download-app.html');
-        return { token: null, user: null };
-    }
-
-    return { token, user };
-}
-
 function tNav(key) {
     return window.goDriveI18n ? window.goDriveI18n.t(key) : key;
 }
@@ -30,8 +5,6 @@ function tNav(key) {
 function setupNav() {
     const nav = document.getElementById('nav-links');
     if (!nav) return;
-
-    checkAuth();
 
     nav.setAttribute('aria-label', tNav('nav.aria'));
     nav.innerHTML = `
