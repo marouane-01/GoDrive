@@ -3037,6 +3037,45 @@ body.page-contact {
     font-size: 0.95rem;
 }
 
+/* Hero: trust bar (rating · users · support) */
+.hero-trust-bar {
+    margin: 0.9rem 0 0;
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.025em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Services: app-only callout pill */
+.services-app-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1.25rem;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(22, 163, 74, 0.28);
+    border-radius: 999px;
+}
+.services-app-note::before { content: '📱'; font-size: 0.9rem; }
+.services-app-note a { color: var(--accent-hover); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Testimonials: aggregate rating strip */
+.testi-aggregate {
+    margin: -0.25rem 0 1.75rem;
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
 /* Override hero-panel when it hosts the phone mockup */
 .hero-panel--mockup {
     background: transparent;
@@ -3925,10 +3964,7 @@ body.page-contact {
     }
 }
 
-/* — Mid CTA visual punch — */
-.midcta-section {
-    padding: 4rem 0;
-}
+/* — Mid CTA visual punch — (full padding rule lives in PREMIUM REFINEMENTS) */
 
 /* — Final CTA section — */
 .final-cta-section {
@@ -4209,3 +4245,1764 @@ body.page-contact {
     }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   PREMIUM REFINEMENTS — Spacing · Typography · Visual Hierarchy
+   Mobile-first overrides applied after all component rules.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* — Base: tighter font rendering, more open body rhythm — */
+body {
+    line-height: 1.62;
+    letter-spacing: -0.003em;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Hero: bigger headline, more breathing room ──────────────────────── */
+.hero {
+    padding: clamp(4.5rem, 11vw, 7rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 5.5rem);
+}
+
+.hero h1,
+.hero-heading {
+    font-size: clamp(2.5rem, 7vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+    margin: 0 0 1.25rem;
+}
+
+.hero-lead {
+    font-size: clamp(1.05rem, 2vw, 1.15rem);
+    line-height: 1.7;
+    max-width: 40rem;
+    color: rgba(255, 255, 255, 0.86);
+    margin: 0 0 2.15rem;
+}
+
+.hero-cta {
+    gap: 0.9rem;
+    margin-bottom: 2.25rem;
+}
+
+.hero-rating {
+    margin: 0 0 1.65rem;
+    padding: 0.55rem 1rem;
+}
+
+.btn-lg {
+    padding: 1.05rem 2rem;
+    font-size: 1.08rem;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+}
+
+/* ── Section rhythm: more generous vertical cadence ─────────────────── */
+.section {
+    padding: clamp(4.5rem, 9vw, 7rem) clamp(1.25rem, 4vw, 2rem);
+}
+
+.section-title {
+    font-size: clamp(1.95rem, 4vw, 2.55rem);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin: 0 0 0.7rem;
+}
+
+.section-sub {
+    font-size: 1.08rem;
+    line-height: 1.68;
+    max-width: 42rem;
+    margin: 0 0 2.65rem;
+}
+
+/* ── Stats: more visual weight per metric ────────────────────────────── */
+.stats-section {
+    padding: 2.5rem clamp(1.25rem, 4vw, 2rem);
+}
+
+.stats-row {
+    padding: 1.85rem 1.65rem;
+    border-radius: 24px;
+    gap: 1.5rem;
+}
+
+.stat-pill strong {
+    font-size: clamp(1.8rem, 3.8vw, 2.5rem);
+    letter-spacing: -0.035em;
+}
+
+.stat-pill span {
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* ── App preview: better card proportion ─────────────────────────────── */
+.app-preview-section {
+    padding-top: clamp(4.5rem, 9vw, 7rem);
+    padding-bottom: clamp(4.5rem, 9vw, 7rem);
+}
+
+.app-preview-grid {
+    gap: 2.25rem;
+    margin-top: 2.75rem;
+}
+
+.app-preview-card {
+    gap: 1.15rem;
+}
+
+.app-preview-card h3 {
+    font-size: 1.1rem;
+    letter-spacing: -0.022em;
+}
+
+.app-preview-card p {
+    font-size: 0.94rem;
+    line-height: 1.62;
+}
+
+/* ── Service cards: more generous inner space ────────────────────────── */
+.service-card {
+    padding: 1.85rem 1.75rem;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    letter-spacing: -0.028em;
+    margin: 0 0 0.55rem;
+}
+
+.service-card p {
+    font-size: 0.975rem;
+    line-height: 1.62;
+}
+
+/* ── Testimonials: premium card feel ─────────────────────────────────── */
+.testimonials-section {
+    padding-top: clamp(4.5rem, 9vw, 7rem);
+    padding-bottom: clamp(4.5rem, 9vw, 7rem);
+}
+
+.testimonials-grid {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.testimonial-card {
+    padding: 1.9rem 1.75rem;
+    gap: 1.05rem;
+    border-radius: 22px;
+}
+
+.testimonial-card blockquote {
+    font-size: 1.03rem;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--ink);
+    font-weight: 450;
+}
+
+.testimonial-card blockquote::before {
+    content: '\201C';
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    line-height: 0.8;
+    color: var(--accent);
+    opacity: 0.35;
+    margin-bottom: 0.5rem;
+    font-style: normal;
+}
+
+.testimonial-card__stars {
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+/* ── Trust feature list: glowing bullets, better spacing ─────────────── */
+.feature-list li {
+    padding: 0.75rem 0 0.75rem 2rem;
+    font-size: 0.975rem;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
+    width: 9px;
+    height: 9px;
+    top: 1.1rem;
+    background: var(--accent-light);
+    box-shadow: 0 0 7px rgba(74, 222, 128, 0.55);
+}
+
+/* ── Mid CTA: more punch ─────────────────────────────────────────────── */
+.midcta-section {
+    padding: clamp(5rem, 10vw, 8rem) clamp(1.25rem, 4vw, 2rem);
+}
+
+.midcta-section .section-title {
+    font-size: clamp(2.05rem, 4.5vw, 2.9rem);
+    letter-spacing: -0.045em;
+}
+
+/* ── Final CTA: maximum conversion impact ────────────────────────────── */
+.final-cta-section {
+    margin: 2.5rem auto 4rem;
+    padding: clamp(3.5rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 3.5rem);
+    border-radius: 32px;
+}
+
+.final-cta-title {
+    font-size: clamp(2rem, 4.2vw, 2.9rem);
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+    margin: 0 0 1.15rem;
+}
+
+.final-cta-lead {
+    font-size: 1.08rem;
+    line-height: 1.68;
+    margin: 0 0 2rem;
+}
+
+/* ── Services app note: nicely centred ───────────────────────────────── */
+.services-app-note {
+    margin: 1.4rem 0 0;
+}
+
+/* ── Testi aggregate: slightly larger ───────────────────────────────── */
+.testi-aggregate {
+    font-size: 1.02rem;
+    margin: -0.5rem 0 2.25rem;
+    opacity: 0.9;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   MOBILE-FIRST TWEAKS (≤ 480 px)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    /* Hero: stack CTA buttons full-width */
+    .hero {
+        padding-top: 3.75rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .btn-lg {
+        padding: 1rem 1.5rem;
+        font-size: 1.02rem;
+    }
+
+    /* Section: comfortable on 375 px */
+    .section {
+        padding: 3.75rem 1.1rem;
+    }
+
+    /* Stats: compact */
+    .stats-row {
+        padding: 1.25rem 1rem;
+        gap: 1rem;
+    }
+
+    /* App preview: full-width card */
+    .app-preview-card .phone-mockup {
+        transform: scale(0.97);
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    /* Final CTA */
+    .final-cta-section {
+        margin: 1.5rem auto 3rem;
+        padding: 2.75rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .final-cta-wrap {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .final-cta-badges {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+/* ─── 481–640 px: comfortable mid-small ──────────────────────────────── */
+@media (min-width: 481px) and (max-width: 640px) {
+    .hero-cta {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .btn-lg {
+        padding: 1rem 1.65rem;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GODRIVE IN-APP DESIGN SYSTEM
+   Reusable tokens for all .appui placeholder screens.
+   To swap a screen for a real screenshot, replace the .appui div with:
+     <img src="screens/NAME.webp" class="phone-mockup__screenshot" alt="">
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Screenshot-ready slot ───────────────────────────────────────────── */
+.phone-mockup__screenshot {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    /* border-radius already set by the screen container */
+}
+
+/* ── Unified border colour for all in-app card / input elements ──────── */
+.appui__card,
+.appui__card-block,
+.appui__driver-row,
+.appui__field,
+.appui__order,
+.appui__search,
+.appui__quick-item {
+    border-color: rgba(22, 163, 74, 0.12);
+}
+
+/* ── Reusable card block (preferred over .appui__card for new screens) ── */
+.appui__card-block {
+    background: var(--white);
+    border: 1px solid rgba(22, 163, 74, 0.12);
+    border-radius: 14px;
+    padding: 0.65rem 0.75rem;
+    box-shadow: 0 2px 10px rgba(15, 41, 24, 0.06);
+}
+
+/* ── Mini status bar — shared across ALL preview screens ─────────────── */
+.appui__mini-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* bleed to phone edges, then reset padding inside */
+    margin: 0 -14px 6px;
+    padding: 5px 14px 3px;
+    background: rgba(244, 251, 247, 0.92);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    flex-shrink: 0;
+}
+
+.appui__mini-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--ink);
+    opacity: 0.75;
+}
+
+/* ── Screen header — GoDrive mark + screen title + optional action ────── */
+.appui__screen-hd {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(22, 163, 74, 0.12);
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Green square GoDrive brand mark */
+.appui__screen-hd__mark {
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-light));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+    letter-spacing: 0;
+}
+
+.appui__screen-hd__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.84rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appui__screen-hd__action {
+    font-size: 0.66rem;
+    font-weight: 600;
+    color: var(--accent);
+    flex-shrink: 0;
+    line-height: 1;
+    cursor: default;
+}
+
+/* ── Row helper ──────────────────────────────────────────────────────── */
+.appui__row {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+/* ── Thin divider ────────────────────────────────────────────────────── */
+.appui__divider {
+    height: 1px;
+    background: rgba(22, 163, 74, 0.1);
+    margin: 0.35rem 0;
+    flex-shrink: 0;
+}
+
+/* ── Caption label ───────────────────────────────────────────────────── */
+.appui__caption {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* ── Driver row: add shadow to match card system ─────────────────────── */
+.appui__driver-row {
+    box-shadow: 0 2px 6px rgba(15, 41, 24, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   APP-FOCUSED VISUALS — Hero floating cards · Notification screen
+   Mobile swipeable preview · Premium phone UI enhancements
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero floating cards (Uber / Glovo / Revolut style) ──────────────── */
+.hero-float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.75rem 1.1rem;
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(22, 163, 74, 0.12);
+    border-radius: 18px;
+    box-shadow:
+        0 18px 44px rgba(15, 41, 24, 0.2),
+        0 4px 10px rgba(15, 41, 24, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    z-index: 20;
+    animation: hfc-float 3.8s ease-in-out infinite;
+    white-space: nowrap;
+    font-size: 0.81rem;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    /* prevent layout interaction */
+    pointer-events: none;
+    user-select: none;
+}
+
+/* "Colis en transit" — top-right of phone */
+.hero-float-card--delivery {
+    top: 11%;
+    right: -28px;
+    animation-delay: 0s;
+}
+
+/* Rating pill — bottom-left of phone */
+.hero-float-card--rating {
+    bottom: 19%;
+    left: -36px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.8rem 1.25rem;
+    text-align: center;
+    animation-delay: 1.9s;
+}
+
+.hero-float-card__icon {
+    font-size: 1.45rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.hero-float-card__body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.22;
+}
+
+.hero-float-card__body strong {
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.hero-float-card__body em {
+    font-style: normal;
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.hero-float-card__dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.7);
+    flex-shrink: 0;
+    animation: hfc-pulse 2s ease-in-out infinite;
+}
+
+.hero-float-card__stars {
+    color: #f59e0b;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    line-height: 1;
+}
+
+.hero-float-card__val {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.hero-float-card__label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+@keyframes hfc-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
+
+@keyframes hfc-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(34, 197, 94, 0.7); }
+    50% { opacity: 0.7; box-shadow: 0 0 10px rgba(34, 197, 94, 0.5); }
+}
+
+/* Hide floating cards when phone is stacked below text on small screens */
+@media (max-width: 899px) {
+    .hero-float-card {
+        display: none;
+    }
+}
+
+/* ── Notification screen variant ─────────────────────────────────────── */
+.appui--notif {
+    gap: 0.4rem;
+}
+
+.appui__notif-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    padding: 0.55rem 0.6rem;
+    border-radius: 12px;
+    background: var(--white);
+    border: 1px solid transparent;
+}
+
+.appui__notif-row--new {
+    background: rgba(22, 163, 74, 0.07);
+    border-color: rgba(22, 163, 74, 0.18);
+}
+
+.appui__notif-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    line-height: 1.3;
+}
+
+.appui__notif-body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    min-width: 0;
+}
+
+.appui__notif-body strong {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.appui__notif-body em {
+    font-style: normal;
+    font-size: 0.66rem;
+    color: var(--muted);
+    margin-top: 0.1rem;
+}
+
+/* ── Mobile swipeable app preview ────────────────────────────────────── */
+@media (max-width: 900px) {
+    .app-preview-section .app-preview-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1.15rem;
+        padding: 0.75rem 1.25rem 2rem;
+        margin: 2rem -1.25rem 0;
+        scrollbar-width: none;
+    }
+
+    .app-preview-section .app-preview-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .app-preview-section .app-preview-card {
+        flex: 0 0 72vw;
+        max-width: 268px;
+        min-width: 230px;
+        scroll-snap-align: start;
+    }
+
+    /* Scroll hint: fade edge */
+    .app-preview-section {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-preview-section .app-preview-card {
+        flex: 0 0 82vw;
+        max-width: 300px;
+    }
+}
+
+/* ── Swipe hint indicator (dots) ─────────────────────────────────────── */
+.preview-scroll-hint {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.preview-scroll-hint::before {
+    content: '←';
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+.preview-scroll-hint::after {
+    content: '→';
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+    .preview-scroll-hint {
+        display: flex;
+    }
+}
+
+/* ── Hero phone UI: enhanced home screen ─────────────────────────────── */
+
+/* Accent left border on the active order card */
+.appui__order {
+    border-left: 3px solid var(--accent);
+}
+
+/* Map: richer gradient terrain feel */
+.appui__map {
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(22, 163, 74, 0.18), transparent 70%),
+        linear-gradient(160deg, #e8f5e9 0%, #c8e6c9 40%, #a5d6a7 100%);
+}
+
+/* Slightly warmer driver icon */
+.appui__driver {
+    font-size: 1.4rem;
+}
+
+/* ── App-preview card: subtle floating border on hover ───────────────── */
+.app-preview-card {
+    transition: transform 0.35s var(--ease-spring);
+}
+
+.app-preview-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ── Reduced motion: disable all float animations ────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .hero-float-card,
+    .hero-float-card__dot {
+        animation: none;
+    }
+    .app-preview-card:hover {
+        transform: none;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DOWNLOAD PAGE — Premium mobile-first conversion layout
+   Reuses .hero, .hero-inner, .hero-eyebrow, .hero-heading, .hero-lead,
+   .hero-trust-bar, .store-badge, .phone-mockup, and design-system tokens.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero tweaks (download page) ────────────────────────────────────── */
+.hero--download {
+    padding: clamp(3.25rem, 8vw, 5.5rem) clamp(1.25rem, 4vw, 2rem) clamp(3rem, 6vw, 4.5rem);
+}
+
+.hero--download .hero-heading {
+    margin-bottom: 1rem;
+}
+
+.hero--download .hero-lead {
+    margin-bottom: 1.75rem;
+}
+
+.hero--download .hero-store-badges {
+    margin-top: 1.75rem;
+}
+
+.hero--download .hero-trust-bar {
+    margin-top: 1.25rem;
+}
+
+/* ── Reusable benefit grid (icon + label) ───────────────────────────── */
+.dl-benefits {
+    list-style: none;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 0.85rem;
+    max-width: 32rem;
+}
+
+.dl-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease-spring);
+}
+
+.dl-benefit:hover {
+    border-color: rgba(167, 243, 208, 0.45);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.dl-benefit__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-light));
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+}
+
+.dl-benefit__text {
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+}
+
+/* ── Welcome screen variant (inside phone mockup) ───────────────────── */
+.appui--welcome {
+    text-align: center;
+    align-items: stretch;
+    gap: 0.7rem;
+}
+
+.appui__welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0.4rem 0 0.55rem;
+}
+
+.appui__brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-light));
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(22, 163, 74, 0.35);
+    letter-spacing: -0.02em;
+}
+
+.appui__welcome-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    line-height: 1;
+}
+
+.appui__welcome-sub {
+    font-style: normal;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.appui__welcome-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: start;
+}
+
+.appui__welcome-list .appui__row {
+    background: var(--white);
+    border: 1px solid rgba(22, 163, 74, 0.12);
+    border-radius: 12px;
+    padding: 0.5rem 0.65rem;
+    box-shadow: 0 2px 8px rgba(15, 41, 24, 0.05);
+}
+
+.appui__welcome-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appui__welcome-list .appui__row span:last-child {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    min-width: 0;
+}
+
+.appui__welcome-list .appui__row strong {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.appui__welcome-list .appui__row em {
+    font-style: normal;
+    font-size: 0.66rem;
+    color: var(--muted);
+    margin-top: 0.1rem;
+}
+
+/* ── QR section ─────────────────────────────────────────────────────── */
+.dl-qr-section {
+    padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+    background:
+        radial-gradient(ellipse 100% 70% at 50% 0%, rgba(22, 163, 74, 0.07), transparent 55%),
+        var(--bg);
+}
+
+.dl-qr-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dl-qr-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 0 0 0.65rem;
+}
+
+.dl-qr-sub {
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--muted);
+    max-width: 32rem;
+    margin: 0 auto 2.5rem;
+}
+
+/* ── Premium QR card ─────────────────────────────────────────────────── */
+.dl-qr-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    background: linear-gradient(180deg, #ffffff 0%, var(--surface) 100%);
+    border: 1px solid rgba(22, 163, 74, 0.14);
+    border-radius: 28px;
+    box-shadow:
+        0 24px 60px rgba(15, 41, 24, 0.1),
+        0 4px 12px rgba(15, 41, 24, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 720px) {
+    .dl-qr-card {
+        grid-template-columns: auto 1fr;
+        gap: 3rem;
+        text-align: start;
+    }
+}
+
+.dl-qr-card__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* QR with bracket corners */
+.dl-qr-frame {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1rem;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow:
+        0 10px 28px rgba(22, 163, 74, 0.14),
+        0 2px 6px rgba(15, 41, 24, 0.05),
+        inset 0 0 0 1px rgba(22, 163, 74, 0.08);
+    transition: transform 0.45s var(--ease-spring), box-shadow 0.4s ease;
+}
+
+.dl-qr-frame:hover {
+    transform: scale(1.02);
+    box-shadow:
+        0 18px 40px rgba(22, 163, 74, 0.2),
+        0 4px 10px rgba(15, 41, 24, 0.08),
+        inset 0 0 0 1px rgba(22, 163, 74, 0.16);
+}
+
+.dl-qr-frame img {
+    display: block;
+    width: clamp(180px, 42vw, 220px);
+    height: auto;
+}
+
+/* Decorative L-shaped corner brackets */
+.dl-qr-frame__corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--accent);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.dl-qr-frame__corner--tl { top: -6px; left: -6px; border-right: 0; border-bottom: 0; border-top-left-radius: 8px; }
+.dl-qr-frame__corner--tr { top: -6px; right: -6px; border-left: 0; border-bottom: 0; border-top-right-radius: 8px; }
+.dl-qr-frame__corner--bl { bottom: -6px; left: -6px; border-right: 0; border-top: 0; border-bottom-left-radius: 8px; }
+.dl-qr-frame__corner--br { bottom: -6px; right: -6px; border-left: 0; border-top: 0; border-bottom-right-radius: 8px; }
+
+/* ── 3-step list ─────────────────────────────────────────────────────── */
+.dl-qr-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: start;
+}
+
+.dl-qr-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+}
+
+.dl-qr-step__num {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent-hover);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(22, 163, 74, 0.18);
+    letter-spacing: -0.01em;
+}
+
+.dl-qr-step__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    line-height: 1.45;
+}
+
+.dl-qr-step__body strong {
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.018em;
+}
+
+.dl-qr-step__body em {
+    font-style: normal;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+/* ── "or" divider ────────────────────────────────────────────────────── */
+.dl-qr-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin: 2.5rem 0 1.5rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.dl-qr-divider::before,
+.dl-qr-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(22, 163, 74, 0.2), transparent);
+    max-width: 140px;
+}
+
+/* ── Stores row + footer hint ────────────────────────────────────────── */
+.dl-qr-stores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.dl-qr-foot {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+/* ── Mobile-first refinements ────────────────────────────────────────── */
+@media (max-width: 720px) {
+    .dl-benefits {
+        grid-template-columns: 1fr;
+        max-width: 22rem;
+    }
+
+    .hero--download .hero-store-badges {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero--download .hero-store-badges .store-badge {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .dl-qr-stores {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dl-qr-stores .store-badge {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .dl-qr-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 22px;
+    }
+
+    .dl-qr-frame {
+        padding: 0.85rem;
+    }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .dl-benefit:hover,
+    .dl-qr-frame:hover {
+        transform: none;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ABOUT PAGE — Premium brand story (typography-driven, app-focused)
+   Reuses .hero, .hero-inner, .hero-eyebrow, .hero-heading, .hero-lead,
+   .text-gradient-hero, .text-gradient-accent and the design tokens.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero variant: centered, no phone mockup ─────────────────────────── */
+.hero--about {
+    padding: clamp(3.5rem, 9vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(3rem, 7vw, 4.5rem);
+    text-align: center;
+}
+
+.hero-inner--single {
+    grid-template-columns: 1fr;
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.hero--about .hero-eyebrow {
+    margin: 0 auto 1rem;
+}
+
+.hero--about .hero-heading {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero--about .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 36rem;
+}
+
+/* ── Story section — clean prose ─────────────────────────────────────── */
+.about-story-section {
+    padding: clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2rem) clamp(2rem, 5vw, 3rem);
+    background: var(--bg);
+}
+
+.about-story {
+    max-width: 36rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.about-story__p {
+    margin: 0;
+    font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+    line-height: 1.75;
+    color: var(--text);
+    letter-spacing: -0.005em;
+    font-weight: 400;
+}
+
+.about-story__p strong {
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.about-story__p:first-child::first-letter {
+    /* Subtle premium initial cap */
+    font-family: var(--font-display);
+    font-size: 1.35em;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+/* ── Mission section — 3 value tiles ─────────────────────────────────── */
+.about-mission-section {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 8vw, 6.5rem);
+    background: var(--bg);
+}
+
+.about-mission-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-mission-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.65rem, 3.5vw, 2.15rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 clamp(2rem, 4vw, 2.75rem);
+}
+
+/* Reusable value-tiles grid (also useful for other pages) */
+.about-values {
+    list-style: none;
+    margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: start;
+}
+
+@media (min-width: 720px) {
+    .about-values {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+}
+
+.about-value {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1.5rem 1.4rem;
+    background: linear-gradient(180deg, #ffffff 0%, var(--surface) 100%);
+    border: 1px solid rgba(22, 163, 74, 0.14);
+    border-radius: 20px;
+    box-shadow:
+        0 8px 28px rgba(15, 41, 24, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.35s var(--ease-spring);
+}
+
+.about-value:hover {
+    border-color: rgba(22, 163, 74, 0.32);
+    box-shadow:
+        0 16px 40px rgba(15, 41, 24, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transform: translateY(-4px);
+}
+
+.about-value__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-light));
+    color: #fff;
+    margin-bottom: 0.25rem;
+    box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
+}
+
+.about-value__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    line-height: 1.2;
+}
+
+.about-value__text {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+/* ── Independence note ───────────────────────────────────────────────── */
+.about-disclaimer {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 36rem;
+    margin-inline: auto;
+    opacity: 0.8;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .about-value:hover {
+        transform: none;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GUIDE PAGE — Onboarding step flow (numbered cards, premium)
+   Reuses .hero, .hero-inner--single, .hero-eyebrow, .hero-heading,
+   .text-gradient-{hero,accent}, .about-values, .btn-primary.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Hero variant for the guide page ─────────────────────────────────── */
+.hero--guide {
+    padding: clamp(3.5rem, 9vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(3rem, 7vw, 4.5rem);
+    text-align: center;
+}
+
+.hero--guide .hero-eyebrow {
+    margin: 0 auto 1rem;
+}
+
+.hero--guide .hero-heading {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero--guide .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 36rem;
+}
+
+/* ── Guide section wrapper ───────────────────────────────────────────── */
+.guide-section {
+    padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem);
+    background: var(--bg);
+}
+
+.guide-section--alt {
+    background:
+        radial-gradient(ellipse 100% 70% at 50% 0%, rgba(22, 163, 74, 0.05), transparent 55%),
+        var(--surface);
+    border-top: 1px solid rgba(22, 163, 74, 0.08);
+    border-bottom: 1px solid rgba(22, 163, 74, 0.08);
+}
+
+.guide-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.guide-section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.12;
+    color: var(--ink);
+    margin: 0 0 0.55rem;
+}
+
+.guide-section-sub {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 32rem;
+    margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+}
+
+/* ── Step grid: 3-up desktop, vertical mobile ────────────────────────── */
+.guide-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    text-align: start;
+    counter-reset: guide-step;
+}
+
+@media (min-width: 800px) {
+    .guide-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* ── Single step card ────────────────────────────────────────────────── */
+.guide-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.75rem 1.5rem 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, var(--surface) 100%);
+    border: 1px solid rgba(22, 163, 74, 0.14);
+    border-radius: 22px;
+    box-shadow:
+        0 8px 28px rgba(15, 41, 24, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.35s ease,
+        transform 0.4s var(--ease-spring);
+}
+
+.guide-step:hover {
+    border-color: rgba(22, 163, 74, 0.32);
+    box-shadow:
+        0 18px 44px rgba(15, 41, 24, 0.09),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transform: translateY(-4px);
+}
+
+/* Connecting line between steps on desktop */
+@media (min-width: 800px) {
+    .guide-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 2.55rem;
+        right: -0.9rem;
+        width: 1.25rem;
+        height: 2px;
+        background: linear-gradient(to right, rgba(22, 163, 74, 0.35), rgba(22, 163, 74, 0.05));
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+/* RTL: mirror the connector */
+html[dir='rtl'] .guide-step:not(:last-child)::after {
+    right: auto;
+    left: -0.9rem;
+    background: linear-gradient(to left, rgba(22, 163, 74, 0.35), rgba(22, 163, 74, 0.05));
+}
+
+/* Numbered badge (top-right corner) */
+.guide-step__num {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-family: var(--font-display);
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, rgba(22, 163, 74, 0.22), rgba(22, 163, 74, 0.08));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    pointer-events: none;
+    user-select: none;
+}
+
+html[dir='rtl'] .guide-step__num {
+    right: auto;
+    left: 1.25rem;
+}
+
+/* Icon tile */
+.guide-step__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-light));
+    color: #fff;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 8px 18px rgba(22, 163, 74, 0.32);
+}
+
+.guide-step__title {
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    line-height: 1.25;
+}
+
+.guide-step__text {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ── Trust section (reuses .about-values via shared selectors) ──────── */
+.guide-trust-section {
+    padding: clamp(4rem, 8vw, 6.5rem) clamp(1.25rem, 4vw, 2rem) clamp(4.5rem, 9vw, 7rem);
+    background:
+        radial-gradient(ellipse 100% 70% at 50% 0%, rgba(22, 163, 74, 0.07), transparent 55%),
+        var(--bg);
+    text-align: center;
+}
+
+.guide-trust__cta {
+    display: inline-flex;
+    margin-top: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* ── Mobile refinements ──────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .guide-step {
+        padding: 1.5rem 1.25rem 1.25rem;
+    }
+
+    .guide-step__num {
+        font-size: 1.55rem;
+        top: 0.85rem;
+        right: 1rem;
+    }
+
+    html[dir='rtl'] .guide-step__num {
+        right: auto;
+        left: 1rem;
+    }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .guide-step:hover {
+        transform: none;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FINAL POLISH PASS
+   Last-stage refinements that unify spacing, touch targets, focus rings,
+   and remove inline-styles needs. No new visual direction — pure cleanup.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── 1 / Replace inline styles in home mid-CTA section ─────────────── */
+.midcta-section .section-inner {
+    text-align: center;
+}
+
+.midcta-section .section-sub {
+    margin-inline: auto;
+}
+
+.midcta-section .hero-cta {
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+/* Reusable centered-CTA modifier (any page that needs a centered hero-cta) */
+.hero-cta--center {
+    justify-content: center;
+}
+
+/* ── 2 / Contact legal note (typography token, not inline) ──────────── */
+.contact-legal-note p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    max-width: 42rem;
+}
+
+.contact-legal-note p a {
+    color: var(--accent-hover);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.contact-legal-note p a:hover {
+    color: var(--accent);
+}
+
+/* ── 3 / iOS touch-target safety on form controls (48 × 48 minimum) ── */
+.contact-field input[type='text'],
+.contact-field input[type='email'],
+.contact-field input[type='tel'],
+.contact-select-wrap select {
+    min-height: 48px;
+}
+
+.contact-field textarea {
+    min-height: 96px;
+}
+
+.contact-submit {
+    min-height: 52px;
+}
+
+/* The info "i" button next to the email field also needs a real tap area */
+.contact-info-btn {
+    width: 36px;
+    height: 36px;
+    right: 0.45rem;
+}
+
+/* ── 4 / Focus polish — clearer keyboard rings on form controls ─────── */
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible,
+.contact-select-wrap select:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow:
+        0 0 0 4px rgba(22, 163, 74, 0.16),
+        0 1px 2px rgba(15, 41, 24, 0.04);
+}
+
+/* Unified link focus ring (text links inside main content) */
+.about-story a:focus-visible,
+.guide-step a:focus-visible,
+.contact-legal-note a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* ── 5 / iPhone SE / 320 px width safety on hero phone mockup ───────── */
+@media (max-width: 360px) {
+    .phone-mockup {
+        width: 260px;
+        height: 530px;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+    }
+
+    .hero-trust-bar,
+    .hero-cta-hint {
+        font-size: 0.86rem;
+    }
+
+    .dl-qr-frame img {
+        width: 170px;
+    }
+}
+
+/* ── 6 / Unified store badge stacking on small mobile ───────────────── */
+@media (max-width: 480px) {
+    .hero-store-badges {
+        width: 100%;
+    }
+
+    .hero-store-badges .store-badge {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .final-cta-badges {
+        width: 100%;
+    }
+
+    .final-cta-badges .store-badge {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ── 7 / Section rhythm normalization on small phones ───────────────── */
+@media (max-width: 480px) {
+    .about-story-section,
+    .about-mission-section,
+    .guide-section,
+    .guide-trust-section,
+    .dl-qr-section {
+        padding-left: 1.15rem;
+        padding-right: 1.15rem;
+    }
+}
+
+/* ── 8 / Smooth scroll feel without overflow surprise on RTL ────────── */
+html {
+    scroll-padding-top: calc(var(--header-h) + 12px);
+}
+
+/* ── 9 / Body keeps room for sticky CTA on home only ────────────────── */
+@media (max-width: 768px) {
+    body[data-page='home'] {
+        padding-bottom: 72px;
+    }
+}
+
+/* ── 10 / Visual scanning: improved selection on dark sections ──────── */
+.section-dark ::selection,
+.hero ::selection,
+.final-cta-section ::selection {
+    background: rgba(167, 243, 208, 0.45);
+    color: #052e16;
+}
+
+/* ── 11 / Image loading shift safety: declare aspect on logos ───────── */
+.logo img,
+.footer-simple__logo img {
+    aspect-ratio: 677 / 369;
+}
+
+/* ── 12 / Print-friendly fallback (no premium gradients on paper) ───── */
+@media print {
+    .hero,
+    .section-dark,
+    .final-cta-section,
+    .hero-float-card,
+    .mobile-sticky-cta {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+    }
+}
+
+/* ── 13 / Last reduced-motion safeguard for all newly added effects ── */
+@media (prefers-reduced-motion: reduce) {
+    .hero-heading,
+    .hero-lead,
+    .hero-eyebrow,
+    .hero-cta,
+    .hero-rating,
+    .hero-stats,
+    .hero-panel {
+        animation: none !important;
+    }
+}

@@ -4,33 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Télécharger l’app — Go Drive</title>
+    <meta name="description" content="Téléchargez Go Drive gratuitement sur iOS et Android. Scannez le QR code ou ouvrez votre store pour accéder à tous les services.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body data-page="download">
-        <header class="site-header site-header--transparent">
+    <header class="site-header site-header--transparent">
         <div class="header-inner">
-
-            <!-- ① Logo -->
             <a href="/" class="logo" aria-label="Go Drive">
-                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" fetchpriority="high">
             </a>
 
-            <!-- ② Desktop navigation (≥900 px) -->
             <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
                 <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
                 <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
                 <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
             </nav>
 
-            <!-- ③ Right-side controls -->
             <div class="header-actions">
-                <!-- Download CTA -->
                 <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">
                     Télécharger
                 </button>
 
-                <!-- Language selector with globe icon -->
                 <label class="lang-switcher" aria-label="Choisir la langue">
                     <span class="lang-switcher__globe" aria-hidden="true">
                         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +44,6 @@
                     </select>
                 </label>
 
-                <!-- Hamburger / menu toggle -->
                 <button type="button" class="nav-menu-btn" id="nav-menu-btn"
                     aria-expanded="false"
                     aria-controls="site-menu-panel"
@@ -62,75 +56,222 @@
                 </button>
             </div>
 
-            <!-- ④ Mobile dropdown panel -->
             <div id="site-menu-panel" class="site-menu-panel" hidden>
                 <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
             </div>
-
         </div>
     </header>
 
-    <div class="page-hero">
-        <div class="page-hero-inner">
-            <h1 data-i18n="download.hero.title">Télécharger Go Drive</h1>
-            <p data-i18n="download.hero.lead">Scannez le QR code ou ouvrez l’application depuis votre store.</p>
-        </div>
-    </div>
-
-    <div class="container">
-        <section class="download-section download-section--page" aria-labelledby="dl-title">
-            <div class="download-wrap">
-                <h2 id="dl-title" class="section-title reveal" style="text-align: center;" data-i18n-html="download.section.title_html">Obtenir <span class="text-gradient-accent">l’application</span></h2>
-                <p class="section-sub download-lead reveal" style="text-align: center; margin-left: auto; margin-right: auto;" data-i18n="download.section.sub">
-                    Le même QR code que sur l’accueil mène à cette page — idéal pour partager le lien de téléchargement.
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO — App download focus (premium, dark gradient)
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero hero--download" aria-labelledby="download-hero-title">
+        <div class="hero-inner">
+            <div>
+                <p class="hero-eyebrow" data-i18n="download.hero.eyebrow">App mobile · iOS &amp; Android</p>
+                <h1 id="download-hero-title" class="hero-heading" data-i18n-html="download.hero.title_html">
+                    <span class="hero-heading__line">Téléchargez</span>
+                    <span class="hero-heading__line"><span class="text-gradient-hero">Go Drive</span> maintenant</span>
+                </h1>
+                <p class="hero-lead" data-i18n="download.hero.lead">
+                    Livraison, ambulance et dépannage : tous les services Go Drive, accessibles dans une seule app. Gratuit, sans engagement.
                 </p>
-                <div class="download-grid">
-                    <div class="download-qr card reveal" data-reveal-delay="0">
-                        <p class="qr-label" data-i18n="home.download.qr_label">QR code</p>
-                        <div class="qr-frame">
-                            <img
-                                id="app-qr-img"
-                                src="/images/download-app-qr.png"
-                                width="220"
-                                height="220"
-                                alt="QR code Go Drive"
-                                data-i18n-alt="home.download.qr_label"
-                                loading="lazy"
-                                decoding="async">
+
+                <!-- Reusable benefit grid -->
+                <ul class="dl-benefits" aria-label="Pourquoi télécharger Go Drive">
+                    <li class="dl-benefit">
+                        <span class="dl-benefit__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                        </span>
+                        <span class="dl-benefit__text" data-i18n="download.benefit.free">100 % gratuit</span>
+                    </li>
+                    <li class="dl-benefit">
+                        <span class="dl-benefit__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg>
+                        </span>
+                        <span class="dl-benefit__text" data-i18n="download.benefit.devices">iOS &amp; Android</span>
+                    </li>
+                    <li class="dl-benefit">
+                        <span class="dl-benefit__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/></svg>
+                        </span>
+                        <span class="dl-benefit__text" data-i18n="download.benefit.secure">Données sécurisées</span>
+                    </li>
+                    <li class="dl-benefit">
+                        <span class="dl-benefit__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <span class="dl-benefit__text" data-i18n="download.benefit.users">50 000+ utilisateurs</span>
+                    </li>
+                </ul>
+
+                <!-- Official store badges (same reusable component as homepage) -->
+                <div class="hero-store-badges" aria-label="Stores">
+                    <a id="btn-ios" href="#" target="_blank" rel="noopener noreferrer" class="store-badge store-badge--lg store-badge--ios" aria-label="App Store">
+                        <span class="store-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M16.365 1.43c0 1.14-.46 2.22-1.21 3.02-.81.85-2.13 1.51-3.21 1.42-.13-1.13.42-2.31 1.16-3.06.84-.85 2.27-1.49 3.26-1.38zM20.5 17.34c-.55 1.27-.81 1.84-1.52 2.96-.99 1.57-2.39 3.53-4.13 3.55-1.55.02-1.95-1.01-4.05-1-2.1.01-2.55 1.02-4.1 1-1.74-.02-3.07-1.79-4.06-3.36C.04 16.6-.31 11.46 1.59 8.71c1.34-1.93 3.46-3.06 5.45-3.06 2.03 0 3.31 1.11 4.99 1.11 1.63 0 2.62-1.11 4.97-1.11 1.78 0 3.66.97 5 2.65-4.39 2.41-3.68 8.7.5 9.04z"/></svg>
+                        </span>
+                        <span class="store-badge__text">
+                            <span class="store-badge__l1" data-i18n="badge.appstore.l1">Télécharger sur</span>
+                            <span class="store-badge__l2" data-i18n="badge.appstore.l2">App Store</span>
+                        </span>
+                    </a>
+                    <a id="btn-android" href="#" target="_blank" rel="noopener noreferrer" class="store-badge store-badge--lg store-badge--play" aria-label="Google Play">
+                        <span class="store-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 512 512" width="26" height="26"><path d="M48 480V32l253 224L48 480z" fill="#34a853"/><path d="M48 32l253 224 73-65L80 16c-12-7-25-3-32 16z" fill="#4285f4"/><path d="M48 480l326-160-73-64L48 480z" fill="#ea4335"/><path d="M448 232l-74 24-73 65 73 64 74-25c25-15 25-113 0-128z" fill="#fbbc05"/></svg>
+                        </span>
+                        <span class="store-badge__text">
+                            <span class="store-badge__l1" data-i18n="badge.googleplay.l1">DISPONIBLE SUR</span>
+                            <span class="store-badge__l2" data-i18n="badge.googleplay.l2">Google Play</span>
+                        </span>
+                    </a>
+                </div>
+
+                <p class="hero-trust-bar" data-i18n="download.hero.trust_bar">★ 4,9/5 · 50 000+ utilisateurs · Support 24/7</p>
+            </div>
+
+            <!-- Phone mockup — reuses homepage design system -->
+            <aside class="hero-panel hero-panel--mockup" aria-label="Aperçu de l’app Go Drive">
+
+                <!-- Floating rating card — bottom left -->
+                <div class="hero-float-card hero-float-card--rating" aria-hidden="true">
+                    <span class="hero-float-card__stars">★★★★★</span>
+                    <span class="hero-float-card__val">4,9</span>
+                    <span class="hero-float-card__label">50 000+ utilisateurs</span>
+                </div>
+
+                <div class="phone-mockup phone-mockup--hero" role="img" aria-label="Écran d’accueil Go Drive">
+                    <div class="phone-mockup__notch" aria-hidden="true"></div>
+                    <div class="phone-mockup__home" aria-hidden="true"></div>
+                    <div class="phone-mockup__glare" aria-hidden="true"></div>
+                    <div class="phone-mockup__screen">
+                        <div class="appui appui--welcome" data-screen="welcome">
+                            <!-- ✔ Screenshot ready: replace this div with
+                                 <img src="screens/welcome.webp" class="phone-mockup__screenshot" alt="Go Drive — bienvenue"> -->
+                            <div class="appui__mini-bar" aria-hidden="true">
+                                <span class="appui__time">9:41</span>
+                                <span class="appui__mini-icons">
+                                    <svg width="14" height="9" viewBox="0 0 17 11" fill="none"><rect x="0" y="8" width="3" height="3" rx="0.5" fill="currentColor"/><rect x="4.5" y="6" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="9" y="3" width="3" height="8" rx="0.5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx="0.5" fill="currentColor"/></svg>
+                                    <svg width="20" height="9" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="2" y="2" width="16" height="8" rx="1.5" fill="currentColor"/><rect x="23" y="3.5" width="2" height="5" rx="1" fill="currentColor" fill-opacity="0.45"/></svg>
+                                </span>
+                            </div>
+
+                            <div class="appui__welcome">
+                                <span class="appui__brand-mark" aria-hidden="true">G</span>
+                                <strong class="appui__welcome-title">Go Drive</strong>
+                                <em class="appui__welcome-sub" data-i18n="download.welcome.sub">Votre mobilité, simplifiée</em>
+                            </div>
+
+                            <ul class="appui__welcome-list" aria-hidden="true">
+                                <li class="appui__row">
+                                    <span class="appui__welcome-icon">📦</span>
+                                    <span><strong>Livraison</strong><em>Colis, urbain & inter-ville</em></span>
+                                </li>
+                                <li class="appui__row">
+                                    <span class="appui__welcome-icon">🚑</span>
+                                    <span><strong>Ambulance</strong><em>Assistance médicale rapide</em></span>
+                                </li>
+                                <li class="appui__row">
+                                    <span class="appui__welcome-icon">🛠️</span>
+                                    <span><strong>Dépannage</strong><em>Intervention sur la route</em></span>
+                                </li>
+                            </ul>
+
+                            <div class="appui__btn" data-i18n="download.welcome.cta">Commencer</div>
                         </div>
-                    </div>
-                    <div class="download-stores card reveal" data-reveal-delay="110">
-                        <div class="download-visual">
-                            <figure>
-                                <img
-                                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=560&q=75"
-                                    srcset="
-                                        https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=320&q=75 320w,
-                                        https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=560&q=75 560w,
-                                        https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=840&q=75 840w
-                                    "
-                                    sizes="(max-width: 799px) 78vw, 320px"
-                                    width="560"
-                                    height="746"
-                                    alt="Smartphone tenu à la main pour ouvrir une application de livraison"
-                                    loading="lazy"
-                                    decoding="async">
-                                <figcaption class="visually-hidden">Application mobile</figcaption>
-                            </figure>
-                        </div>
-                        <h3 class="store-heading" data-i18n="home.download.stores">Stores</h3>
-                        <div class="store-buttons">
-                            <a id="btn-ios" class="store-btn store-btn--ios" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.app">App Store</a>
-                            <a id="btn-android" class="store-btn store-btn--android" href="#" target="_blank" rel="noopener noreferrer" data-i18n="footer.store.play">Google Play</a>
-                        </div>
-                        <p class="text-muted" style="margin-top: 1.25rem; font-size: 0.9rem;">
-                            <a href="/" data-i18n="download.link_home">Accueil</a>
-                        </p>
                     </div>
                 </div>
+                <span class="hero-panel-glow" aria-hidden="true"></span>
+            </aside>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         QR SECTION — Single premium block, conversion-focused
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="dl-qr-section" aria-labelledby="dl-qr-title">
+        <div class="dl-qr-wrap">
+            <h2 id="dl-qr-title" class="dl-qr-title reveal" data-i18n-html="download.qr.title_html">
+                Scannez avec <span class="text-gradient-accent">votre téléphone</span>
+            </h2>
+            <p class="dl-qr-sub reveal" data-i18n="download.qr.sub">
+                Pointez l’appareil photo sur le QR code — la page de téléchargement s’ouvre directement.
+            </p>
+
+            <div class="dl-qr-card reveal" data-reveal-delay="80">
+                <div class="dl-qr-card__visual">
+                    <div class="dl-qr-frame">
+                        <img
+                            id="app-qr-img"
+                            src="/images/download-app-qr.png"
+                            width="260"
+                            height="260"
+                            alt="QR code Go Drive"
+                            data-i18n-alt="home.download.qr_label"
+                            loading="lazy"
+                            decoding="async">
+                        <span class="dl-qr-frame__corner dl-qr-frame__corner--tl" aria-hidden="true"></span>
+                        <span class="dl-qr-frame__corner dl-qr-frame__corner--tr" aria-hidden="true"></span>
+                        <span class="dl-qr-frame__corner dl-qr-frame__corner--bl" aria-hidden="true"></span>
+                        <span class="dl-qr-frame__corner dl-qr-frame__corner--br" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+                <ol class="dl-qr-steps" aria-label="Étapes pour télécharger">
+                    <li class="dl-qr-step">
+                        <span class="dl-qr-step__num">1</span>
+                        <div class="dl-qr-step__body">
+                            <strong data-i18n="download.qr.step1.title">Ouvrez l’appareil photo</strong>
+                            <em data-i18n="download.qr.step1.text">Sur votre téléphone iOS ou Android.</em>
+                        </div>
+                    </li>
+                    <li class="dl-qr-step">
+                        <span class="dl-qr-step__num">2</span>
+                        <div class="dl-qr-step__body">
+                            <strong data-i18n="download.qr.step2.title">Pointez vers le QR code</strong>
+                            <em data-i18n="download.qr.step2.text">Le lien apparaît automatiquement.</em>
+                        </div>
+                    </li>
+                    <li class="dl-qr-step">
+                        <span class="dl-qr-step__num">3</span>
+                        <div class="dl-qr-step__body">
+                            <strong data-i18n="download.qr.step3.title">Installez l’app Go Drive</strong>
+                            <em data-i18n="download.qr.step3.text">Gratuit. Prêt en 30 secondes.</em>
+                        </div>
+                    </li>
+                </ol>
             </div>
-        </section>
-    </div>
+
+            <p class="dl-qr-divider" aria-hidden="true">
+                <span data-i18n="download.qr.or">ou téléchargez directement</span>
+            </p>
+
+            <div class="dl-qr-stores" aria-label="Stores">
+                <a class="js-store-ios store-badge store-badge--lg store-badge--ios" href="#" target="_blank" rel="noopener noreferrer" aria-label="App Store">
+                    <span class="store-badge__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M16.365 1.43c0 1.14-.46 2.22-1.21 3.02-.81.85-2.13 1.51-3.21 1.42-.13-1.13.42-2.31 1.16-3.06.84-.85 2.27-1.49 3.26-1.38zM20.5 17.34c-.55 1.27-.81 1.84-1.52 2.96-.99 1.57-2.39 3.53-4.13 3.55-1.55.02-1.95-1.01-4.05-1-2.1.01-2.55 1.02-4.1 1-1.74-.02-3.07-1.79-4.06-3.36C.04 16.6-.31 11.46 1.59 8.71c1.34-1.93 3.46-3.06 5.45-3.06 2.03 0 3.31 1.11 4.99 1.11 1.63 0 2.62-1.11 4.97-1.11 1.78 0 3.66.97 5 2.65-4.39 2.41-3.68 8.7.5 9.04z"/></svg>
+                    </span>
+                    <span class="store-badge__text">
+                        <span class="store-badge__l1" data-i18n="badge.appstore.l1">Télécharger sur</span>
+                        <span class="store-badge__l2" data-i18n="badge.appstore.l2">App Store</span>
+                    </span>
+                </a>
+                <a class="js-store-android store-badge store-badge--lg store-badge--play" href="#" target="_blank" rel="noopener noreferrer" aria-label="Google Play">
+                    <span class="store-badge__icon" aria-hidden="true">
+                        <svg viewBox="0 0 512 512" width="28" height="28"><path d="M48 480V32l253 224L48 480z" fill="#34a853"/><path d="M48 32l253 224 73-65L80 16c-12-7-25-3-32 16z" fill="#4285f4"/><path d="M48 480l326-160-73-64L48 480z" fill="#ea4335"/><path d="M448 232l-74 24-73 65 73 64 74-25c25-15 25-113 0-128z" fill="#fbbc05"/></svg>
+                    </span>
+                    <span class="store-badge__text">
+                        <span class="store-badge__l1" data-i18n="badge.googleplay.l1">DISPONIBLE SUR</span>
+                        <span class="store-badge__l2" data-i18n="badge.googleplay.l2">Google Play</span>
+                    </span>
+                </a>
+            </div>
+
+            <p class="dl-qr-foot" data-i18n="download.qr.foot">
+                Gratuit · iOS &amp; Android · prêt en 30 sec
+            </p>
+        </div>
+    </section>
 
     <footer class="site-footer site-footer--simple" lang="fr">
         <div class="footer-simple">

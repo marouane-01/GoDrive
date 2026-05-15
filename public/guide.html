@@ -4,33 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comment ça marche — Go Drive</title>
+    <meta name="description" content="Comment utiliser l’app Go Drive : étapes simples pour les clients et les livreurs — commande, suivi en temps réel et QR sécurisé.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body data-page="guide">
-        <header class="site-header site-header--transparent">
+    <header class="site-header site-header--transparent">
         <div class="header-inner">
-
-            <!-- ① Logo -->
             <a href="/" class="logo" aria-label="Go Drive">
-                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" fetchpriority="high">
             </a>
 
-            <!-- ② Desktop navigation (≥900 px) -->
             <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
                 <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
                 <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
                 <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
             </nav>
 
-            <!-- ③ Right-side controls -->
             <div class="header-actions">
-                <!-- Download CTA -->
                 <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">
                     Télécharger
                 </button>
 
-                <!-- Language selector with globe icon -->
                 <label class="lang-switcher" aria-label="Choisir la langue">
                     <span class="lang-switcher__globe" aria-hidden="true">
                         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +44,6 @@
                     </select>
                 </label>
 
-                <!-- Hamburger / menu toggle -->
                 <button type="button" class="nav-menu-btn" id="nav-menu-btn"
                     aria-expanded="false"
                     aria-controls="site-menu-panel"
@@ -62,49 +56,148 @@
                 </button>
             </div>
 
-            <!-- ④ Mobile dropdown panel -->
             <div id="site-menu-panel" class="site-menu-panel" hidden>
                 <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
             </div>
-
         </div>
     </header>
 
-    <div class="page-hero">
-        <div class="page-hero-inner">
-            <h1 data-i18n-html="guide.hero.title_html">Comment utiliser <span class="text-gradient-on-dark">Go Drive</span></h1>
-            <p data-i18n="guide.hero.lead">Quelques étapes, comme sur une app de course — ici pour vos colis.</p>
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO — Onboarding opener (typography-driven)
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero hero--guide" aria-labelledby="guide-hero-title">
+        <div class="hero-inner hero-inner--single">
+            <p class="hero-eyebrow" data-i18n="guide.eyebrow">Comment ça marche</p>
+            <h1 id="guide-hero-title" class="hero-heading" data-i18n-html="guide.hero.title_html">
+                <span class="hero-heading__line">Comprenez Go Drive en</span>
+                <span class="hero-heading__line"><span class="text-gradient-hero">quelques étapes simples</span></span>
+            </h1>
+            <p class="hero-lead" data-i18n="guide.hero.lead">
+                Tout se passe dans l’application mobile — rapide, clair et sécurisé.
+            </p>
         </div>
-    </div>
+    </section>
 
-    <div class="container">
-        <figure class="content-hero-img content-hero-img--logo reveal">
-            <img
-                src="/images/guide-hero-logo.png"
-                width="677"
-                height="369"
-                alt="Go Drive"
-                loading="lazy"
-                decoding="async">
-            <figcaption class="visually-hidden">Logo Go Drive</figcaption>
-        </figure>
-        <div class="card reveal" data-reveal-delay="0">
-            <h2 style="margin-top: 0; font-family: var(--font-display); font-weight: 700;" data-i18n="guide.clients.title">Clients</h2>
-            <ol style="padding-left: 1.25rem; color: var(--muted);">
-                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.clients.li1_html"><strong>Téléchargez l’application</strong> (lien sur l’accueil ou QR code).</li>
-                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.clients.li2_html">Créez ou utilisez votre compte <strong>Client</strong> dans l’app pour passer et suivre vos commandes.</li>
-                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.clients.li3_html">Partagez le <strong>QR code</strong> de commande au destinataire (accès utile depuis l’app).</li>
+    <!-- ═══════════════════════════════════════════════════════════════
+         CLIENTS — 3 numbered step cards
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="guide-section" aria-labelledby="guide-clients-title">
+        <div class="guide-wrap">
+            <h2 id="guide-clients-title" class="guide-section-title reveal" data-i18n-html="guide.clients.title_html">
+                Pour les <span class="text-gradient-accent">clients</span>
+            </h2>
+            <p class="guide-section-sub reveal" data-i18n="guide.clients.sub">Trois étapes pour commander et suivre en direct.</p>
+
+            <ol class="guide-steps" aria-label="Étapes pour les clients">
+                <li class="guide-step reveal" data-reveal-delay="0">
+                    <span class="guide-step__num" aria-hidden="true">01</span>
+                    <span class="guide-step__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+                    </span>
+                    <strong class="guide-step__title" data-i18n="guide.clients.s1.title">Télécharger l’application</strong>
+                    <p class="guide-step__text" data-i18n="guide.clients.s1.text">Téléchargez Go Drive depuis l’accueil ou via QR code.</p>
+                </li>
+
+                <li class="guide-step reveal" data-reveal-delay="80">
+                    <span class="guide-step__num" aria-hidden="true">02</span>
+                    <span class="guide-step__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                    </span>
+                    <strong class="guide-step__title" data-i18n="guide.clients.s2.title">Passer une commande</strong>
+                    <p class="guide-step__text" data-i18n="guide.clients.s2.text">Créez ou utilisez votre compte client pour demander une livraison, une ambulance ou un dépannage.</p>
+                </li>
+
+                <li class="guide-step reveal" data-reveal-delay="160">
+                    <span class="guide-step__num" aria-hidden="true">03</span>
+                    <span class="guide-step__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <strong class="guide-step__title" data-i18n="guide.clients.s3.title">Suivre et partager</strong>
+                    <p class="guide-step__text" data-i18n="guide.clients.s3.text">Suivez votre commande en temps réel et partagez le QR code avec le destinataire.</p>
+                </li>
             </ol>
         </div>
-        <div class="card reveal" data-reveal-delay="100">
-            <h2 style="margin-top: 0; font-family: var(--font-display); font-weight: 700;" data-i18n="guide.drivers.title">Livreurs</h2>
-            <ol style="padding-left: 1.25rem; color: var(--muted);">
-                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.drivers.li1_html"><strong>Installez l’app</strong> et activez votre profil <strong>Livreur</strong> (hors inscription sur ce site).</li>
-                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.drivers.li2_html">Consultez les commandes <strong>disponibles</strong> et acceptez une course.</li>
-                <li style="margin-bottom: 0.5rem;" data-i18n-html="guide.drivers.li3_html">Mettez à jour le statut (en transit, livré) et la position pour l’historique.</li>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         DRIVERS — 3 numbered step cards (mirror layout)
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="guide-section guide-section--alt" aria-labelledby="guide-drivers-title">
+        <div class="guide-wrap">
+            <h2 id="guide-drivers-title" class="guide-section-title reveal" data-i18n-html="guide.drivers.title_html">
+                Pour les <span class="text-gradient-accent">livreurs</span>
+            </h2>
+            <p class="guide-section-sub reveal" data-i18n="guide.drivers.sub">Gérez vos courses directement depuis l’app.</p>
+
+            <ol class="guide-steps" aria-label="Étapes pour les livreurs">
+                <li class="guide-step reveal" data-reveal-delay="0">
+                    <span class="guide-step__num" aria-hidden="true">01</span>
+                    <span class="guide-step__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><path d="m17.5 12.5 1.5 1.5 3-3"/></svg>
+                    </span>
+                    <strong class="guide-step__title" data-i18n="guide.drivers.s1.title">Activer votre profil</strong>
+                    <p class="guide-step__text" data-i18n="guide.drivers.s1.text">Installez l’application et activez votre compte livreur.</p>
+                </li>
+
+                <li class="guide-step reveal" data-reveal-delay="80">
+                    <span class="guide-step__num" aria-hidden="true">02</span>
+                    <span class="guide-step__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 10h8"/><path d="M8 14h5"/><path d="m15.5 15.5 1.5 1.5 3-3"/></svg>
+                    </span>
+                    <strong class="guide-step__title" data-i18n="guide.drivers.s2.title">Accepter des courses</strong>
+                    <p class="guide-step__text" data-i18n="guide.drivers.s2.text">Consultez les demandes disponibles et acceptez les missions proches.</p>
+                </li>
+
+                <li class="guide-step reveal" data-reveal-delay="160">
+                    <span class="guide-step__num" aria-hidden="true">03</span>
+                    <span class="guide-step__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+                    </span>
+                    <strong class="guide-step__title" data-i18n="guide.drivers.s3.title">Mettre à jour la livraison</strong>
+                    <p class="guide-step__text" data-i18n="guide.drivers.s3.text">Mettez à jour le statut et suivez les livraisons en temps réel.</p>
+                </li>
             </ol>
         </div>
-    </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TRUST — Final reassurance (reuses .about-values pattern)
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="guide-trust-section" aria-labelledby="guide-trust-title">
+        <div class="about-mission-wrap">
+            <h2 id="guide-trust-title" class="about-mission-title reveal" data-i18n-html="guide.trust.title_html">
+                Une expérience <span class="text-gradient-accent">simple et transparente</span>
+            </h2>
+
+            <ul class="about-values">
+                <li class="about-value reveal" data-reveal-delay="0">
+                    <span class="about-value__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </span>
+                    <strong class="about-value__title" data-i18n="guide.trust.v1.title">Suivi en temps réel</strong>
+                    <p class="about-value__text" data-i18n="guide.trust.v1.text">Position du livreur et statuts mis à jour à chaque étape.</p>
+                </li>
+
+                <li class="about-value reveal" data-reveal-delay="80">
+                    <span class="about-value__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3z"/><path d="M19 14h2"/><path d="M14 19h3"/><path d="M19 19h2"/></svg>
+                    </span>
+                    <strong class="about-value__title" data-i18n="guide.trust.v2.title">QR code sécurisé</strong>
+                    <p class="about-value__text" data-i18n="guide.trust.v2.text">Un code unique par commande, partagé entre client et livreur.</p>
+                </li>
+
+                <li class="about-value reveal" data-reveal-delay="160">
+                    <span class="about-value__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                    </span>
+                    <strong class="about-value__title" data-i18n="guide.trust.v3.title">Notifications à chaque étape</strong>
+                    <p class="about-value__text" data-i18n="guide.trust.v3.text">Une alerte claire à chaque mise à jour de votre commande.</p>
+                </li>
+            </ul>
+
+            <a href="/download-app.html" class="btn btn-primary btn-lg guide-trust__cta reveal" data-i18n="guide.trust.cta">Télécharger Go Drive</a>
+        </div>
+    </section>
 
     <footer class="site-footer site-footer--simple" lang="fr">
         <div class="footer-simple">

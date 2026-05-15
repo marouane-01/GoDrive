@@ -31,12 +31,16 @@ app.use(
 );
 app.use(cors());
 
-// Rate Limiting
-const limiter = rateLimit({
+// Rate Limiting — applied ONLY to /api routes (not static assets / HTML pages),
+// otherwise a single page load (CSS + JS + images) eats the quota in seconds.
+const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100 // limit each IP to 100 requests per windowMs
+    max: 300, // generous limit for API calls per IP per window
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: { success: false, error: 'Too many requests, please try again later.' },
 });
-app.use(limiter);
+app.use('/api', apiLimiter);
 
 // Body Parser
 app.use(express.json());

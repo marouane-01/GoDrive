@@ -53,9 +53,10 @@
                     <span class="hero-rating__text" data-i18n="home.hero.rating">4,9 sur 1 200+ avis</span>
                 </div>
                 <div class="hero-cta">
-                    <a href="#download" class="btn btn-primary btn-lg" data-i18n="home.hero.cta1">Télécharger gratuitement</a>
+                    <a href="#download" class="btn btn-primary btn-lg" data-i18n="home.hero.cta1">Obtenir l’app — c’est gratuit</a>
                     <a href="#app-preview" class="btn btn-ghost" data-i18n="home.hero.cta2">Voir l’app en action</a>
                 </div>
+                <p class="hero-trust-bar" data-i18n="home.hero.trust_bar">★ 4,9/5 · 50 000+ utilisateurs · Support 24/7</p>
                 <p class="hero-cta-hint" data-i18n="home.hero.cta_hint">Gratuit · iOS &amp; Android · prêt en 30 sec</p>
                 <div class="hero-store-badges" aria-label="Stores">
                     <a id="btn-ios" href="#" target="_blank" rel="noopener noreferrer" class="store-badge store-badge--ios" aria-label="App Store">
@@ -80,12 +81,32 @@
                 <p class="hero-app-only" data-i18n="home.hero.app_only_chip">Services accessibles uniquement dans l’app</p>
             </div>
             <aside class="hero-panel hero-panel--mockup" aria-label="Aperçu de l’app Go Drive">
+
+                <!-- Floating status card — top right -->
+                <div class="hero-float-card hero-float-card--delivery" aria-hidden="true">
+                    <span class="hero-float-card__icon">📦</span>
+                    <div class="hero-float-card__body">
+                        <strong>Colis en transit</strong>
+                        <em>Arrivée dans 8 min</em>
+                    </div>
+                    <span class="hero-float-card__dot"></span>
+                </div>
+
+                <!-- Floating rating card — bottom left -->
+                <div class="hero-float-card hero-float-card--rating" aria-hidden="true">
+                    <span class="hero-float-card__stars">★★★★★</span>
+                    <span class="hero-float-card__val">4,9</span>
+                    <span class="hero-float-card__label">50 000+ utilisateurs</span>
+                </div>
+
                 <div class="phone-mockup phone-mockup--hero" role="img" aria-label="Aperçu de l’application Go Drive sur iPhone">
                     <div class="phone-mockup__notch" aria-hidden="true"></div>
                     <div class="phone-mockup__home" aria-hidden="true"></div>
                     <div class="phone-mockup__glare" aria-hidden="true"></div>
                     <div class="phone-mockup__screen">
-                        <div class="appui">
+                        <div class="appui" data-screen="home">
+                            <!-- ✔ Screenshot ready: replace this div with
+                                 <img src="screens/home.webp" class="phone-mockup__screenshot" alt="Go Drive — écran d'accueil"> -->
                             <div class="appui__statusbar" aria-hidden="true">
                                 <span class="appui__time">9:41</span>
                                 <span class="appui__statusbar-icons">
@@ -204,8 +225,21 @@
                         <div class="phone-mockup__home" aria-hidden="true"></div>
                         <div class="phone-mockup__glare" aria-hidden="true"></div>
                         <div class="phone-mockup__screen">
-                            <div class="appui appui--form">
-                                <div class="appui__title">Nouvelle demande</div>
+                            <div class="appui appui--form" data-screen="create-request">
+                                <!-- ✔ Screenshot ready: replace this div with
+                                     <img src="screens/create-request.webp" class="phone-mockup__screenshot" alt="Créer une demande"> -->
+                            <div class="appui__mini-bar" aria-hidden="true">
+                                <span class="appui__time">9:41</span>
+                                <span class="appui__mini-icons">
+                                    <svg width="14" height="9" viewBox="0 0 17 11" fill="none"><rect x="0" y="8" width="3" height="3" rx="0.5" fill="currentColor"/><rect x="4.5" y="6" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="9" y="3" width="3" height="8" rx="0.5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx="0.5" fill="currentColor"/></svg>
+                                    <svg width="20" height="9" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="2" y="2" width="16" height="8" rx="1.5" fill="currentColor"/><rect x="23" y="3.5" width="2" height="5" rx="1" fill="currentColor" fill-opacity="0.45"/></svg>
+                                </span>
+                            </div>
+                                <div class="appui__screen-hd" aria-hidden="true">
+                                    <span class="appui__screen-hd__mark">G</span>
+                                    <span class="appui__screen-hd__title">Nouvelle demande</span>
+                                    <span class="appui__screen-hd__action">✕</span>
+                                </div>
                                 <div class="appui__field"><span data-i18n="home.preview.s1.field1">Lieu de départ</span><i>Casablanca · Maarif</i></div>
                                 <div class="appui__field"><span data-i18n="home.preview.s1.field2">Lieu d’arrivée</span><i>Rabat · Agdal</i></div>
                                 <div class="appui__field"><span data-i18n="home.preview.s1.field3">Type de trajet</span><i>Inter-ville</i></div>
@@ -223,8 +257,21 @@
                         <div class="phone-mockup__home" aria-hidden="true"></div>
                         <div class="phone-mockup__glare" aria-hidden="true"></div>
                         <div class="phone-mockup__screen">
-                            <div class="appui appui--list">
-                                <div class="appui__title">Livreurs proches</div>
+                            <div class="appui appui--list" data-screen="driver-list">
+                                <!-- ✔ Screenshot ready: replace this div with
+                                     <img src="screens/driver-list.webp" class="phone-mockup__screenshot" alt="Choisir un livreur"> -->
+                            <div class="appui__mini-bar" aria-hidden="true">
+                                <span class="appui__time">9:41</span>
+                                <span class="appui__mini-icons">
+                                    <svg width="14" height="9" viewBox="0 0 17 11" fill="none"><rect x="0" y="8" width="3" height="3" rx="0.5" fill="currentColor"/><rect x="4.5" y="6" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="9" y="3" width="3" height="8" rx="0.5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx="0.5" fill="currentColor"/></svg>
+                                    <svg width="20" height="9" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="2" y="2" width="16" height="8" rx="1.5" fill="currentColor"/><rect x="23" y="3.5" width="2" height="5" rx="1" fill="currentColor" fill-opacity="0.45"/></svg>
+                                </span>
+                            </div>
+                                <div class="appui__screen-hd" aria-hidden="true">
+                                    <span class="appui__screen-hd__mark">G</span>
+                                    <span class="appui__screen-hd__title">Livreurs proches</span>
+                                    <span class="appui__chip appui__chip--ok">3 dispo.</span>
+                                </div>
                                 <div class="appui__driver-row">
                                     <span class="appui__avatar appui__avatar--a">K</span>
                                     <div><strong>Karim B.</strong><em>★ 4.9 · 1.2 km</em></div>
@@ -250,14 +297,23 @@
                         <div class="phone-mockup__home" aria-hidden="true"></div>
                         <div class="phone-mockup__glare" aria-hidden="true"></div>
                         <div class="phone-mockup__screen">
-                            <div class="appui">
+                            <div class="appui" data-screen="live-tracking">
+                                <!-- ✔ Screenshot ready: replace this div with
+                                     <img src="screens/live-tracking.webp" class="phone-mockup__screenshot" alt="Suivi en temps réel"> -->
+                            <div class="appui__mini-bar" aria-hidden="true">
+                                <span class="appui__time">9:41</span>
+                                <span class="appui__mini-icons">
+                                    <svg width="14" height="9" viewBox="0 0 17 11" fill="none"><rect x="0" y="8" width="3" height="3" rx="0.5" fill="currentColor"/><rect x="4.5" y="6" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="9" y="3" width="3" height="8" rx="0.5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx="0.5" fill="currentColor"/></svg>
+                                    <svg width="20" height="9" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="2" y="2" width="16" height="8" rx="1.5" fill="currentColor"/><rect x="23" y="3.5" width="2" height="5" rx="1" fill="currentColor" fill-opacity="0.45"/></svg>
+                                </span>
+                            </div>
                                 <div class="appui__map appui__map--lg" role="img" aria-label="Carte avec trajet">
                                     <span class="appui__pin appui__pin--from" aria-hidden="true"></span>
                                     <span class="appui__pin appui__pin--to" aria-hidden="true"></span>
                                     <span class="appui__route" aria-hidden="true"></span>
                                     <span class="appui__driver" aria-hidden="true">🚐</span>
                                 </div>
-                                <div class="appui__card">
+                                <div class="appui__card-block">
                                     <div class="appui__card-row">
                                         <span class="appui__chip appui__chip--ok" data-i18n="home.preview.s3.status">En transit</span>
                                         <span class="appui__eta-inline" data-i18n="home.preview.s3.eta">Arrivée dans 12 min</span>
@@ -277,8 +333,21 @@
                         <div class="phone-mockup__home" aria-hidden="true"></div>
                         <div class="phone-mockup__glare" aria-hidden="true"></div>
                         <div class="phone-mockup__screen">
-                            <div class="appui appui--qr">
-                                <div class="appui__title appui__title--center" data-i18n="home.preview.s4.label">Commande #1042</div>
+                            <div class="appui appui--qr" data-screen="qr-code">
+                                <!-- ✔ Screenshot ready: replace this div with
+                                     <img src="screens/qr-code.webp" class="phone-mockup__screenshot" alt="QR de commande"> -->
+                            <div class="appui__mini-bar" aria-hidden="true">
+                                <span class="appui__time">9:41</span>
+                                <span class="appui__mini-icons">
+                                    <svg width="14" height="9" viewBox="0 0 17 11" fill="none"><rect x="0" y="8" width="3" height="3" rx="0.5" fill="currentColor"/><rect x="4.5" y="6" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="9" y="3" width="3" height="8" rx="0.5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx="0.5" fill="currentColor"/></svg>
+                                    <svg width="20" height="9" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="2" y="2" width="16" height="8" rx="1.5" fill="currentColor"/><rect x="23" y="3.5" width="2" height="5" rx="1" fill="currentColor" fill-opacity="0.45"/></svg>
+                                </span>
+                            </div>
+                                <div class="appui__screen-hd" aria-hidden="true">
+                                    <span class="appui__screen-hd__mark">G</span>
+                                    <span class="appui__screen-hd__title" data-i18n="home.preview.s4.label">Commande #1042</span>
+                                    <span class="appui__screen-hd__action">✕</span>
+                                </div>
                                 <div class="appui__qr">
                                     <img src="/images/download-app-qr.png" alt="" width="170" height="170" loading="lazy" decoding="async">
                                 </div>
@@ -289,7 +358,64 @@
                     <h3 data-i18n="home.preview.s4.title">QR de commande</h3>
                     <p data-i18n="home.preview.s4.text">Un code unique partagé entre client et livreur.</p>
                 </article>
+
+                <article class="app-preview-card reveal" data-reveal-delay="320">
+                    <div class="phone-mockup">
+                        <div class="phone-mockup__notch" aria-hidden="true"></div>
+                        <div class="phone-mockup__home" aria-hidden="true"></div>
+                        <div class="phone-mockup__glare" aria-hidden="true"></div>
+                        <div class="phone-mockup__screen">
+                            <div class="appui appui--notif" data-screen="notifications">
+                                <!-- ✔ Screenshot ready: replace this div with
+                                     <img src="screens/notifications.webp" class="phone-mockup__screenshot" alt="Notifications"> -->
+                            <div class="appui__mini-bar" aria-hidden="true">
+                                <span class="appui__time">9:41</span>
+                                <span class="appui__mini-icons">
+                                    <svg width="14" height="9" viewBox="0 0 17 11" fill="none"><rect x="0" y="8" width="3" height="3" rx="0.5" fill="currentColor"/><rect x="4.5" y="6" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="9" y="3" width="3" height="8" rx="0.5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="11" rx="0.5" fill="currentColor"/></svg>
+                                    <svg width="20" height="9" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-opacity="0.45"/><rect x="2" y="2" width="16" height="8" rx="1.5" fill="currentColor"/><rect x="23" y="3.5" width="2" height="5" rx="1" fill="currentColor" fill-opacity="0.45"/></svg>
+                                </span>
+                            </div>
+                                <div class="appui__screen-hd" aria-hidden="true">
+                                    <span class="appui__screen-hd__mark">G</span>
+                                    <span class="appui__screen-hd__title" data-i18n="home.preview.s5.label">Notifications</span>
+                                    <span class="appui__screen-hd__action">Tout voir</span>
+                                </div>
+                                <div class="appui__notif-row appui__notif-row--new">
+                                    <span class="appui__notif-icon">📦</span>
+                                    <div class="appui__notif-body">
+                                        <strong>Colis récupéré</strong>
+                                        <em>Karim est en route · 8 min</em>
+                                    </div>
+                                </div>
+                                <div class="appui__notif-row">
+                                    <span class="appui__notif-icon">✅</span>
+                                    <div class="appui__notif-body">
+                                        <strong>Commande confirmée</strong>
+                                        <em>Casa → Rabat · #1042</em>
+                                    </div>
+                                </div>
+                                <div class="appui__notif-row">
+                                    <span class="appui__notif-icon">⭐</span>
+                                    <div class="appui__notif-body">
+                                        <strong>Évaluez votre course</strong>
+                                        <em>Sofia · hier à 14h20</em>
+                                    </div>
+                                </div>
+                                <div class="appui__notif-row">
+                                    <span class="appui__notif-icon">🎉</span>
+                                    <div class="appui__notif-body">
+                                        <strong>Livraison réussie !</strong>
+                                        <em>Commande #1041 · il y a 3 h</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 data-i18n="home.preview.s5.title">Notifications</h3>
+                    <p data-i18n="home.preview.s5.text">Chaque étape, une alerte. Restez informé en temps réel.</p>
+                </article>
             </div>
+            <p class="preview-scroll-hint" aria-hidden="true" data-i18n="home.preview.swipe_hint">Glissez pour voir plus</p>
         </div>
     </section>
 
@@ -298,6 +424,7 @@
         <div class="section-inner">
             <h2 id="services-title" class="section-title reveal" data-i18n-html="home.services.title_html">Des services pour <span class="text-gradient-accent">chaque besoin</span></h2>
             <p class="section-sub reveal" data-i18n="home.services.sub">Livraisons et assistance rapide, accessibles uniquement dans l’application Go Drive.</p>
+            <p class="services-app-note reveal" data-i18n-html="home.services.app_only_html">Tous les services Go Drive — livraison, ambulance et dépannage — sont accessibles <strong>uniquement depuis l’application mobile</strong>. <a href="/download-app.html">Téléchargez l’app</a> pour commencer.</p>
 
             <div class="services-modules">
                 <!-- Module: Delivery (parcel tiers) -->
@@ -413,10 +540,11 @@
         </div>
     </section>
 
-    <section class="section testimonials-section" aria-labelledby="testi-title">
+    <section class="section testimonials-section" aria-labelledby="social-title">
         <div class="section-inner">
-            <h2 id="testi-title" class="section-title reveal" data-i18n-html="home.testi.title_html">Ce que <span class="text-gradient-accent">disent</span> nos utilisateurs</h2>
-            <p class="section-sub reveal" data-i18n="home.testi.sub">Clients et livreurs parlent de leur expérience Go Drive.</p>
+            <h2 id="social-title" class="section-title reveal" data-i18n-html="home.social.title_html">Ils font <span class="text-gradient-accent">confiance</span> à Go Drive</h2>
+            <p class="section-sub reveal" data-i18n="home.social.sub">Des milliers d’utilisateurs nous font confiance chaque jour au Maroc.</p>
+            <p class="testi-aggregate reveal" data-i18n="home.social.rating">★★★★★ 4,9/5 · Plus de 1 200 avis vérifiés</p>
             <div class="testimonials-grid">
                 <figure class="testimonial-card reveal" data-reveal-delay="0">
                     <div class="testimonial-card__stars" aria-label="5 étoiles">★★★★★</div>
@@ -456,11 +584,11 @@
     </section>
 
     <section class="section section-dark midcta-section" aria-labelledby="midcta-title">
-        <div class="section-inner" style="text-align: center;">
-            <h2 id="midcta-title" class="section-title reveal" data-i18n-html="home.midcta.title_html">Téléchargez Go Drive en <span class="text-gradient-accent">moins de 30 secondes</span></h2>
-            <p class="section-sub reveal" style="margin-left: auto; margin-right: auto;" data-i18n="home.midcta.lead">Gratuit. iOS et Android. Toutes les commandes se font dans l’app.</p>
-            <div class="hero-cta reveal" style="justify-content: center; margin-top: 1.5rem;">
-                <a href="/download-app.html" class="btn btn-primary btn-lg" data-i18n="home.midcta.cta">Télécharger gratuitement</a>
+        <div class="section-inner">
+            <h2 id="midcta-title" class="section-title reveal" data-i18n-html="home.midcta.title_html">Accédez à tous les services — <span class="text-gradient-accent">en 30 secondes</span></h2>
+            <p class="section-sub reveal" data-i18n="home.midcta.lead">Téléchargez l’app Go Drive gratuitement. Livraison, ambulance et dépannage : tous les services dans votre poche.</p>
+            <div class="hero-cta hero-cta--center reveal">
+                <a href="/download-app.html" class="btn btn-primary btn-lg" data-i18n="home.midcta.cta">Obtenir Go Drive gratuitement</a>
                 <a href="/guide.html" class="btn btn-ghost" data-i18n="home.midcta.cta_secondary">Comment ça marche</a>
             </div>
         </div>
@@ -501,8 +629,8 @@
     <section class="final-cta-section" id="download" aria-labelledby="download-title">
         <div class="final-cta-wrap">
             <div class="final-cta-copy">
-                <h2 id="download-title" class="final-cta-title reveal" data-i18n-html="home.final.title_html">Téléchargez <span class="text-gradient-accent">Go Drive</span> maintenant</h2>
-                <p class="final-cta-lead reveal" data-i18n="home.final.lead">Gratuit, sans engagement. Disponible sur iOS et Android.</p>
+                <h2 id="download-title" class="final-cta-title reveal" data-i18n-html="home.final.title_html">Téléchargez <span class="text-gradient-accent">Go Drive</span> et accédez aux services maintenant</h2>
+                <p class="final-cta-lead reveal" data-i18n="home.final.lead">Livraison, ambulance, dépannage — tout dans l’app. Gratuit, sans engagement, disponible sur iOS et Android.</p>
                 <div class="final-cta-badges reveal">
                     <a class="js-store-ios store-badge store-badge--lg store-badge--ios" href="#" target="_blank" rel="noopener noreferrer" aria-label="App Store">
                         <span class="store-badge__icon" aria-hidden="true">

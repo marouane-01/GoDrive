@@ -4,33 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos — Go Drive</title>
+    <meta name="description" content="Go Drive — l’application mobile marocaine pour vos colis, vos urgences et vos imprévus. Simple, rapide, à portée de poche.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body data-page="about">
-        <header class="site-header site-header--transparent">
+    <header class="site-header site-header--transparent">
         <div class="header-inner">
-
-            <!-- ① Logo -->
             <a href="/" class="logo" aria-label="Go Drive">
-                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" fetchpriority="high">
             </a>
 
-            <!-- ② Desktop navigation (≥900 px) -->
             <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
                 <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
                 <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
                 <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
             </nav>
 
-            <!-- ③ Right-side controls -->
             <div class="header-actions">
-                <!-- Download CTA -->
                 <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">
                     Télécharger
                 </button>
 
-                <!-- Language selector with globe icon -->
                 <label class="lang-switcher" aria-label="Choisir la langue">
                     <span class="lang-switcher__globe" aria-hidden="true">
                         <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +44,6 @@
                     </select>
                 </label>
 
-                <!-- Hamburger / menu toggle -->
                 <button type="button" class="nav-menu-btn" id="nav-menu-btn"
                     aria-expanded="false"
                     aria-controls="site-menu-panel"
@@ -62,38 +56,86 @@
                 </button>
             </div>
 
-            <!-- ④ Mobile dropdown panel -->
             <div id="site-menu-panel" class="site-menu-panel" hidden>
                 <nav id="nav-links" class="main-nav" aria-label="Navigation principale"></nav>
             </div>
-
         </div>
     </header>
 
-    <div class="page-hero">
-        <div class="page-hero-inner">
-            <h1 data-i18n-html="about.hero.title_html">À propos de <span class="text-gradient-on-dark">Go Drive</span></h1>
-            <p data-i18n="about.hero.lead">Une plateforme pensée comme les apps de mobilité : simple, lisible, centrée sur l’expéditeur et le livreur.</p>
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO — Brand story opener (typography-driven, no imagery)
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero hero--about" aria-labelledby="about-hero-title">
+        <div class="hero-inner hero-inner--single">
+            <p class="hero-eyebrow" data-i18n="about.eyebrow">Notre histoire</p>
+            <h1 id="about-hero-title" class="hero-heading" data-i18n-html="about.hero.title_html">
+                <span class="hero-heading__line">L’app marocaine</span>
+                <span class="hero-heading__line">pour <span class="text-gradient-hero">bouger plus vite</span></span>
+            </h1>
+            <p class="hero-lead" data-i18n="about.hero.lead">
+                Une application mobile pour vos colis, vos urgences et vos imprévus — où que vous soyez au Maroc.
+            </p>
         </div>
-    </div>
+    </section>
 
-    <div class="container">
-        <figure class="content-hero-img reveal">
-            <img
-                src="assets/images/about-godrive-banner.png"
-                width="704"
-                height="303"
-                alt="Bannière Go Drive : remise d’un colis à un livreur, avantages du service et aperçu du suivi de livraison dans l’application."
-                data-i18n-alt="about.banner.alt"
-                loading="lazy"
-                decoding="async">
-            <figcaption class="visually-hidden" data-i18n="about.banner.caption">Bannière Go Drive : livraison de confiance et suivi dans l’application</figcaption>
-        </figure>
-        <div class="card reveal">
-            <p class="text-muted" style="margin-top: 0;" data-i18n-html="about.p1_html">Go Drive met en relation des <strong>clients</strong> qui ont un colis ou des bagages à envoyer avec des <strong>livreurs</strong> disponibles sur le même créneau — en local, entre villes ou à l’international.</p>
-            <p data-i18n-html="about.p2_html">Nous nous inspirons des meilleures expériences du marché (transparence des étapes, confiance) tout en restant un produit générique : <strong>Go Drive</strong> n’est pas affilié à inDrive ni à aucune autre marque.</p>
+    <!-- ═══════════════════════════════════════════════════════════════
+         STORY — 3 short paragraphs, clean typography
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="about-story-section" aria-labelledby="about-story-title">
+        <h2 id="about-story-title" class="visually-hidden" data-i18n="about.story.title">Notre histoire</h2>
+        <div class="about-story">
+            <p class="about-story__p reveal" data-i18n-html="about.p1_html">
+                Go Drive est une <strong>application mobile</strong>. Une seule app pour envoyer un colis, appeler une ambulance ou demander un dépannage — directement depuis votre téléphone.
+            </p>
+            <p class="about-story__p reveal" data-reveal-delay="80" data-i18n-html="about.p2_html">
+                Notre mission : rendre l’accès aux services de mobilité aussi simple <strong>qu’un message</strong>. Pas de file d’attente. Pas d’appel. Pas de paperasse. Vous ouvrez l’app, vous publiez votre demande — c’est tout.
+            </p>
+            <p class="about-story__p reveal" data-reveal-delay="160" data-i18n-html="about.p3_html">
+                Chaque commande est <strong>suivie en temps réel</strong>, partagée par un QR code sécurisé et confirmée à chaque étape par une notification. Tout ce dont vous avez besoin tient dans votre poche.
+            </p>
         </div>
-    </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         MISSION — 3 short value tiles
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="about-mission-section" aria-labelledby="about-mission-title">
+        <div class="about-mission-wrap">
+            <h2 id="about-mission-title" class="about-mission-title reveal" data-i18n-html="about.mission.title_html">
+                Notre <span class="text-gradient-accent">promesse</span>
+            </h2>
+
+            <ul class="about-values">
+                <li class="about-value reveal" data-reveal-delay="0">
+                    <span class="about-value__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    </span>
+                    <strong class="about-value__title" data-i18n="about.mission.v1.title">Simplicité</strong>
+                    <p class="about-value__text" data-i18n="about.mission.v1.text">Une app intuitive, prête en quelques secondes.</p>
+                </li>
+
+                <li class="about-value reveal" data-reveal-delay="80">
+                    <span class="about-value__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </span>
+                    <strong class="about-value__title" data-i18n="about.mission.v2.title">Rapidité</strong>
+                    <p class="about-value__text" data-i18n="about.mission.v2.text">Livreurs, ambulances et dépannage en temps réel.</p>
+                </li>
+
+                <li class="about-value reveal" data-reveal-delay="160">
+                    <span class="about-value__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </span>
+                    <strong class="about-value__title" data-i18n="about.mission.v3.title">Confiance</strong>
+                    <p class="about-value__text" data-i18n="about.mission.v3.text">Suivi, notifications et QR sécurisé pour chaque commande.</p>
+                </li>
+            </ul>
+
+            <p class="about-disclaimer reveal" data-i18n="about.disclaimer">
+                Go Drive est une marque indépendante. Aucune affiliation avec d’autres applications de mobilité.
+            </p>
+        </div>
+    </section>
 
     <footer class="site-footer site-footer--simple" lang="fr">
         <div class="footer-simple">
@@ -117,6 +159,7 @@
             </div>
         </div>
     </footer>
+
     <script src="js/i18n.js"></script>
     <script src="js/i18n-content.js"></script>
     <script src="js/config.js"></script>
