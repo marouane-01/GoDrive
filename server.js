@@ -16,6 +16,7 @@ const { errorHandler } = require('./middlewares/errorHandler');
 const app = express();
 
 const isProd = process.env.NODE_ENV === 'production';
+// Security Middlewares — CSP : scripts externes (QR jsdelivr) + pas de script inline (fichiers dans public/js/)
 
 // Security Middlewares — CSP : scripts externes (QR jsdelivr) + pas de script inline (fichiers dans public/js/)
 app.use(
