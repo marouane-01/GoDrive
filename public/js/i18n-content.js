@@ -1,4 +1,8 @@
-/** Traductions étendues (FR / EN / AR) — fusionnées dans goDriveI18n au chargement */
+/**
+ * Extended translations (FR / EN / AR) — build-time source only.
+ * Bundled into public/js/i18n/{lang}/*.json via: npm run i18n:extract
+ * Not loaded in the browser; see i18n-core.js + i18n.js lazy loader.
+ */
 (function () {
     if (!window.goDriveI18n || typeof window.goDriveI18n.mergeDict !== 'function') return;
 
@@ -220,6 +224,12 @@
             'contact.label.email': 'E-mail',
             'contact.ph.email': 'votre@email.com',
             'contact.label.msg': 'Commentaire',
+            'contact.label.attachments': 'Pièces jointes',
+            'contact.email.info': 'Nous utiliserons cet e-mail uniquement pour répondre à votre message.',
+            'contact.phone.country_btn': 'Choisir le pays et l’indicatif téléphonique',
+            'contact.phone.search_label': 'Rechercher un pays',
+            'contact.phone.search_ph': 'Rechercher un pays ou un indicatif…',
+            'contact.phone.list_aria': 'Pays et indicatifs',
             'contact.ph.msg': 'Votre message',
             'contact.ph.subject.colis': 'Ex. Livraison urgente de colis',
             'contact.ph.subject.ambulance': 'Ex. Ambulance urgente — [lieu]',
@@ -321,6 +331,7 @@
             'home.preview.s4.title': 'QR de commande',
             'home.preview.s4.text': 'Un code unique partagé entre client et livreur.',
             'home.preview.s4.label': 'Commande #1042',
+            'home.preview.qr.alt': 'QR code de démonstration pour partager une commande Go Drive',
             'home.preview.s5.label': 'Notifications',
             'home.preview.s5.title': 'Notifications',
             'home.preview.s5.text': 'Chaque étape, une alerte. Restez informé en temps réel.',
@@ -586,6 +597,12 @@
             'contact.label.email': 'E-mail',
             'contact.ph.email': 'your@email.com',
             'contact.label.msg': 'Message',
+            'contact.label.attachments': 'Attachments',
+            'contact.email.info': 'We will only use this email to reply to your message.',
+            'contact.phone.country_btn': 'Choose country and phone code',
+            'contact.phone.search_label': 'Search for a country',
+            'contact.phone.search_ph': 'Search for a country or dialing code…',
+            'contact.phone.list_aria': 'Countries and dialing codes',
             'contact.ph.msg': 'Describe your request…',
             'contact.ph.subject.colis': 'E.g. Urgent parcel delivery',
             'contact.ph.subject.ambulance': 'E.g. Urgent ambulance — [location]',
@@ -687,6 +704,7 @@
             'home.preview.s4.title': 'Order QR code',
             'home.preview.s4.text': 'A unique code shared between client and driver.',
             'home.preview.s4.label': 'Order #1042',
+            'home.preview.qr.alt': 'Demo QR code to share a Go Drive order',
             'home.preview.s5.label': 'Notifications',
             'home.preview.s5.title': 'Notifications',
             'home.preview.s5.text': 'Every step, an alert. Stay informed in real time.',
@@ -951,6 +969,12 @@
             'contact.label.email': 'البريد الإلكتروني',
             'contact.ph.email': 'your@email.com',
             'contact.label.msg': 'الرسالة',
+            'contact.label.attachments': 'المرفقات',
+            'contact.email.info': 'سنستخدم هذا البريد فقط للرد على رسالتك.',
+            'contact.phone.country_btn': 'اختر البلد ورمز الاتصال',
+            'contact.phone.search_label': 'البحث عن بلد',
+            'contact.phone.search_ph': 'ابحث عن بلد أو رمز اتصال…',
+            'contact.phone.list_aria': 'البلدان ورموز الاتصال',
             'contact.ph.msg': 'صف طلبك…',
             'contact.ph.subject.colis': 'مثال: توصيل طرد عاجل',
             'contact.ph.subject.ambulance': 'مثال: إسعاف عاجل — [الموقع]',
@@ -1050,6 +1074,7 @@
             'home.preview.s4.title': 'رمز QR للطلب',
             'home.preview.s4.text': 'رمز فريد يُشارك بين العميل والسائق.',
             'home.preview.s4.label': 'طلب رقم 1042',
+            'home.preview.qr.alt': 'رمز QR تجريبي لمشاركة طلب Go Drive',
             'home.preview.s5.label': 'الإشعارات',
             'home.preview.s5.title': 'الإشعارات',
             'home.preview.s5.text': 'كل خطوة، تنبيه. ابقَ على اطلاع فوري.',

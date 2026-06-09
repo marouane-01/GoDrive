@@ -2,19 +2,13 @@ const express = require('express');
 const multer = require('multer');
 const rateLimit = require('express-rate-limit');
 const Joi = require('joi');
+const { isProduction } = require('../config/appConfig');
 const { sendContactEmail, isMailConfigured, buildFullPhone } = require('../services/contactEmailService');
-
-const MAX_FILES = 3;
-const MAX_BYTES = 10 * 1024 * 1024;
-
-const ALLOWED_MIMES = new Set([
-    'application/pdf',
-    'image/jpeg',
-    'image/png',
-    'image/webp',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-]);
+const {
+    MAX_FILES,
+    MAX_BYTES,
+    validateContactUploads,
+} = require('../utils/contactUploadValidation');
 
 const upload = multer({
     storage: multer.memoryStorage(),
@@ -81,8 +75,9 @@ router.post(
                 return res.status(503).json({
                     success: false,
                     code: 'MAIL_CONFIG',
-                    message:
-                        'Le serveur e-mail n’est pas configuré. Définissez CONTACT_SMTP_HOST, CONTACT_SMTP_USER et CONTACT_SMTP_PASS dans les variables d’environnement.',
+                    message: isProduction()
+                        ? 'Email service is temporarily unavailable.'
+                        : 'Le serveur e-mail n’est pas configuré. Définissez CONTACT_SMTP_HOST, CONTACT_SMTP_USER et CONTACT_SMTP_PASS dans les variables d’environnement.',
                 });
             }
 
@@ -130,29 +125,36 @@ router.post(
             }
 
             const fullPhone = buildFullPhone(value.phone_prefix, value.phone_local);
-            const files = req.files || [];
-            for (const f of files) {
-                if (!ALLOWED_MIMES.has(f.mimetype)) {
-                    return res.status(400).json({
-                        success: false,
-                        code: 'FILE_TYPE',
-                        message: 'Unsupported file type. Allowed: PDF, JPG, PNG, WebP, DOC, DOCX.',
-                    });
-                }
+            const uploadValidation = validateContactUploads(req.files || []);
+            if (!uploadValidation.ok) {
+                return res.status(400).json({
+                    success: false,
+                    code: uploadValidation.code,
+                    message: uploadValidation.message,
+                });
             }
 
-            await sendContactEmail({ ...value, fullPhone }, files);
+            await sendContactEmail({ ...value, fullPhone }, uploadValidation.files);
 
             return res.status(200).json({
                 success: true,
                 message: 'Your message has been sent.',
             });
         } catch (e) {
+            if (e.code && String(e.code).startsWith('FILE_')) {
+                return res.status(e.statusCode || 400).json({
+                    success: false,
+                    code: e.code,
+                    message: e.message || 'File upload rejected.',
+                });
+            }
             if (e.code === 'MAIL_CONFIG') {
                 return res.status(e.statusCode || 503).json({
                     success: false,
                     code: e.code,
-                    message: e.message,
+                    message: isProduction()
+                        ? 'Email service is temporarily unavailable.'
+                        : e.message,
                 });
             }
             console.error('[contact]', e);

@@ -5,24 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact & support — Go Drive</title>
     <meta name="description" content="Contactez l’équipe Go Drive : questions sur l’application mobile, support, partenariats. Réponse rapide en français, anglais ou arabe.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#145232">
+    <meta name="author" content="Go Drive">
+    <link rel="icon" href="/images/godrive-logo.png" type="image/png" sizes="any">
+    <link rel="apple-touch-icon" href="/images/godrive-logo.png">
+    <link rel="canonical" href="/contact.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Go Drive">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact & support — Go Drive">
+    <meta property="og:description" content="Contactez l’équipe Go Drive : questions sur l’application mobile, support, partenariats. Réponse rapide en français, anglais ou arabe.">
+    <meta property="og:url" content="/contact.html">
+    <meta property="og:image" content="/images/godrive-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact & support — Go Drive">
+    <meta name="twitter:description" content="Contactez l’équipe Go Drive : questions sur l’application mobile, support, partenariats. Réponse rapide en français, anglais ou arabe.">
+    <meta name="twitter:image" content="/images/godrive-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="css/app.min.css">
 </head>
 <body class="page-contact" data-page="contact">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Aller au contenu principal</a>
         <header class="site-header site-header--transparent">
         <div class="header-inner">
 
             <!-- ① Logo -->
             <a href="/" class="logo" aria-label="Go Drive">
+                <picture>
+                <source type="image/webp" srcset="/images/godrive-logo-200w.webp 200w, images/godrive-logo-400w.webp 400w, images/godrive-logo.webp 677w" sizes="(max-width: 768px) 120px, 180px">
                 <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" fetchpriority="high">
+            </picture>
             </a>
 
             <!-- ② Desktop navigation (≥900 px) -->
-            <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
-                <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
-                <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
-                <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
-            </nav>
+            <nav class="header-desktop-nav" id="header-desktop-nav" aria-label="Navigation principale"></nav>
 
             <!-- ③ Right-side controls -->
             <div class="header-actions">
@@ -71,7 +92,7 @@
         </div>
     </header>
 
-    <main class="contact-main">
+    <main id="main-content" class="contact-main">
         <div class="contact-wrap">
             <div class="contact-bg" aria-hidden="true">
                 <span class="contact-bg__shape contact-bg__shape--1"></span>
@@ -154,6 +175,7 @@
                                     aria-haspopup="listbox"
                                     aria-expanded="false"
                                     aria-controls="contact-phone-panel"
+                                    data-i18n-aria-label="contact.phone.country_btn"
                                     aria-label="Choisir le pays et l’indicatif téléphonique"
                                 >
                                     <span class="phone-flag-display" id="contact-phone-flag" aria-hidden="true">🇲🇦</span>
@@ -163,11 +185,12 @@
                                     </span>
                                 </button>
                                 <div id="contact-phone-panel" class="phone-country-panel" hidden>
-                                    <label for="contact-phone-search" class="visually-hidden">Rechercher un pays</label>
+                                    <label for="contact-phone-search" class="visually-hidden" data-i18n="contact.phone.search_label">Rechercher un pays</label>
                                     <input
                                         type="text"
                                         id="contact-phone-search"
                                         class="phone-country-search"
+                                        data-i18n-placeholder="contact.phone.search_ph"
                                         placeholder="Rechercher un pays ou un indicatif…"
                                         autocomplete="off"
                                         autocorrect="off"
@@ -180,6 +203,7 @@
                                         id="contact-phone-list"
                                         class="phone-country-list"
                                         role="listbox"
+                                        data-i18n-aria-label="contact.phone.list_aria"
                                         aria-label="Pays et indicatifs"
                                         aria-multiselectable="false"
                                     ></ul>
@@ -194,14 +218,15 @@
                     <div class="contact-field">
                         <label for="contact-email" data-i18n="contact.label.email">E-mail</label>
                         <div class="contact-input-icon-wrap">
-                            <input type="email" id="contact-email" name="email" data-i18n-placeholder="contact.ph.email" placeholder="votre@email.com" autocomplete="email" required>
-                            <button type="button" class="contact-info-btn" title="Nous utiliserons cet e-mail uniquement pour répondre à votre message." aria-label="Information sur l’e-mail">
+                            <input type="email" id="contact-email" name="email" data-i18n-placeholder="contact.ph.email" placeholder="votre@email.com" autocomplete="email" aria-describedby="contact-email-info" required>
+                            <button type="button" class="contact-info-btn" id="contact-email-info-btn" data-i18n-title="contact.email.info" title="Nous utiliserons cet e-mail uniquement pour répondre à votre message." aria-describedby="contact-email-info" aria-label="Information sur l’e-mail">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <circle cx="12" cy="12" r="10"/>
                                     <path d="M12 16v-4M12 8h.01"/>
                                 </svg>
                             </button>
                         </div>
+                        <span id="contact-email-info" class="visually-hidden" data-i18n="contact.email.info">Nous utiliserons cet e-mail uniquement pour répondre à votre message.</span>
                     </div>
 
                     <div class="contact-field">
@@ -211,7 +236,7 @@
                     </div>
 
                     <div class="contact-field contact-field--upload">
-                        <span class="contact-field__label">Pièces jointes</span>
+                        <label for="contact-files" class="contact-field__label" data-i18n="contact.label.attachments">Pièces jointes</label>
                         <div class="contact-upload">
                             <input type="file" id="contact-files" name="files" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx" class="visually-hidden">
                             <label for="contact-files" class="contact-upload__btn" title="Ajouter des fichiers">
@@ -230,20 +255,23 @@
                 </form>
             </div>
         </div>
-    </main>
 
-    <section id="mentions-confidentialite" class="contact-legal-note container">
-        <h2 class="visually-hidden">Mentions légales — confidentialité</h2>
-        <p class="text-muted">
-            Les informations collectées via ce formulaire servent à traiter votre demande. Pour toute question :
-            <a href="mailto:support@godrive.com">support@godrive.com</a>.
-        </p>
-    </section>
+        <section id="mentions-confidentialite" class="contact-legal-note container">
+            <h2 class="visually-hidden">Mentions légales — confidentialité</h2>
+            <p class="text-muted">
+                Les informations collectées via ce formulaire servent à traiter votre demande. Pour toute question :
+                <a href="mailto:support@godrive.com">support@godrive.com</a>.
+            </p>
+        </section>
+    </main>
 
     <footer class="site-footer site-footer--simple" lang="fr">
         <div class="footer-simple">
             <div class="footer-simple__top">
-                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy"></a>
+                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><picture>
+                <source type="image/webp" srcset="/images/godrive-logo-200w.webp 200w, images/godrive-logo-400w.webp 400w, images/godrive-logo.webp 677w" sizes="(max-width: 768px) 120px, 180px">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy">
+            </picture></a>
                 <nav class="footer-simple__nav" data-i18n-aria-label="footer.aria" aria-label="Pied de page">
                     <ul class="footer-simple__links">
                         <li><a href="/" data-i18n="nav.home">Accueil</a></li>
@@ -262,12 +290,12 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/i18n.js"></script>
-    <script src="js/i18n-content.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/download-modal.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/store-links.js"></script>
+    <script src="js/i18n.min.js" defer></script>
+    <script src="js/seo.min.js" defer></script>
+    <script src="js/config.min.js" defer></script>
+    <script src="js/a11y.min.js" defer></script>
+    <script src="js/download-modal.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
+    <script src="js/store-links.min.js" defer></script>
 </body>
 </html>

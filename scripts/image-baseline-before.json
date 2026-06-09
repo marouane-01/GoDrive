@@ -1,0 +1,9 @@
+{
+  "label": "before",
+  "capturedAt": "2026-06-08",
+  "totalAssetsKB": 4568.4,
+  "over200KBCount": 12,
+  "homeLazyImagesKB": 1010.7,
+  "responsive": { "pictureElements": 0, "webpSrcset": 0, "lcpPreload": false },
+  "lighthouse": { "performanceBefore": 57, "performanceAfter": 57, "lcpBeforeSec": 4.8, "lcpAfterSec": 4.8 }
+}

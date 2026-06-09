@@ -1,73 +1,65 @@
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const db = require('../config/db');
 const Joi = require('joi');
+const { signAccessToken } = require('../utils/jwt');
+const { getJwtSecret, MIN_JWT_SECRET_LENGTH } = require('../utils/jwtSecret');
+const { ROLES, isAllowedRole } = require('../utils/roles');
 
-const registerSchema = Joi.object({
-    name: Joi.string().required(),
-    email: Joi.string().email().required(),
-    password: Joi.string().min(6).required(),
-    role: Joi.string().valid('client', 'driver').required()
+const loginSchema = Joi.object({
+    email: Joi.string().trim().email().max(254).required(),
+    password: Joi.string().min(1).max(128).required(),
 });
-
-exports.register = async (req, res, next) => {
-    try {
-        const { error } = registerSchema.validate(req.body);
-        if (error) return res.status(400).json({ error: error.details[0].message });
-
-        const { name, email, password, role } = req.body;
-
-        const userExists = await db.query('SELECT * FROM users WHERE email = $1', [email]);
-        if (userExists.rows.length > 0) {
-            return res.status(400).json({ error: 'User already exists' });
-        }
-
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
-        const newUser = await db.query(
-            'INSERT INTO users (name, email, password, role) VALUES ($1, $2, $3, $4) RETURNING id, name, email, role',
-            [name, email, hashedPassword, role]
-        );
-
-        res.status(201).json({ success: true, data: newUser.rows[0] });
-    } catch (err) {
-        next(err);
-    }
-};
 
 exports.login = async (req, res, next) => {
     try {
-        const { email, password } = req.body;
+        const { error, value } = loginSchema.validate(req.body || {}, {
+            abortEarly: false,
+            stripUnknown: true,
+        });
 
-        if (!email || !password) {
-            return res.status(400).json({ error: 'Please provide email and password' });
+        if (error) {
+            return res.status(400).json({
+                error: 'Invalid credentials',
+                details: error.details.map((d) => ({ field: d.path.join('.'), message: d.message })),
+            });
         }
 
-        const user = await db.query('SELECT * FROM users WHERE email = $1', [email]);
+        if (!getJwtSecret()) {
+            console.error(`[auth] JWT_SECRET is missing or shorter than ${MIN_JWT_SECRET_LENGTH} characters`);
+            return res.status(503).json({ error: 'Server authentication is not configured' });
+        }
+
+        const { email, password } = value;
+
+        const user = await db.query('SELECT id, name, email, password, role FROM users WHERE email = $1', [email]);
         if (user.rows.length === 0) {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
 
-        const isMatch = await bcrypt.compare(password, user.rows[0].password);
+        const account = user.rows[0];
+
+        if (!isAllowedRole(account.role)) {
+            console.error(`[auth] User ${account.id} has unsupported role "${account.role}"`);
+            return res.status(403).json({ error: 'Account is not permitted to sign in' });
+        }
+
+        const isMatch = await bcrypt.compare(password, account.password);
         if (!isMatch) {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
 
-        const secret = process.env.JWT_SECRET;
-        if (!secret || String(secret).length < 8) {
-            console.error('[auth] JWT_SECRET is missing or too short');
+        const token = signAccessToken({ id: account.id, role: account.role });
+
+        res.status(200).json({
+            success: true,
+            token,
+            user: { id: account.id, name: account.name, role: account.role },
+        });
+    } catch (err) {
+        if (err.message === 'JWT_SECRET_NOT_CONFIGURED') {
+            console.error(`[auth] JWT_SECRET is missing or shorter than ${MIN_JWT_SECRET_LENGTH} characters`);
             return res.status(503).json({ error: 'Server authentication is not configured' });
         }
-
-        const token = jwt.sign(
-            { id: user.rows[0].id, role: user.rows[0].role },
-            secret,
-            { expiresIn: '30d' }
-        );
-
-        res.status(200).json({ success: true, token, user: { id: user.rows[0].id, name: user.rows[0].name, role: user.rows[0].role } });
-    } catch (err) {
         next(err);
     }
 };

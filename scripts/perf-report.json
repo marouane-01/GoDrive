@@ -1,0 +1,130 @@
+{
+  "measuredAt": "2026-06-09T01:03:09.244Z",
+  "legacy": {
+    "mode": "legacy",
+    "cssKB": 156.9,
+    "jsKB": 152.9,
+    "i18nRuntimeKB": 24.8,
+    "i18nLegacyContentKB": 83.5,
+    "htmlTotalKB": 141.4,
+    "perPage": [
+      {
+        "page": "home",
+        "htmlKB": 55.6,
+        "cssKB": 156.9,
+        "jsKB": 152.9,
+        "i18nKB": 10.6,
+        "totalKB": 376
+      },
+      {
+        "page": "about",
+        "htmlKB": 12.8,
+        "cssKB": 156.9,
+        "jsKB": 152.9,
+        "i18nKB": 4.1,
+        "totalKB": 326.6
+      },
+      {
+        "page": "guide",
+        "htmlKB": 18.2,
+        "cssKB": 156.9,
+        "jsKB": 152.9,
+        "i18nKB": 4.6,
+        "totalKB": 332.5
+      },
+      {
+        "page": "contact",
+        "htmlKB": 19.4,
+        "cssKB": 156.9,
+        "jsKB": 152.9,
+        "i18nKB": 6.6,
+        "totalKB": 335.8
+      },
+      {
+        "page": "download",
+        "htmlKB": 22.6,
+        "cssKB": 156.9,
+        "jsKB": 152.9,
+        "i18nKB": 4.5,
+        "totalKB": 336.8
+      },
+      {
+        "page": "dashboard",
+        "htmlKB": 12.8,
+        "cssKB": 156.9,
+        "jsKB": 152.9,
+        "i18nKB": 5.3,
+        "totalKB": 327.9
+      }
+    ],
+    "homeFirstLoadKB": 376,
+    "contactFirstLoadKB": 335.8
+  },
+  "optimized": {
+    "mode": "optimized",
+    "cssKB": 82.3,
+    "jsKB": 33.3,
+    "i18nRuntimeKB": 3.2,
+    "i18nLegacyContentKB": 0,
+    "htmlTotalKB": 141.4,
+    "perPage": [
+      {
+        "page": "home",
+        "htmlKB": 55.6,
+        "cssKB": 82.3,
+        "jsKB": 33.3,
+        "i18nKB": 10.6,
+        "totalKB": 181.9
+      },
+      {
+        "page": "about",
+        "htmlKB": 12.8,
+        "cssKB": 82.3,
+        "jsKB": 33.3,
+        "i18nKB": 4.1,
+        "totalKB": 132.5
+      },
+      {
+        "page": "guide",
+        "htmlKB": 18.2,
+        "cssKB": 82.3,
+        "jsKB": 33.3,
+        "i18nKB": 4.6,
+        "totalKB": 138.3
+      },
+      {
+        "page": "contact",
+        "htmlKB": 19.4,
+        "cssKB": 82.3,
+        "jsKB": 33.3,
+        "i18nKB": 6.6,
+        "totalKB": 141.6
+      },
+      {
+        "page": "download",
+        "htmlKB": 22.6,
+        "cssKB": 82.3,
+        "jsKB": 33.3,
+        "i18nKB": 4.5,
+        "totalKB": 142.7
+      },
+      {
+        "page": "dashboard",
+        "htmlKB": 12.8,
+        "cssKB": 82.3,
+        "jsKB": 33.3,
+        "i18nKB": 5.3,
+        "totalKB": 133.8
+      }
+    ],
+    "homeFirstLoadKB": 181.9,
+    "contactFirstLoadKB": 141.6
+  },
+  "savings": {
+    "cssSavedKB": 74.6,
+    "jsSavedKB": 119.6,
+    "homeSavedKB": 194.1,
+    "lighthouseBefore": 57,
+    "lighthouseAfter": 72
+  }
+}

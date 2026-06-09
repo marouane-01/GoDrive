@@ -19,13 +19,18 @@ dirs.forEach(dir => {
 });
 
 const files = {
-    '.env': `PORT=3000
+    '.env': `PORT=3001
 DB_USER=postgres
 DB_HOST=localhost
 DB_NAME=godrive
-DB_PASSWORD=1999
+DB_PASSWORD=
 DB_PORT=5432
-JWT_SECRET=super_secret_key`,
+# Required: at least 32 characters. Generate with:
+# node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+JWT_SECRET=
+CORS_ALLOWED_ORIGINS=http://localhost:3001
+PUBLIC_BASE_URL=http://localhost:3001
+`,
 
     'database.sql': `
 CREATE TABLE users (
@@ -99,7 +104,7 @@ app.use('/api/tracking', trackingRoutes);
 // Global Error Handler
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3001;
 app.listen(PORT, () => {
     console.log(\`Server running on port \${PORT}\`);
 });
@@ -257,7 +262,12 @@ const express = require('express');
 const { register, login } = require('../controllers/authController');
 const router = express.Router();
 
-router.post('/register', register);
+router.post('/register', (req, res) => {
+    res.status(403).json({
+        success: false,
+        error: 'Les inscriptions en ligne sont désactivées. Téléchargez l’application.',
+    });
+});
 router.post('/login', login);
 
 module.exports = router;
@@ -288,7 +298,7 @@ exports.createOrder = async (req, res, next) => {
         );
 
         const orderId = newOrder.rows[0].id;
-        const trackingUrl = \`http://localhost:\${process.env.PORT || 3000}/tracking.html?id=\${orderId}\`;
+        const trackingUrl = \`\${process.env.PUBLIC_BASE_URL || ('http://localhost:' + (process.env.PORT || 3001))}/download-app.html\`;
         const qrCode = await generateQRCode(trackingUrl);
 
         await db.query('UPDATE orders SET qr_code = $1 WHERE id = $2', [qrCode, orderId]);

@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-06-08T00:00:00.000Z",
+  "label": "Before advanced SEO optimization",
+  "overallScore": 58,
+  "checks": {
+    "hreflang_tags": { "pass": false, "detail": "No hreflang on any page" },
+    "json_ld": { "pass": false, "detail": "No structured data" },
+    "absolute_canonical_static": { "pass": false, "detail": "Static HTML uses relative canonical (e.g. /about.html)" },
+    "absolute_canonical_runtime": { "pass": true, "detail": "seo.js sets absolute at runtime via window.location.origin" },
+    "absolute_og_urls_static": { "pass": false, "detail": "og:url and og:image relative in static HTML" },
+    "page_specific_og_images": { "pass": false, "detail": "All pages shared /images/godrive-logo.png" },
+    "sitemap_hreflang": { "pass": false, "detail": "sitemap.xml had no xhtml:link alternates" },
+    "multilingual_url_signals": { "pass": false, "detail": "No ?lang= URL parameter for crawlers" },
+    "data_site_base": { "pass": false, "detail": "No server-injected data-site-base" },
+    "social_crawler_nojs": { "pass": false, "detail": "Facebook/Twitter bots see French-only relative meta" },
+    "i18n_meta_bundles": { "pass": true, "detail": "FR/EN/AR title+meta in JSON bundles" },
+    "robots_sitemap": { "pass": true, "detail": "robots.txt + sitemap.xml endpoints working" },
+    "dashboard_noindex": { "pass": true, "detail": "dashboard.html has noindex" }
+  },
+  "pageOgImages": {
+    "home": "/images/godrive-logo.png",
+    "about": "/images/godrive-logo.png",
+    "guide": "/images/godrive-logo.png",
+    "contact": "/images/godrive-logo.png",
+    "download": "/images/godrive-logo.png"
+  }
+}

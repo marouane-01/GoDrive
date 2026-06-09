@@ -2,17 +2,89 @@ function tNav(key) {
     return window.goDriveI18n ? window.goDriveI18n.t(key) : key;
 }
 
-function setupNav() {
-    const nav = document.getElementById('nav-links');
-    if (!nav) return;
+const NAV_DESKTOP_ITEMS = [
+    { href: '/about.html', key: 'nav.about', page: 'about' },
+    { href: '/guide.html', key: 'nav.guide', page: 'guide' },
+    { href: '/contact.html', key: 'nav.contact', page: 'contact' },
+];
 
-    nav.setAttribute('aria-label', tNav('nav.aria'));
-    nav.innerHTML = `
-        <a href="/about.html">${tNav('nav.about')}</a>
-        <a href="/guide.html">${tNav('nav.guide')}</a>
-        <a href="/contact.html">${tNav('nav.contact')}</a>
-        <a href="/index.html#download" class="btn btn-sm btn-primary">${tNav('nav.download')}</a>
-    `;
+const NAV_MOBILE_ITEMS = [
+    ...NAV_DESKTOP_ITEMS,
+    { href: '/download-app.html', key: 'nav.download', page: 'download', mobileCta: true },
+];
+
+function getCurrentPage() {
+    const dataPage = document.body.getAttribute('data-page');
+    if (dataPage) return dataPage;
+
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    if (path === '/' || path.endsWith('/index.html')) return 'home';
+    if (path.endsWith('/about.html')) return 'about';
+    if (path.endsWith('/guide.html')) return 'guide';
+    if (path.endsWith('/contact.html')) return 'contact';
+    if (path.endsWith('/download-app.html')) return 'download';
+    if (path.endsWith('/dashboard.html')) return 'dashboard';
+    return '';
+}
+
+function renderNavLinks(items, { linkClass, activeClass, mobile }) {
+    const current = getCurrentPage();
+
+    return items
+        .map((item) => {
+            const isActive = item.page === current;
+            const classes = [];
+            if (linkClass) classes.push(linkClass);
+            if (isActive && activeClass) classes.push(activeClass);
+            if (mobile && item.mobileCta) classes.push('btn', 'btn-sm', 'btn-primary');
+
+            const classAttr = classes.length ? ` class="${classes.join(' ')}"` : '';
+            const ariaCurrent = isActive ? ' aria-current="page"' : '';
+            return `<a href="${item.href}"${classAttr}${ariaCurrent}>${tNav(item.key)}</a>`;
+        })
+        .join('');
+}
+
+function syncNavLandmarks() {
+    const mobileNav = document.getElementById('nav-links');
+    const desktopNav = document.getElementById('header-desktop-nav');
+    const isDesktop = window.matchMedia('(min-width: 900px)').matches;
+
+    if (desktopNav) {
+        if (isDesktop) desktopNav.removeAttribute('aria-hidden');
+        else desktopNav.setAttribute('aria-hidden', 'true');
+    }
+    if (mobileNav) {
+        if (isDesktop) mobileNav.setAttribute('aria-hidden', 'true');
+        else mobileNav.removeAttribute('aria-hidden');
+    }
+}
+
+function setupNav() {
+    const ariaDesktop = tNav('nav.aria');
+    const ariaMobile = tNav('nav.aria_mobile');
+    const mobileNav = document.getElementById('nav-links');
+    const desktopNav = document.getElementById('header-desktop-nav');
+
+    if (mobileNav) {
+        mobileNav.setAttribute('aria-label', ariaMobile);
+        mobileNav.innerHTML = renderNavLinks(NAV_MOBILE_ITEMS, {
+            linkClass: '',
+            activeClass: 'is-active',
+            mobile: true,
+        });
+    }
+
+    if (desktopNav) {
+        desktopNav.setAttribute('aria-label', ariaDesktop);
+        desktopNav.innerHTML = renderNavLinks(NAV_DESKTOP_ITEMS, {
+            linkClass: 'header-nav-link',
+            activeClass: 'is-active',
+            mobile: false,
+        });
+    }
+
+    syncNavLandmarks();
 }
 
 function initNavMenu() {
@@ -21,8 +93,14 @@ function initNavMenu() {
     const header = document.querySelector('.site-header');
     if (!btn || !panel || !header) return;
 
+    let releaseMenuTrap = null;
+
     function menuAria(open) {
         btn.setAttribute('aria-label', open ? tNav('nav.menu_close') : tNav('nav.menu_open'));
+    }
+
+    function firstMenuLink() {
+        return panel.querySelector('#nav-links a, .main-nav a');
     }
 
     function setOpen(open) {
@@ -31,15 +109,32 @@ function initNavMenu() {
         menuAria(open);
         header.classList.toggle('is-menu-open', open);
         document.body.style.overflow = open ? 'hidden' : '';
+
+        if (typeof releaseMenuTrap === 'function') {
+            releaseMenuTrap();
+            releaseMenuTrap = null;
+        }
+
+        if (open && window.goDriveA11y) {
+            window.goDriveA11y.setBackgroundInert(header);
+            releaseMenuTrap = window.goDriveA11y.trapFocus(panel, { onEscape: close });
+            const firstLink = firstMenuLink();
+            if (firstLink) firstLink.focus();
+        } else if (window.goDriveA11y) {
+            window.goDriveA11y.clearBackgroundInert();
+        }
     }
 
     function close() {
+        const shouldRestore = !panel.hidden;
         setOpen(false);
+        if (shouldRestore) btn.focus();
     }
 
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
-        setOpen(panel.hidden);
+        if (panel.hidden) setOpen(true);
+        else close();
     });
 
     document.addEventListener('click', (e) => {
@@ -57,6 +152,14 @@ function initNavMenu() {
 
     window.addEventListener('godrive:lang', () => {
         menuAria(!panel.hidden);
+        setupNav();
+    });
+
+    window.addEventListener('resize', () => {
+        syncNavLandmarks();
+        if (window.matchMedia('(min-width: 900px)').matches) {
+            close();
+        }
     });
 
     menuAria(!panel.hidden);
@@ -300,9 +403,18 @@ function initPhoneCountryField() {
         updateEmptyState();
     }
 
+    function setActiveOption(optionEl) {
+        if (!optionEl) {
+            btn.removeAttribute('aria-activedescendant');
+            return;
+        }
+        btn.setAttribute('aria-activedescendant', optionEl.id);
+    }
+
     function closePanel() {
         panel.hidden = true;
         btn.setAttribute('aria-expanded', 'false');
+        btn.removeAttribute('aria-activedescendant');
         wrap.classList.remove('phone-country--open');
         contactCard?.classList.remove('contact-card--phone-open');
     }
@@ -374,17 +486,31 @@ function initPhoneCountryField() {
 
         if (e.key === 'ArrowDown') {
             e.preventDefault();
-            if (idx < vis.length - 1) vis[idx + 1].focus();
+            if (idx < vis.length - 1) {
+                vis[idx + 1].focus();
+                setActiveOption(vis[idx + 1]);
+            }
         } else if (e.key === 'ArrowUp') {
             e.preventDefault();
-            if (idx > 0) vis[idx - 1].focus();
-            else search?.focus();
+            if (idx > 0) {
+                vis[idx - 1].focus();
+                setActiveOption(vis[idx - 1]);
+            } else {
+                setActiveOption(null);
+                search?.focus();
+            }
         } else if (e.key === 'Home') {
             e.preventDefault();
-            if (vis.length) vis[0].focus();
+            if (vis.length) {
+                vis[0].focus();
+                setActiveOption(vis[0]);
+            }
         } else if (e.key === 'End') {
             e.preventDefault();
-            if (vis.length) vis[vis.length - 1].focus();
+            if (vis.length) {
+                vis[vis.length - 1].focus();
+                setActiveOption(vis[vis.length - 1]);
+            }
         } else if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             const val = t.dataset.value;
@@ -421,7 +547,10 @@ function initPhoneCountryField() {
         if (e.key === 'ArrowDown') {
             e.preventDefault();
             const vis = getVisiblePhoneOptions(list);
-            if (vis.length) vis[0].focus();
+            if (vis.length) {
+                vis[0].focus();
+                setActiveOption(vis[0]);
+            }
             return;
         }
         if (e.key === 'Escape') {
@@ -566,6 +695,7 @@ function initContactForm() {
             const removeBtn = document.createElement('button');
             removeBtn.type = 'button';
             removeBtn.textContent = tNav('contact.file.remove');
+            removeBtn.setAttribute('aria-label', `${tNav('contact.file.remove')} ${file.name}`);
             removeBtn.addEventListener('click', () => {
                 selectedFiles.splice(index, 1);
                 updateFileInput();
@@ -825,16 +955,18 @@ function initHeroPanelCarousel() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (window.goDriveI18n) window.goDriveI18n.init();
-    setupNav();
-    initNavMenu();
-    window.addEventListener('godrive:lang', () => {
+    void (async () => {
+        if (window.goDriveI18n) await window.goDriveI18n.init();
         setupNav();
-    });
-    initScrollReveal();
-    initHeaderScroll();
-    initContactForm();
-    initFooterLangPill();
-    initFooterMegaPromo();
-    initHeroPanelCarousel();
+        initNavMenu();
+        window.addEventListener('godrive:lang', () => {
+            setupNav();
+        });
+        initScrollReveal();
+        initHeaderScroll();
+        initContactForm();
+        initFooterLangPill();
+        initFooterMegaPromo();
+        initHeroPanelCarousel();
+    })();
 });

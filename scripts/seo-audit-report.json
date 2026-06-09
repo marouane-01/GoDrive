@@ -1,0 +1,378 @@
+{
+  "generatedAt": "2026-06-09T01:36:45.700Z",
+  "baseUrl": "http://localhost:3095",
+  "overallScore": 100,
+  "totalPassed": 69,
+  "totalChecks": 69,
+  "sections": [
+    {
+      "name": "Static injection",
+      "score": 100,
+      "passed": 29,
+      "total": 29,
+      "checks": [
+        {
+          "id": "home:hreflang",
+          "pass": true,
+          "detail": "hreflang fr/en/ar + x-default"
+        },
+        {
+          "id": "home:jsonld",
+          "pass": true,
+          "detail": "JSON-LD present"
+        },
+        {
+          "id": "home:absolute-canonical",
+          "pass": true,
+          "detail": "absolute canonical"
+        },
+        {
+          "id": "home:absolute-og-image",
+          "pass": true,
+          "detail": "absolute og:image"
+        },
+        {
+          "id": "home:page-og-image",
+          "pass": true,
+          "detail": "page OG image /images/og/home.jpg"
+        },
+        {
+          "id": "about:hreflang",
+          "pass": true,
+          "detail": "hreflang fr/en/ar + x-default"
+        },
+        {
+          "id": "about:jsonld",
+          "pass": true,
+          "detail": "JSON-LD present"
+        },
+        {
+          "id": "about:absolute-canonical",
+          "pass": true,
+          "detail": "absolute canonical"
+        },
+        {
+          "id": "about:absolute-og-image",
+          "pass": true,
+          "detail": "absolute og:image"
+        },
+        {
+          "id": "about:page-og-image",
+          "pass": true,
+          "detail": "page OG image /images/og/about.png"
+        },
+        {
+          "id": "guide:hreflang",
+          "pass": true,
+          "detail": "hreflang fr/en/ar + x-default"
+        },
+        {
+          "id": "guide:jsonld",
+          "pass": true,
+          "detail": "JSON-LD present"
+        },
+        {
+          "id": "guide:absolute-canonical",
+          "pass": true,
+          "detail": "absolute canonical"
+        },
+        {
+          "id": "guide:absolute-og-image",
+          "pass": true,
+          "detail": "absolute og:image"
+        },
+        {
+          "id": "guide:page-og-image",
+          "pass": true,
+          "detail": "page OG image /images/og/guide.png"
+        },
+        {
+          "id": "contact:hreflang",
+          "pass": true,
+          "detail": "hreflang fr/en/ar + x-default"
+        },
+        {
+          "id": "contact:jsonld",
+          "pass": true,
+          "detail": "JSON-LD present"
+        },
+        {
+          "id": "contact:absolute-canonical",
+          "pass": true,
+          "detail": "absolute canonical"
+        },
+        {
+          "id": "contact:absolute-og-image",
+          "pass": true,
+          "detail": "absolute og:image"
+        },
+        {
+          "id": "contact:page-og-image",
+          "pass": true,
+          "detail": "page OG image /images/og/contact.png"
+        },
+        {
+          "id": "download:hreflang",
+          "pass": true,
+          "detail": "hreflang fr/en/ar + x-default"
+        },
+        {
+          "id": "download:jsonld",
+          "pass": true,
+          "detail": "JSON-LD present"
+        },
+        {
+          "id": "download:absolute-canonical",
+          "pass": true,
+          "detail": "absolute canonical"
+        },
+        {
+          "id": "download:absolute-og-image",
+          "pass": true,
+          "detail": "absolute og:image"
+        },
+        {
+          "id": "download:page-og-image",
+          "pass": true,
+          "detail": "page OG image /images/og/download.png"
+        },
+        {
+          "id": "dashboard:hreflang",
+          "pass": true,
+          "detail": "hreflang fr/en/ar + x-default"
+        },
+        {
+          "id": "dashboard:jsonld",
+          "pass": true,
+          "detail": "JSON-LD present"
+        },
+        {
+          "id": "dashboard:absolute-canonical",
+          "pass": true,
+          "detail": "absolute canonical"
+        },
+        {
+          "id": "dashboard:absolute-og-image",
+          "pass": true,
+          "detail": "absolute og:image"
+        }
+      ]
+    },
+    {
+      "name": "Multilingual SEO",
+      "score": 100,
+      "passed": 9,
+      "total": 9,
+      "checks": [
+        {
+          "id": "i18n:fr:home-title",
+          "pass": true,
+          "detail": "Go Drive — Transport de colis, local & international"
+        },
+        {
+          "id": "i18n:en:home-title",
+          "pass": true,
+          "detail": "Go Drive — Parcel delivery, local & international"
+        },
+        {
+          "id": "i18n:ar:home-title",
+          "pass": true,
+          "detail": "Go Drive — توصيل الطرود محليًا ودوليًا"
+        },
+        {
+          "id": "i18n:home:localized-meta",
+          "pass": true,
+          "detail": "titles=3 desc=3"
+        },
+        {
+          "id": "i18n:about:localized-meta",
+          "pass": true,
+          "detail": "titles=3 desc=3"
+        },
+        {
+          "id": "i18n:guide:localized-meta",
+          "pass": true,
+          "detail": "titles=3 desc=3"
+        },
+        {
+          "id": "i18n:contact:localized-meta",
+          "pass": true,
+          "detail": "titles=2 desc=3"
+        },
+        {
+          "id": "i18n:download:localized-meta",
+          "pass": true,
+          "detail": "titles=3 desc=3"
+        },
+        {
+          "id": "jsonld:inLanguage",
+          "pass": true,
+          "detail": "WebSite lists 3 languages"
+        }
+      ]
+    },
+    {
+      "name": "Live endpoints",
+      "score": 100,
+      "passed": 31,
+      "total": 31,
+      "checks": [
+        {
+          "id": "live:robots",
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        {
+          "id": "live:robots-sitemap",
+          "pass": true,
+          "detail": "sitemap directive"
+        },
+        {
+          "id": "live:sitemap",
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        {
+          "id": "live:sitemap-hreflang",
+          "pass": true,
+          "detail": "xhtml hreflang alternates"
+        },
+        {
+          "id": "live:home:html",
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        {
+          "id": "live:home:hreflang",
+          "pass": true,
+          "detail": "served HTML has hreflang + site base"
+        },
+        {
+          "id": "live:home:jsonld",
+          "pass": true,
+          "detail": "served JSON-LD"
+        },
+        {
+          "id": "live:home:canonical-abs",
+          "pass": true,
+          "detail": "absolute canonical in served HTML"
+        },
+        {
+          "id": "live:home:og-page-image",
+          "pass": true,
+          "detail": "/images/og/home.jpg"
+        },
+        {
+          "id": "live:about:html",
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        {
+          "id": "live:about:hreflang",
+          "pass": true,
+          "detail": "served HTML has hreflang + site base"
+        },
+        {
+          "id": "live:about:jsonld",
+          "pass": true,
+          "detail": "served JSON-LD"
+        },
+        {
+          "id": "live:about:canonical-abs",
+          "pass": true,
+          "detail": "absolute canonical in served HTML"
+        },
+        {
+          "id": "live:about:og-page-image",
+          "pass": true,
+          "detail": "/images/og/about.png"
+        },
+        {
+          "id": "live:guide:html",
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        {
+          "id": "live:guide:hreflang",
+          "pass": true,
+          "detail": "served HTML has hreflang + site base"
+        },
+        {
+          "id": "live:guide:jsonld",
+          "pass": true,
+          "detail": "served JSON-LD"
+        },
+        {
+          "id": "live:guide:canonical-abs",
+          "pass": true,
+          "detail": "absolute canonical in served HTML"
+        },
+        {
+          "id": "live:guide:og-page-image",
+          "pass": true,
+          "detail": "/images/og/guide.png"
+        },
+        {
+          "id": "live:contact:html",
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        {
+          "id": "live:contact:hreflang",
+          "pass": true,
+          "detail": "served HTML has hreflang + site base"
+        },
+        {
+          "id": "live:contact:jsonld",
+          "pass": true,
+          "detail": "served JSON-LD"
+        },
+        {
+          "id": "live:contact:canonical-abs",
+          "pass": true,
+          "detail": "absolute canonical in served HTML"
+        },
+        {
+          "id": "live:contact:og-page-image",
+          "pass": true,
+          "detail": "/images/og/contact.png"
+        },
+        {
+          "id": "live:download:html",
+          "pass": true,
+          "detail": "HTTP 200"
+        },
+        {
+          "id": "live:download:hreflang",
+          "pass": true,
+          "detail": "served HTML has hreflang + site base"
+        },
+        {
+          "id": "live:download:jsonld",
+          "pass": true,
+          "detail": "served JSON-LD"
+        },
+        {
+          "id": "live:download:canonical-abs",
+          "pass": true,
+          "detail": "absolute canonical in served HTML"
+        },
+        {
+          "id": "live:download:og-page-image",
+          "pass": true,
+          "detail": "/images/og/download.png"
+        },
+        {
+          "id": "live:about:en:href",
+          "pass": true,
+          "detail": "about.html?lang=en"
+        },
+        {
+          "id": "live:about:ar:href",
+          "pass": true,
+          "detail": "about.html?lang=ar"
+        }
+      ]
+    }
+  ]
+}

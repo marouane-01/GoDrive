@@ -5,21 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Télécharger l’app — Go Drive</title>
     <meta name="description" content="Téléchargez Go Drive gratuitement sur iOS et Android. Scannez le QR code ou ouvrez votre store pour accéder à tous les services.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#145232">
+    <meta name="author" content="Go Drive">
+    <link rel="icon" href="/images/godrive-logo.png" type="image/png" sizes="any">
+    <link rel="apple-touch-icon" href="/images/godrive-logo.png">
+    <link rel="canonical" href="/download-app.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Go Drive">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Télécharger l’app — Go Drive">
+    <meta property="og:description" content="Téléchargez Go Drive gratuitement sur iOS et Android. Scannez le QR code ou ouvrez votre store pour accéder à tous les services.">
+    <meta property="og:url" content="/download-app.html">
+    <meta property="og:image" content="/images/godrive-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Télécharger l’app — Go Drive">
+    <meta name="twitter:description" content="Téléchargez Go Drive gratuitement sur iOS et Android. Scannez le QR code ou ouvrez votre store pour accéder à tous les services.">
+    <meta name="twitter:image" content="/images/godrive-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="css/app.min.css">
 </head>
 <body data-page="download">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Aller au contenu principal</a>
     <header class="site-header site-header--transparent">
         <div class="header-inner">
             <a href="/" class="logo" aria-label="Go Drive">
+                <picture>
+                <source type="image/webp" srcset="/images/godrive-logo-200w.webp 200w, images/godrive-logo-400w.webp 400w, images/godrive-logo.webp 677w" sizes="(max-width: 768px) 120px, 180px">
                 <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" fetchpriority="high">
+            </picture>
             </a>
 
-            <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
-                <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
-                <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
-                <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
-            </nav>
+            <nav class="header-desktop-nav" id="header-desktop-nav" aria-label="Navigation principale"></nav>
 
             <div class="header-actions">
                 <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">
@@ -62,6 +83,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <!-- ═══════════════════════════════════════════════════════════════
          HERO — App download focus (premium, dark gradient)
          ═══════════════════════════════════════════════════════════════ -->
@@ -272,11 +294,15 @@
             </p>
         </div>
     </section>
+    </main>
 
     <footer class="site-footer site-footer--simple" lang="fr">
         <div class="footer-simple">
             <div class="footer-simple__top">
-                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy"></a>
+                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><picture>
+                <source type="image/webp" srcset="/images/godrive-logo-200w.webp 200w, images/godrive-logo-400w.webp 400w, images/godrive-logo.webp 677w" sizes="(max-width: 768px) 120px, 180px">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy">
+            </picture></a>
                 <nav class="footer-simple__nav" data-i18n-aria-label="footer.aria" aria-label="Pied de page">
                     <ul class="footer-simple__links">
                         <li><a href="/" data-i18n="nav.home">Accueil</a></li>
@@ -295,12 +321,12 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/i18n.js"></script>
-    <script src="js/i18n-content.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/download-modal.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/store-links.js"></script>
+    <script src="js/i18n.min.js" defer></script>
+    <script src="js/seo.min.js" defer></script>
+    <script src="js/config.min.js" defer></script>
+    <script src="js/a11y.min.js" defer></script>
+    <script src="js/download-modal.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
+    <script src="js/store-links.min.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const { getEtherealBundle } = require('./mailer');
+const { validateContactUploads } = require('../utils/contactUploadValidation');
 
 function getContactMailToOrThrow() {
     const to = String(process.env.CONTACT_MAIL_TO || '').trim();
@@ -111,9 +112,17 @@ function isMailConfigured() {
  * @param {import('multer').File[]} files
  */
 async function sendContactEmail(data, files) {
+    const uploadValidation = validateContactUploads(files || []);
+    if (!uploadValidation.ok) {
+        const err = new Error(uploadValidation.message);
+        err.code = uploadValidation.code;
+        err.statusCode = 400;
+        throw err;
+    }
+
     const { text, html } = buildBodies(data);
 
-    const attachments = (files || []).map((f) => ({
+    const attachments = uploadValidation.files.map((f) => ({
         filename: f.originalname || 'attachment',
         content: f.buffer,
         contentType: f.mimetype || undefined,

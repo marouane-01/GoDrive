@@ -1,5 +1,4 @@
-/* Go Drive — thème vert & blanc + animations */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+/* Go Drive — thème vert & blanc + animations (fonts loaded via HTML head) */
 
 :root {
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -103,6 +102,36 @@ button:focus-visible,
 .btn:focus-visible {
     outline-offset: 2px;
     box-shadow: var(--ring);
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    z-index: 1200;
+    padding: 0.75rem 1rem;
+    background: var(--ink);
+    color: var(--white);
+    font-weight: 600;
+    border-radius: var(--radius);
+    text-decoration: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    left: 1rem;
+    top: 1rem;
+}
+
+main {
+    flex: 1;
+}
+
+.mobile-sticky-cta:focus-visible {
+    outline: 2px solid var(--accent-light);
+    outline-offset: 3px;
+    box-shadow: var(--ring), 0 18px 36px rgba(15, 41, 24, 0.4);
 }
 
 /* ——— Header (type landing mobilité) ——— */
@@ -414,6 +443,87 @@ html[dir='rtl'] .lang-select {
 html[dir='rtl'] .site-menu-panel {
     margin-left: 0;
     margin-right: auto;
+}
+
+/* ——— Desktop header navigation ——— */
+.header-desktop-nav {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    flex: 1;
+    min-width: 0;
+    padding: 0 0.5rem;
+}
+
+.header-nav-link {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.header-nav-link:hover {
+    color: var(--accent-hover);
+    background: var(--accent-soft);
+}
+
+.header-nav-link.is-active {
+    color: var(--accent);
+    font-weight: 600;
+    background: var(--accent-soft);
+}
+
+.header-nav-link:focus-visible {
+    outline: none;
+    box-shadow: var(--ring);
+}
+
+.site-header.site-header--transparent:not(.is-scrolled) .header-nav-link {
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.site-header.site-header--transparent:not(.is-scrolled) .header-nav-link:hover,
+.site-header.site-header--transparent:not(.is-scrolled) .header-nav-link.is-active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.site-menu-panel .main-nav a.is-active:not(.btn) {
+    color: var(--accent);
+    font-weight: 600;
+    background: var(--accent-soft);
+}
+
+@media (min-width: 900px) {
+    .header-desktop-nav {
+        display: flex;
+    }
+
+    .nav-menu-btn {
+        display: none !important;
+    }
+
+    .site-menu-panel {
+        display: none !important;
+    }
+
+    .site-header.is-menu-open .nav-menu-btn {
+        display: none !important;
+    }
+}
+
+@media (max-width: 899px) {
+    .header-desktop-nav {
+        display: none !important;
+    }
 }
 
 /* ——— Buttons ——— */
@@ -868,7 +978,8 @@ html[dir='rtl'] .site-menu-panel {
     pointer-events: none;
 }
 
-.service-card h3 {
+.service-card h3,
+.service-card h4 {
     font-family: var(--font-display);
     font-size: 1.15rem;
     font-weight: 700;
@@ -3818,7 +3929,7 @@ body.page-contact {
 /* — App preview grid — */
 .app-preview-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
 }
@@ -3832,13 +3943,13 @@ body.page-contact {
 }
 
 .app-preview-card .phone-mockup {
-    transform: scale(0.92);
+    zoom: 0.68;
     transform-origin: top center;
     transition: transform 0.3s var(--ease-spring);
 }
 
 .app-preview-card:hover .phone-mockup {
-    transform: scale(0.95) translateY(-4px);
+    transform: scale(1.04) translateY(-4px);
 }
 
 .app-preview-card h3 {
@@ -3858,8 +3969,18 @@ body.page-contact {
 
 @media (max-width: 1100px) {
     .app-preview-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem 1.25rem;
+    }
+    .app-preview-card .phone-mockup {
+        zoom: unset;
+    }
+}
+
+@media (max-width: 700px) {
+    .app-preview-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 1rem;
+        gap: 1.75rem 1rem;
     }
 }
 
@@ -3869,6 +3990,7 @@ body.page-contact {
     }
     .app-preview-card .phone-mockup {
         transform: scale(0.95);
+        zoom: unset;
     }
 }
 
@@ -4343,7 +4465,7 @@ body {
 }
 
 .app-preview-grid {
-    gap: 2.25rem;
+    gap: 1.25rem;
     margin-top: 2.75rem;
 }
 
@@ -4366,7 +4488,8 @@ body {
     padding: 1.85rem 1.75rem;
 }
 
-.service-card h3 {
+.service-card h3,
+.service-card h4 {
     font-size: 1.2rem;
     letter-spacing: -0.028em;
     margin: 0 0 0.55rem;
@@ -4471,7 +4594,7 @@ body {
 
 /* ── Services app note: nicely centred ───────────────────────────────── */
 .services-app-note {
-    margin: 1.4rem 0 0;
+    margin: 1.4rem 0 1cm;
 }
 
 /* ── Testi aggregate: slightly larger ───────────────────────────────── */
@@ -4874,39 +4997,33 @@ body {
 /* ── Mobile swipeable app preview ────────────────────────────────────── */
 @media (max-width: 900px) {
     .app-preview-section .app-preview-grid {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 1.15rem;
-        padding: 0.75rem 1.25rem 2rem;
-        margin: 2rem -1.25rem 0;
-        scrollbar-width: none;
-    }
-
-    .app-preview-section .app-preview-grid::-webkit-scrollbar {
-        display: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.25rem;
+        overflow-x: unset;
+        padding: 0;
+        margin: 2rem 0 0;
     }
 
     .app-preview-section .app-preview-card {
-        flex: 0 0 72vw;
-        max-width: 268px;
-        min-width: 230px;
-        scroll-snap-align: start;
+        flex: unset;
+        max-width: unset;
+        min-width: unset;
     }
 
-    /* Scroll hint: fade edge */
+    .app-preview-section .app-preview-card .phone-mockup {
+        zoom: unset;
+    }
+
     .app-preview-section {
-        overflow: hidden;
+        overflow: unset;
     }
 }
 
-@media (max-width: 480px) {
-    .app-preview-section .app-preview-card {
-        flex: 0 0 82vw;
-        max-width: 300px;
+@media (max-width: 560px) {
+    .app-preview-section .app-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem 0;
     }
 }
 
@@ -4936,7 +5053,7 @@ body {
 
 @media (max-width: 900px) {
     .preview-scroll-hint {
-        display: flex;
+        display: none;
     }
 }
 
@@ -5554,6 +5671,7 @@ body {
 }
 
 .about-value__title {
+    margin: 0;
     font-family: var(--font-display);
     font-size: 1.1rem;
     font-weight: 800;
@@ -5758,6 +5876,7 @@ html[dir='rtl'] .guide-step__num {
 }
 
 .guide-step__title {
+    margin: 0;
     font-family: var(--font-display);
     font-size: 1.08rem;
     font-weight: 800;

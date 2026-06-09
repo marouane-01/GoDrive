@@ -5,22 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aperçu de l’application — Go Drive</title>
     <meta name="description" content="Aperçu de l’application mobile Go Drive : commandes, suivi et statuts. Toutes les actions se font uniquement depuis l’app.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/media.css">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#145232">
+    <meta name="author" content="Go Drive">
+    <link rel="icon" href="/images/godrive-logo.png" type="image/png" sizes="any">
+    <link rel="apple-touch-icon" href="/images/godrive-logo.png">
+    <link rel="canonical" href="/dashboard.html">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Go Drive">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aperçu de l’application — Go Drive">
+    <meta property="og:description" content="Aperçu de l’application mobile Go Drive : commandes, suivi et statuts. Toutes les actions se font uniquement depuis l’app.">
+    <meta property="og:url" content="/dashboard.html">
+    <meta property="og:image" content="/images/godrive-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aperçu de l’application — Go Drive">
+    <meta name="twitter:description" content="Aperçu de l’application mobile Go Drive : commandes, suivi et statuts. Toutes les actions se font uniquement depuis l’app.">
+    <meta name="twitter:image" content="/images/godrive-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="css/app.min.css">
 </head>
 <body data-page="dashboard">
+    <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Aller au contenu principal</a>
         <header class="site-header site-header--transparent">
         <div class="header-inner">
 
             <a href="/" class="logo" aria-label="Go Drive">
-                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async">
+                <picture>
+                <source type="image/webp" srcset="/images/godrive-logo-200w.webp 200w, images/godrive-logo-400w.webp 400w, images/godrive-logo.webp 677w" sizes="(max-width: 768px) 120px, 180px">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" >
+            </picture>
             </a>
 
-            <nav class="header-desktop-nav" aria-label="Navigation principale" id="header-desktop-nav">
-                <a href="/about.html" class="header-nav-link" data-i18n="nav.about">À propos</a>
-                <a href="/guide.html" class="header-nav-link" data-i18n="nav.guide">Comment ça marche</a>
-                <a href="/contact.html" class="header-nav-link" data-i18n="nav.contact">Contact</a>
-            </nav>
+            <nav class="header-desktop-nav" id="header-desktop-nav" aria-label="Navigation principale"></nav>
 
             <div class="header-actions">
                 <button type="button" class="header-download-btn" id="header-download-btn" data-i18n="header.download_btn">
@@ -64,6 +85,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <div class="page-hero">
         <div class="page-hero-inner">
             <h1 data-i18n-html="dashboard.preview.hero.title_html"><span class="text-gradient-on-dark">Aperçu</span> de l’application</h1>
@@ -72,7 +94,7 @@
     </div>
 
     <div class="container">
-        <div class="card reveal" role="note" aria-live="polite" style="border-left: 4px solid var(--accent, #f6a92c);">
+        <div class="card reveal" role="note" style="border-left: 4px solid var(--accent, #f6a92c);">
             <p style="margin: 0;" data-i18n-html="dashboard.preview.banner_html"><strong>Aperçu uniquement.</strong> Cette page ne permet pas de créer ou de gérer des commandes. Pour utiliser Go Drive, <a href="/download-app.html" data-i18n="dashboard.preview.banner_link">téléchargez l’application</a>.</p>
         </div>
 
@@ -81,7 +103,7 @@
             <p class="text-muted" data-i18n="dashboard.preview.example.lead">Ces cartes sont une démonstration visuelle. Les vraies commandes vivent dans votre application Go Drive.</p>
 
             <div id="ordersList" class="grid" aria-label="Aperçu de commandes">
-                <div class="order-card" aria-hidden="true">
+                <div class="order-card">
                     <h3><span data-i18n="dashboard.order.prefix">Commande #</span>1042</h3>
                     <p><strong data-i18n="dashboard.order.from">De :</strong> <span>Casablanca — Maarif</span></p>
                     <p><strong data-i18n="dashboard.order.to">À :</strong> <span>Rabat — Agdal</span></p>
@@ -89,7 +111,7 @@
                     <p><strong data-i18n="dashboard.order.status">Statut :</strong> <span class="badge in_transit" data-i18n="dashboard.status.in_transit">En transit</span></p>
                 </div>
 
-                <div class="order-card" aria-hidden="true">
+                <div class="order-card">
                     <h3><span data-i18n="dashboard.order.prefix">Commande #</span>1043</h3>
                     <p><strong data-i18n="dashboard.order.from">De :</strong> <span>Marrakech — Guéliz</span></p>
                     <p><strong data-i18n="dashboard.order.to">À :</strong> <span>Marrakech — Médina</span></p>
@@ -97,7 +119,7 @@
                     <p><strong data-i18n="dashboard.order.status">Statut :</strong> <span class="badge accepted" data-i18n="dashboard.status.accepted">Accepté</span></p>
                 </div>
 
-                <div class="order-card" aria-hidden="true">
+                <div class="order-card">
                     <h3><span data-i18n="dashboard.order.prefix">Commande #</span>1044</h3>
                     <p><strong data-i18n="dashboard.order.from">De :</strong> <span>Tanger — Port</span></p>
                     <p><strong data-i18n="dashboard.order.to">À :</strong> <span>Madrid — Centro</span></p>
@@ -143,11 +165,15 @@
             </div>
         </section>
     </div>
+    </main>
 
     <footer class="site-footer site-footer--simple" lang="fr">
         <div class="footer-simple">
             <div class="footer-simple__top">
-                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy"></a>
+                <a href="/" class="footer-simple__logo" aria-label="Go Drive"><picture>
+                <source type="image/webp" srcset="/images/godrive-logo-200w.webp 200w, images/godrive-logo-400w.webp 400w, images/godrive-logo.webp 677w" sizes="(max-width: 768px) 120px, 180px">
+                <img src="/images/godrive-logo.png" width="677" height="369" alt="" decoding="async" loading="lazy">
+            </picture></a>
                 <nav class="footer-simple__nav" data-i18n-aria-label="footer.aria" aria-label="Pied de page">
                     <ul class="footer-simple__links">
                         <li><a href="/" data-i18n="nav.home">Accueil</a></li>
@@ -166,12 +192,12 @@
             </div>
         </div>
     </footer>
-
-    <script src="js/i18n.js"></script>
-    <script src="js/i18n-content.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/download-modal.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/store-links.js"></script>
+    <script src="js/i18n.min.js" defer></script>
+    <script src="js/seo.min.js" defer></script>
+    <script src="js/config.min.js" defer></script>
+    <script src="js/a11y.min.js" defer></script>
+    <script src="js/download-modal.min.js" defer></script>
+    <script src="js/main.min.js" defer></script>
+    <script src="js/store-links.min.js" defer></script>
 </body>
 </html>
